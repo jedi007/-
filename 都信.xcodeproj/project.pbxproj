@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0905DA23E1AB1D003A2788 /* registerViewController.swift */; };
 		CDA465C5238145A4007D794C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C4238145A4007D794C /* AppDelegate.swift */; };
 		CDA465C7238145A4007D794C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C6238145A4007D794C /* SceneDelegate.swift */; };
 		CDA465C9238145A4007D794C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C8238145A4007D794C /* ViewController.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6A0905DA23E1AB1D003A2788 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		CDA465C1238145A4007D794C /* 都信.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "都信.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA465C4238145A4007D794C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA465C6238145A4007D794C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				CDA465CD238145A5007D794C /* Assets.xcassets */,
 				CDA465CF238145A5007D794C /* LaunchScreen.storyboard */,
 				CDA465D2238145A5007D794C /* Info.plist */,
+				6A0905DA23E1AB1D003A2788 /* registerViewController.swift */,
 			);
 			path = "都信";
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				CDA465C9238145A4007D794C /* ViewController.swift in Sources */,
 				CDA465C5238145A4007D794C /* AppDelegate.swift in Sources */,
 				CDA465C7238145A4007D794C /* SceneDelegate.swift in Sources */,
+				6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

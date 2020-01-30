@@ -53,6 +53,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="register:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8mL-zU-aDO"/>
+                                    <segue destination="zfK-RM-kev" kind="show" identifier="goRegisterVC" id="9fb-KF-krz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -74,8 +75,63 @@
             </objects>
             <point key="canvasLocation" x="133" y="139"/>
         </scene>
+        <!--Reister View Controller-->
+        <scene sceneID="j0P-vq-cU6">
+            <objects>
+                <viewController id="zfK-RM-kev" customClass="reisterViewController" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="h5g-aT-PcZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FqU-jX-sKw">
+                                <rect key="frame" x="20" y="20" width="21" height="27"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <state key="normal" image="arrowshape.turn.up.left" catalog="system">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYY-0W-uE5">
+                                <rect key="frame" x="20" y="67" width="142" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="昵称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqL-YE-hyO">
+                                <rect key="frame" x="20" y="150.5" width="39" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="例如：李杰" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="q2u-88-1mE">
+                                <rect key="frame" x="120" y="153" width="76.5" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="MYY-0W-uE5" firstAttribute="top" secondItem="FqU-jX-sKw" secondAttribute="bottom" constant="20" id="2jh-EU-lmX"/>
+                            <constraint firstItem="eqL-YE-hyO" firstAttribute="top" secondItem="MYY-0W-uE5" secondAttribute="bottom" constant="50" id="85z-S9-Yz9"/>
+                            <constraint firstItem="FqU-jX-sKw" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="HT1-wb-jC9"/>
+                            <constraint firstItem="MYY-0W-uE5" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="ICD-PF-dsO"/>
+                            <constraint firstItem="eqL-YE-hyO" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="M1Y-VK-2fN"/>
+                            <constraint firstItem="q2u-88-1mE" firstAttribute="leading" secondItem="MYY-0W-uE5" secondAttribute="leading" constant="100" id="WFv-zv-BRp"/>
+                            <constraint firstItem="FqU-jX-sKw" firstAttribute="top" secondItem="PMZ-f7-84m" secondAttribute="top" constant="20" id="XhI-in-7uO"/>
+                            <constraint firstItem="q2u-88-1mE" firstAttribute="centerY" secondItem="eqL-YE-hyO" secondAttribute="centerY" id="zbK-uo-cvQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PMZ-f7-84m"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dmh-gL-bu0"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TWX-J5-YSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1063.768115942029" y="145.98214285714286"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
         <image name="登录背景.jpg" width="720" height="1280"/>
     </resources>
 </document>
