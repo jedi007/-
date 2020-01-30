@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0905DA23E1AB1D003A2788 /* registerViewController.swift */; };
-		6AC05DD723E2D068009BD223 /* 图标 in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DD623E2D068009BD223 /* 图标 */; };
+		6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */; };
+		6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */; };
+		6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */; };
+		6AC05DE023E2DD7C009BD223 /* Wi-Fi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDC23E2DD7C009BD223 /* Wi-Fi.jpg */; };
 		CDA465C5238145A4007D794C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C4238145A4007D794C /* AppDelegate.swift */; };
 		CDA465C7238145A4007D794C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C6238145A4007D794C /* SceneDelegate.swift */; };
 		CDA465C9238145A4007D794C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C8238145A4007D794C /* ViewController.swift */; };
@@ -20,7 +23,10 @@
 
 /* Begin PBXFileReference section */
 		6A0905DA23E1AB1D003A2788 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
-		6AC05DD623E2D068009BD223 /* 图标 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "图标"; sourceTree = "<group>"; };
+		6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-unchecked.jpg"; sourceTree = "<group>"; };
+		6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-checked.jpg"; sourceTree = "<group>"; };
+		6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-wrong.jpg"; sourceTree = "<group>"; };
+		6AC05DDC23E2DD7C009BD223 /* Wi-Fi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Wi-Fi.jpg"; sourceTree = "<group>"; };
 		CDA465C1238145A4007D794C /* 都信.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "都信.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA465C4238145A4007D794C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA465C6238145A4007D794C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +49,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6AC05DD823E2DD56009BD223 /* 图标 */ = {
+			isa = PBXGroup;
+			children = (
+				6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */,
+				6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */,
+				6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */,
+				6AC05DDC23E2DD7C009BD223 /* Wi-Fi.jpg */,
+			);
+			path = "图标";
+			sourceTree = "<group>";
+		};
 		CDA465B8238145A4007D794C = {
 			isa = PBXGroup;
 			children = (
@@ -78,7 +95,7 @@
 		CDA465D8238145D2007D794C /* images */ = {
 			isa = PBXGroup;
 			children = (
-				6AC05DD623E2D068009BD223 /* 图标 */,
+				6AC05DD823E2DD56009BD223 /* 图标 */,
 				CDA465D9238145F4007D794C /* 登录背景.jpg */,
 			);
 			path = images;
@@ -142,10 +159,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AC05DD723E2D068009BD223 /* 图标 in Resources */,
 				CDA465D1238145A5007D794C /* LaunchScreen.storyboard in Resources */,
+				6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */,
 				CDA465CE238145A5007D794C /* Assets.xcassets in Resources */,
 				CDA465DA238145F4007D794C /* 登录背景.jpg in Resources */,
+				6AC05DE023E2DD7C009BD223 /* Wi-Fi.jpg in Resources */,
+				6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */,
+				6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */,
 				CDA465CC238145A4007D794C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

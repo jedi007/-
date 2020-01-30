@@ -164,19 +164,68 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H5P-IL-Wpu">
-                                <rect key="frame" x="90" y="598" width="133" height="135"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="RadioButton-unchecked.jpg"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zef-Qh-vul">
+                                <rect key="frame" x="55.5" y="408.5" width="303" height="25"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="《软件许可及服务协议》" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5vO-R6-6Oa">
+                                        <rect key="frame" x="126.5" y="2" width="168.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" red="0.0048598507420000003" green="0.096086271109999996" blue="0.57499289509999996" alpha="0.79770440924657537" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已阅读并同意" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u41-PA-uEW">
+                                        <rect key="frame" x="32.5" y="2" width="92" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RadioButton-unchecked.jpg" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qqe-bT-yAL">
+                                        <rect key="frame" x="4.5" y="1" width="20" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6EO-79-dF4"/>
+                                            <constraint firstAttribute="width" constant="20" id="jcF-lj-5P9"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="5vO-R6-6Oa" firstAttribute="top" secondItem="zef-Qh-vul" secondAttribute="top" constant="2" id="0bc-I6-9So"/>
+                                    <constraint firstAttribute="width" secondItem="5vO-R6-6Oa" secondAttribute="width" multiplier="1.8" id="3dF-YC-nKE"/>
+                                    <constraint firstAttribute="trailing" secondItem="5vO-R6-6Oa" secondAttribute="trailing" constant="8" id="6Di-zm-u6U"/>
+                                    <constraint firstAttribute="height" constant="25" id="7Ag-71-y5f"/>
+                                    <constraint firstItem="u41-PA-uEW" firstAttribute="centerY" secondItem="5vO-R6-6Oa" secondAttribute="centerY" id="O6L-FD-4BD"/>
+                                    <constraint firstItem="u41-PA-uEW" firstAttribute="leading" secondItem="qqe-bT-yAL" secondAttribute="trailing" constant="8" id="pyw-iV-Shp"/>
+                                    <constraint firstItem="qqe-bT-yAL" firstAttribute="centerY" secondItem="u41-PA-uEW" secondAttribute="centerY" id="uq1-qN-Tck"/>
+                                    <constraint firstItem="5vO-R6-6Oa" firstAttribute="leading" secondItem="u41-PA-uEW" secondAttribute="trailing" constant="2" id="ycD-CR-gwh"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pw6-iz-Kpq">
+                                <rect key="frame" x="10" y="443.5" width="394" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.79596658360000005" blue="0.25893621579999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="cYL-E6-nZk"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="注册">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="MYY-0W-uE5" firstAttribute="top" secondItem="FqU-jX-sKw" secondAttribute="bottom" constant="20" id="2jh-EU-lmX"/>
                             <constraint firstItem="CCC-m7-IDR" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="6AD-21-QU4"/>
+                            <constraint firstItem="pw6-iz-Kpq" firstAttribute="centerX" secondItem="PMZ-f7-84m" secondAttribute="centerX" id="7Mh-Bh-KY5"/>
                             <constraint firstItem="CCC-m7-IDR" firstAttribute="top" secondItem="jZS-m2-6Ew" secondAttribute="bottom" constant="20" id="83C-nE-QbG"/>
                             <constraint firstItem="eqL-YE-hyO" firstAttribute="top" secondItem="MYY-0W-uE5" secondAttribute="bottom" constant="50" id="85z-S9-Yz9"/>
                             <constraint firstItem="TaG-QW-ewS" firstAttribute="centerY" secondItem="p1p-bo-L9F" secondAttribute="centerY" id="8v5-Gf-brY"/>
+                            <constraint firstItem="zef-Qh-vul" firstAttribute="centerX" secondItem="PMZ-f7-84m" secondAttribute="centerX" id="C9N-3q-omg"/>
+                            <constraint firstItem="PMZ-f7-84m" firstAttribute="trailing" secondItem="pw6-iz-Kpq" secondAttribute="trailing" constant="10" id="GZ8-5a-stO"/>
                             <constraint firstAttribute="trailing" secondItem="P1x-Ef-67R" secondAttribute="trailing" constant="10" id="HHd-qP-WEl"/>
                             <constraint firstItem="FqU-jX-sKw" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="HT1-wb-jC9"/>
                             <constraint firstItem="MYY-0W-uE5" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="ICD-PF-dsO"/>
@@ -185,15 +234,18 @@
                             <constraint firstItem="eqL-YE-hyO" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="M1Y-VK-2fN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jZS-m2-6Ew" secondAttribute="trailing" constant="10" id="MRL-yV-8EP"/>
                             <constraint firstItem="jZS-m2-6Ew" firstAttribute="top" secondItem="eqL-YE-hyO" secondAttribute="bottom" constant="20" id="Mkc-Am-Zok"/>
+                            <constraint firstItem="zef-Qh-vul" firstAttribute="top" secondItem="uwt-gE-A58" secondAttribute="bottom" constant="20" id="Roo-Bx-4WA"/>
                             <constraint firstAttribute="trailing" secondItem="uwt-gE-A58" secondAttribute="trailing" constant="10" id="VY5-bN-Jh6"/>
                             <constraint firstItem="aPF-D8-EBS" firstAttribute="leading" secondItem="q2u-88-1mE" secondAttribute="leading" id="Vbv-Bp-vPx"/>
                             <constraint firstItem="P1x-Ef-67R" firstAttribute="top" secondItem="8Zq-Aa-3f3" secondAttribute="bottom" constant="20" id="VqE-s1-Drk"/>
                             <constraint firstItem="q2u-88-1mE" firstAttribute="leading" secondItem="MYY-0W-uE5" secondAttribute="leading" constant="100" id="WFv-zv-BRp"/>
                             <constraint firstItem="8Zq-Aa-3f3" firstAttribute="top" secondItem="CCC-m7-IDR" secondAttribute="bottom" constant="40" id="Wp5-Yw-0Vq"/>
+                            <constraint firstItem="pw6-iz-Kpq" firstAttribute="top" secondItem="zef-Qh-vul" secondAttribute="bottom" constant="10" id="WsI-Lb-X3a"/>
                             <constraint firstItem="FqU-jX-sKw" firstAttribute="top" secondItem="PMZ-f7-84m" secondAttribute="top" constant="20" id="XhI-in-7uO"/>
                             <constraint firstItem="aPF-D8-EBS" firstAttribute="centerY" secondItem="8Zq-Aa-3f3" secondAttribute="centerY" id="YBa-zf-6Fp"/>
                             <constraint firstItem="jZS-m2-6Ew" firstAttribute="leading" secondItem="h5g-aT-PcZ" secondAttribute="leadingMargin" constant="-10" id="YD1-iv-Pnx"/>
                             <constraint firstItem="P1x-Ef-67R" firstAttribute="leading" secondItem="h5g-aT-PcZ" secondAttribute="leadingMargin" constant="-10" id="Yoi-Wf-IPb"/>
+                            <constraint firstItem="pw6-iz-Kpq" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="10" id="e4Y-0e-Wsi"/>
                             <constraint firstItem="8Zq-Aa-3f3" firstAttribute="leading" secondItem="PMZ-f7-84m" secondAttribute="leading" constant="20" id="fqD-sh-Z6T"/>
                             <constraint firstItem="r9W-P6-ddr" firstAttribute="centerY" secondItem="CCC-m7-IDR" secondAttribute="centerY" id="goE-RX-bPp"/>
                             <constraint firstItem="uwt-gE-A58" firstAttribute="leading" secondItem="h5g-aT-PcZ" secondAttribute="leadingMargin" constant="-10" id="h12-aB-PC0"/>
