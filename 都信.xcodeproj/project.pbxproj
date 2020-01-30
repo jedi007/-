@@ -13,6 +13,7 @@
 		6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */; };
 		6AC05DE023E2DD7C009BD223 /* Wi-Fi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDC23E2DD7C009BD223 /* Wi-Fi.jpg */; };
 		6AC05DE323E30461009BD223 /* dateTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC05DE223E30461009BD223 /* dateTools.swift */; };
+		6AC05DE523E30700009BD223 /* httpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AC05DE423E30700009BD223 /* httpManager.swift */; };
 		CDA465C5238145A4007D794C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C4238145A4007D794C /* AppDelegate.swift */; };
 		CDA465C7238145A4007D794C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C6238145A4007D794C /* SceneDelegate.swift */; };
 		CDA465C9238145A4007D794C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA465C8238145A4007D794C /* ViewController.swift */; };
@@ -29,6 +30,7 @@
 		6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-wrong.jpg"; sourceTree = "<group>"; };
 		6AC05DDC23E2DD7C009BD223 /* Wi-Fi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Wi-Fi.jpg"; sourceTree = "<group>"; };
 		6AC05DE223E30461009BD223 /* dateTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateTools.swift; sourceTree = "<group>"; };
+		6AC05DE423E30700009BD223 /* httpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = httpManager.swift; sourceTree = "<group>"; };
 		CDA465C1238145A4007D794C /* 都信.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "都信.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA465C4238145A4007D794C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA465C6238145A4007D794C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			isa = PBXGroup;
 			children = (
 				6AC05DE223E30461009BD223 /* dateTools.swift */,
+				6AC05DE423E30700009BD223 /* httpManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDA465C9238145A4007D794C /* ViewController.swift in Sources */,
+				6AC05DE523E30700009BD223 /* httpManager.swift in Sources */,
 				CDA465C5238145A4007D794C /* AppDelegate.swift in Sources */,
 				CDA465C7238145A4007D794C /* SceneDelegate.swift in Sources */,
 				6AC05DE323E30461009BD223 /* dateTools.swift in Sources */,

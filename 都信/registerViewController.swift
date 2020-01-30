@@ -36,6 +36,15 @@ class reisterViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    
+    @IBAction func registeCliked(_ sender: UIButton) {
+        
+        httpManager.shared.regist(name: "lijie", telephone: "1356899002", password: "111111", sex: "男", birthday: "1988-05-13 18:18:18")
+        
+    }
+    
+    
+    
     @objc func sureImageClick() -> Void {
         print("image is clicked")
         
@@ -50,4 +59,6 @@ class reisterViewController: UIViewController {
             sureImage.image = image
         }
     }
+    
+    
 }
