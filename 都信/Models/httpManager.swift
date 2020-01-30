@@ -17,7 +17,7 @@ class httpManager {
         
     }
     
-    func regist(name:String, telephone:String, password:String, sex:String, birthday:String) {
+    func regist( registeInfoDic:Dictionary<String,String> ) {
         let session = URLSession(configuration: .default)
         // 设置URL(该地址不可用，写你自己的服务器地址)
         let url = "\(baseUrl)/regist_account"
@@ -25,8 +25,8 @@ class httpManager {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         // 设置要post的内容，字典格式
-        let postData = ["name":"\(name)", "telephone":"\(telephone)", "password":"\(password)", "sex":"\(sex)" ,"birthday":"\(birthday)"]
-        let postString = postData.compactMap({ (key, value) -> String in
+        // let postData = ["name":"\(name)", "telephone":"\(telephone)", "password":"\(password)", "sex":"\(sex)" ,"birthday":"\(birthday)"]
+        let postString = registeInfoDic.compactMap({ (key, value) -> String in
             return "\(key)=\(value)"
         }).joined(separator: "&")
         request.httpBody = postString.data(using: .utf8)
