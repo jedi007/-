@@ -16,14 +16,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func register(_ sender: UIButton) {
+        print("注册被点击了")
         
-        print("注册被电击了")
+        let ndate = DateTools.stringConvertDate(string: "2019-05-13 19:58:44")
         
-        let ndate = stringConvertDate(string: "2019-05-13 19:58:44")
+        let strDate = DateTools.dateConvertString(date: ndate, dateFormat: "yyyy-MM-dd HH:mm:ss")
         
-        let strDate = dateConvertString(date: ndate, dateFormat: "yyyy-MM-dd HH:mm:ss")
-        
-        print(strDate)
+        print("日期转换测试: "+strDate)
         
         post(name: "lijie", telephone: "1356899002", password: "111111", sex: "男", birthday: "1988-05-13 18:18:18")
 
@@ -70,24 +69,6 @@ class ViewController: UIViewController {
         }
         // 启动任务
         task.resume()
-    }
-    
-    func dateConvertString(date:Date, dateFormat:String="yyyy-MM-dd") -> String {
-        //let timeZone = TimeZone.init(identifier: "UTC")
-        let formatter = DateFormatter()
-        //formatter.timeZone = timeZone
-        formatter.locale = Locale.init(identifier: "zh_CN")
-        formatter.dateFormat = dateFormat
-        let date = formatter.string(from: date)
-        return date
-        //return date.components(separatedBy: " ").first!
-    }
-    
-    func stringConvertDate(string:String, dateFormat:String="yyyy-MM-dd HH:mm:ss") -> Date {
-        let dateFormatter = DateFormatter.init()
-        dateFormatter.dateFormat = dateFormat
-        let date = dateFormatter.date(from: string)
-        return date!
     }
     
 }

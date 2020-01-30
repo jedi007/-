@@ -91,6 +91,9 @@
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
                                 </state>
+                                <connections>
+                                    <action selector="backToLogin:" destination="zfK-RM-kev" eventType="touchUpInside" id="Du9-F7-gk6"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号注册" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MYY-0W-uE5">
                                 <rect key="frame" x="20" y="67" width="142" height="33.5"/>
@@ -114,8 +117,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请写密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TaG-QW-ewS">
-                                <rect key="frame" x="120" y="344" width="73.5" height="22"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请填写密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TaG-QW-ewS">
+                                <rect key="frame" x="120" y="344" width="92" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -257,10 +260,13 @@
                         <viewLayoutGuide key="safeArea" id="PMZ-f7-84m"/>
                     </view>
                     <navigationItem key="navigationItem" id="dmh-gL-bu0"/>
+                    <connections>
+                        <outlet property="sureImage" destination="qqe-bT-yAL" id="RMb-Hj-ApV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWX-J5-YSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1063.768115942029" y="145.98214285714286"/>
+            <point key="canvasLocation" x="1007" y="139"/>
         </scene>
     </scenes>
     <resources>

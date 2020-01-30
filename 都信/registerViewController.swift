@@ -10,16 +10,44 @@ import UIKit
 
 class reisterViewController: UIViewController {
 
+    @IBOutlet weak var sureImage: UIImageView!
+    var sureAgreement:Bool
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(sureImageClick))
+        sureImage.addGestureRecognizer(singleTapGesture)
+        //sureImage.isUserInteractionEnabled = true
     }
         
     required init?(coder: NSCoder) {
+        self.sureAgreement = false
+        
         super.init(coder:coder)
-        print("init is called")
+        print("reisterViewController init is called")
         
         self.modalPresentationStyle = .fullScreen //= UIModalPresentationFullScreen
         //fatalError("init(coder:) has not been implemented")
+    }
+    
+    @IBAction func backToLogin(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func sureImageClick() -> Void {
+        print("image is clicked")
+        
+        self.sureAgreement = !self.sureAgreement
+        if self.sureAgreement {
+            let image = UIImage(named:"RadioButton-checked.jpg")
+            sureImage.image = image
+        }
+        else
+        {
+            let image = UIImage(named:"RadioButton-unchecked.jpg")
+            sureImage.image = image
+        }
     }
 }
