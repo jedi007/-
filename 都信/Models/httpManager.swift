@@ -21,7 +21,7 @@ class httpManager {
         let session = URLSession(configuration: .default)
         // 设置URL(该地址不可用，写你自己的服务器地址)
         let url = "\(baseUrl)/regist_account"
-        var request = URLRequest(url: URL(string: url)!, timeoutInterval: 3)
+        var request = URLRequest(url: URL(string: url)!, timeoutInterval: 5)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         // 设置要post的内容，字典格式

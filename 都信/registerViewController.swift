@@ -8,6 +8,28 @@
 
 import UIKit
 
+extension UIViewController
+{
+    // 获取当前显示的 ViewController
+    class func currentViewController(base: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController?
+    {
+        if let nav = base as? UINavigationController
+        {
+            return currentViewController(base: nav.visibleViewController)
+        }
+        if let tab = base as? UITabBarController
+        {
+            return currentViewController(base: tab.selectedViewController)
+        }
+        if let presented = base?.presentedViewController
+        {
+            return currentViewController(base: presented)
+        }
+        return base
+    }
+}
+
+
 class reisterViewController: UIViewController {
 
     @IBOutlet weak var sureImage: UIImageView!
@@ -55,9 +77,19 @@ class reisterViewController: UIViewController {
             let registeInfoDic:[String:String] = ["name":"\(nameTextField.text!)", "telephone":"\(telephoneTextField.text!)", "password":"\(password_md5)", "sex":"男" ,"birthday":"1988-05-13 18:18:18"]
             httpManager.shared.regist(registeInfoDic: registeInfoDic,failed:{(errorCode:Int) in
                 print("get failed info at out, errorCode: \(errorCode)")
-                print("do something after get errorcode")
+                
+                if errorCode == -1
+                {
+                    DispatchQueue.main.async{
+                        self.alertDialog(title: "注册失败", message: "该账号已经注册", actionText: "知道了")
+                    }
+                }
             } ){
                 print("get success info at out")
+                self.alertDialog(title: "注册成功", message: "注册成功", actionText: "OK", actionHandler: {(action:UIAlertAction) in
+                    print("注册成功 回调")
+                    self.dismiss(animated: true, completion: nil)
+                })
             }
         }
         else
@@ -66,7 +98,6 @@ class reisterViewController: UIViewController {
         }
         
     }
-    
     
     
     @objc func sureImageClick() -> Void {
@@ -99,9 +130,10 @@ class reisterViewController: UIViewController {
         return true
     }
     
-    func alertDialog(title:String, message:String, actionText:String) ->Void {
+    
+    func alertDialog(title:String, message:String, actionText:String, actionHandler:((UIAlertAction) -> Void)? = nil ) ->Void {
         let alertController = UIAlertController(title: title, message: message,preferredStyle: .alert)
-        let Action1 = UIAlertAction(title: actionText, style: .destructive, handler: nil)
+        let Action1 = UIAlertAction(title: actionText, style: .destructive, handler: actionHandler)
         //let Action2 = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alertController.addAction(Action1)
         //alertController.addAction(Action2)
