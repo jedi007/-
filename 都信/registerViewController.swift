@@ -45,13 +45,15 @@ class reisterViewController: UIViewController {
     @IBAction func registeCliked(_ sender: UIButton) {
         
         if sureAgreement {
-            
             guard checkForm() else {
                 print("资料有待完善")
                 return
             }
             
-            let registeInfoDic:[String:String] = ["name":"\(nameTextField.text!)", "telephone":"\(telephoneTextField.text!)", "password":"\(passwordTextField.text!)", "sex":"男" ,"birthday":"1988-05-13 18:18:18"]
+            let password_md5 = passwordTextField.text!.md5
+            print("password_md5: \(password_md5)")
+            
+            let registeInfoDic:[String:String] = ["name":"\(nameTextField.text!)", "telephone":"\(telephoneTextField.text!)", "password":"\(password_md5)", "sex":"男" ,"birthday":"1988-05-13 18:18:18"]
             httpManager.shared.regist(registeInfoDic: registeInfoDic,failed:{(errorCode:Int) in
                 print("get failed info at out, errorCode: \(errorCode)")
                 print("do something after get errorcode")
