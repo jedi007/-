@@ -10,7 +10,12 @@ import Foundation
 
 class DateTools
 {
-    static func dateConvertString(date:Date, dateFormat:String="yyyy-MM-dd") -> String {
+    static let shared = DateTools()
+    
+    private init() {
+    }
+    
+    func dateConvertString(date:Date, dateFormat:String="yyyy-MM-dd") -> String {
         //let timeZone = TimeZone.init(identifier: "UTC")
         let formatter = DateFormatter()
         //formatter.timeZone = timeZone
@@ -21,7 +26,7 @@ class DateTools
         //return date.components(separatedBy: " ").first!
     }
     
-    static func stringConvertDate(string:String, dateFormat:String="yyyy-MM-dd HH:mm:ss") -> Date {
+    func stringConvertDate(string:String, dateFormat:String="yyyy-MM-dd HH:mm:ss") -> Date {
         let dateFormatter = DateFormatter.init()
         dateFormatter.dateFormat = dateFormat
         let date = dateFormatter.date(from: string)

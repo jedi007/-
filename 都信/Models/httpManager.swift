@@ -53,7 +53,10 @@ class httpManager {
                                 success()
                             }
                         }
-                        failed(result_code)
+                        else
+                        {
+                            failed(result_code)
+                        }
                     }
                     else
                     {

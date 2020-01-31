@@ -264,7 +264,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="dmh-gL-bu0"/>
                     <connections>
+                        <outlet property="nameTextField" destination="q2u-88-1mE" id="zqG-dP-lih"/>
+                        <outlet property="passwordTextField" destination="TaG-QW-ewS" id="kZa-8S-Kkl"/>
                         <outlet property="sureImage" destination="qqe-bT-yAL" id="RMb-Hj-ApV"/>
+                        <outlet property="telephoneTextField" destination="aPF-D8-EBS" id="6cM-tf-cld"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TWX-J5-YSj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

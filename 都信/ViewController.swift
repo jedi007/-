@@ -18,9 +18,9 @@ class ViewController: UIViewController {
     @IBAction func register(_ sender: UIButton) {
         print("注册被点击了")
         
-        let ndate = DateTools.stringConvertDate(string: "2019-05-13 19:58:44")
+        let ndate = DateTools.shared.stringConvertDate(string: "2019-05-13 19:58:44")
         
-        let strDate = DateTools.dateConvertString(date: ndate, dateFormat: "yyyy-MM-dd HH:mm:ss")
+        let strDate = DateTools.shared.dateConvertString(date: ndate, dateFormat: "yyyy-MM-dd HH:mm:ss")
         
         print("日期转换测试: "+strDate)
 
