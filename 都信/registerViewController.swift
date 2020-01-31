@@ -40,7 +40,12 @@ class reisterViewController: UIViewController {
     @IBAction func registeCliked(_ sender: UIButton) {
         
         let registeInfoDic:[String:String] = ["name":"lijie", "telephone":"1356899002", "password":"1356899002", "sex":"男" ,"birthday":"1988-05-13 18:18:18"]
-        httpManager.shared.regist(registeInfoDic: registeInfoDic)
+        httpManager.shared.regist(registeInfoDic: registeInfoDic,failed:{(errorCode:Int) in
+            print("get failed info at out, errorCode: \(errorCode)")
+            print("do something after get errorcode")
+        } ){
+            print("get success info at out")
+        }
         
     }
     

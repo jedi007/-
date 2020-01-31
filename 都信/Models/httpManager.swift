@@ -14,10 +14,10 @@ class httpManager {
     static let shared = httpManager()
     
     private init() {
-        
+        print("httpManager inited")
     }
     
-    func regist( registeInfoDic:Dictionary<String,String> ) {
+    func regist( registeInfoDic:Dictionary<String,String>, failed:@escaping (_ errorCode:Int)->Void, success:@escaping ()->Void ) {
         let session = URLSession(configuration: .default)
         // 设置URL(该地址不可用，写你自己的服务器地址)
         let url = "\(baseUrl)/regist_account"
@@ -35,6 +35,7 @@ class httpManager {
             if error != nil
             {
                 print("error : \(error!.localizedDescription)")
+                failed(-201)
                 return;
             }
             print(" in response ")
@@ -43,13 +44,25 @@ class httpManager {
                 if let jsonObj:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? NSDictionary
                 {
                     print(jsonObj)
-                    //主线程
-                    DispatchQueue.main.async{
+                    if let result_code = jsonObj["result"] as? Int{
+                        print( type(of: result_code) )
                         
+                        if result_code == 0 {
+                            //主线程
+                            DispatchQueue.main.async{
+                                success()
+                            }
+                        }
+                        failed(result_code)
+                    }
+                    else
+                    {
+                        failed(-202)
                     }
                 }
             } catch{
                 print("Error.")
+                failed(-203)
                 DispatchQueue.main.async{
                     
                 }
