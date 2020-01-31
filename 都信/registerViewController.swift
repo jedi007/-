@@ -51,7 +51,6 @@ class reisterViewController: UIViewController {
             }
             
             let password_md5 = passwordTextField.text!.md5
-            print("password_md5: \(password_md5)")
             
             let registeInfoDic:[String:String] = ["name":"\(nameTextField.text!)", "telephone":"\(telephoneTextField.text!)", "password":"\(password_md5)", "sex":"男" ,"birthday":"1988-05-13 18:18:18"]
             httpManager.shared.regist(registeInfoDic: registeInfoDic,failed:{(errorCode:Int) in
@@ -63,12 +62,7 @@ class reisterViewController: UIViewController {
         }
         else
         {
-            let alertController = UIAlertController(title: "提示", message: "请同意软件许可协议",preferredStyle: .alert)
-            let Action1 = UIAlertAction(title: "知道了", style: .destructive, handler: nil)
-            //let Action2 = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-            alertController.addAction(Action1)
-            //alertController.addAction(Action2)
-            self.present(alertController, animated: true, completion: nil)
+            alertDialog(title: "提示", message: "请同意软件许可协议", actionText: "知道了")
         }
         
     }
@@ -85,22 +79,32 @@ class reisterViewController: UIViewController {
         sureImage.image = UIImage(named: imagename )
     }
     
+    
     func checkForm() -> Bool {
         guard let name = nameTextField.text, !name.isEmpty else {
-            print("姓名不完善")
+            alertDialog(title: "提示", message: "姓名填写不完善", actionText: "知道了")
             return false
         }
         
         guard let telephone = telephoneTextField.text, !RegularTools.shared.RegularExpression(regex: "^1\\d{10}$", validateString: telephone).isEmpty else {
-            print("手机号填写不正确")
+            alertDialog(title: "提示", message: "手机号码填写不正确", actionText: "知道了")
             return false
         }
         
         guard let password = passwordTextField.text, !RegularTools.shared.RegularExpression(regex: "^[0-9a-zA-Z]{8,}$", validateString: password).isEmpty else {
-            print("密码最少为8位数字和字符的组合")
+            alertDialog(title: "提示", message: "密码最少为8位数字和字符的组合", actionText: "知道了")
             return false
         }
         
         return true
+    }
+    
+    func alertDialog(title:String, message:String, actionText:String) ->Void {
+        let alertController = UIAlertController(title: title, message: message,preferredStyle: .alert)
+        let Action1 = UIAlertAction(title: actionText, style: .destructive, handler: nil)
+        //let Action2 = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alertController.addAction(Action1)
+        //alertController.addAction(Action2)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
