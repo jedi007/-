@@ -47,6 +47,13 @@ class reisterViewController: UIViewController {
         let singleTapGesture = UITapGestureRecognizer(target: self, action: #selector(sureImageClick))
         sureImage.addGestureRecognizer(singleTapGesture)
         //sureImage.isUserInteractionEnabled = true
+        
+        let viewSingleTapGesture = UITapGestureRecognizer(target: self, action: #selector(backViewClick))
+        self.view.addGestureRecognizer(viewSingleTapGesture)
+        self.view.isUserInteractionEnabled = true
+        
+        
+        nameTextField.returnKeyType = UIReturnKeyType.done
     }
         
     required init?(coder: NSCoder) {
@@ -60,6 +67,7 @@ class reisterViewController: UIViewController {
     }
     
     @IBAction func backToLogin(_ sender: UIButton) {
+        self.view.endEditing(true)
         dismiss(animated: true, completion: nil)
     }
     
@@ -87,7 +95,7 @@ class reisterViewController: UIViewController {
             } ){
                 print("get success info at out")
                 self.alertDialog(title: "注册成功", message: "注册成功", actionText: "OK", actionHandler: {(action:UIAlertAction) in
-                    print("注册成功 回调")
+                    self.view.endEditing(true)
                     self.dismiss(animated: true, completion: nil)
                 })
             }
@@ -96,7 +104,6 @@ class reisterViewController: UIViewController {
         {
             alertDialog(title: "提示", message: "请同意软件许可协议", actionText: "知道了")
         }
-        
     }
     
     
@@ -108,6 +115,12 @@ class reisterViewController: UIViewController {
         let imagename:String = sureAgreement ? "RadioButton-checked.jpg" : "RadioButton-unchecked.jpg"
         
         sureImage.image = UIImage(named: imagename )
+    }
+    
+    
+    @objc func backViewClick()->Void {
+        print("backViewClicked")
+        self.view.endEditing(true)
     }
     
     
