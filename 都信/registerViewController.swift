@@ -92,6 +92,12 @@ class reisterViewController: UIViewController {
                         self.alertDialog(title: "注册失败", message: "该账号已经注册", actionText: "知道了")
                     }
                 }
+                else
+                {
+                    DispatchQueue.main.async{
+                        self.alertDialog(title: "注册失败", message: "错误码： \(errorCode)", actionText: "知道了")
+                    }
+                }
             } ){
                 print("get success info at out")
                 self.alertDialog(title: "注册成功", message: "注册成功", actionText: "OK", actionHandler: {(action:UIAlertAction) in
