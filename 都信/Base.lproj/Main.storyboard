@@ -36,7 +36,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Bek-SM-6oA"/>
-                                    <segue destination="hYN-bF-2SZ" kind="show" id="qfx-oK-Gw7"/>
+                                    <segue destination="eGE-fT-HfQ" kind="show" id="Fwi-x9-Tnz"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H6Q-fm-Crb">
@@ -79,9 +79,30 @@
             </objects>
             <point key="canvasLocation" x="133" y="139"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="qWX-gE-std">
+            <objects>
+                <navigationController id="eGE-fT-HfQ" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="EDm-s3-eCf"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BxU-do-MeI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="modalPresentationStyle" value=".fullScreen"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <segue destination="hYN-bF-2SZ" kind="relationship" relationship="rootViewController" id="6MI-VJ-mas"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ecs-pi-ho1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="906"/>
+        </scene>
         <!--Login View Controller-->
         <scene sceneID="Xab-Dr-ZB1">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvr-Mj-kEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="hYN-bF-2SZ" customClass="loginViewController" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fva-cO-0OM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -100,9 +121,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="xxQ-dJ-8r5"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hvr-Mj-kEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131.8840579710145" y="900.66964285714278"/>
+            <point key="canvasLocation" x="1006" y="905"/>
         </scene>
         <!--Reister View Controller-->
         <scene sceneID="j0P-vq-cU6">

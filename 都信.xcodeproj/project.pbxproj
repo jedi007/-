@@ -10,6 +10,7 @@
 		6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0905DA23E1AB1D003A2788 /* registerViewController.swift */; };
 		6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */; };
 		6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */; };
+		6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D223E6B19900CC4C58 /* 返回.png */; };
 		6AAFFE4823E427E300665DBE /* RegularTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAFFE4723E427E300665DBE /* RegularTools.swift */; };
 		6AAFFE4A23E42A8B00665DBE /* extensionMd5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAFFE4923E42A8B00665DBE /* extensionMd5.swift */; };
 		6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */; };
@@ -31,6 +32,7 @@
 		6A0905DA23E1AB1D003A2788 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionViewController.swift; sourceTree = "<group>"; };
+		6A8BF6D223E6B19900CC4C58 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
 		6AAFFE4723E427E300665DBE /* RegularTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTools.swift; sourceTree = "<group>"; };
 		6AAFFE4923E42A8B00665DBE /* extensionMd5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionMd5.swift; sourceTree = "<group>"; };
 		6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-unchecked.jpg"; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		6AC05DD823E2DD56009BD223 /* 图标 */ = {
 			isa = PBXGroup;
 			children = (
+				6A8BF6D223E6B19900CC4C58 /* 返回.png */,
 				6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */,
 				6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */,
 				6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */,
@@ -197,6 +200,7 @@
 				6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */,
 				CDA465CE238145A5007D794C /* Assets.xcassets in Resources */,
 				CDA465DA238145F4007D794C /* 登录背景.jpg in Resources */,
+				6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */,
 				6AC05DE023E2DD7C009BD223 /* Wi-Fi.jpg in Resources */,
 				6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */,
 				6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */,

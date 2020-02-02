@@ -18,4 +18,20 @@ class loginViewController: UIViewController {
         //fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+//        let backImage = UIImage(named: "返回")
+//        let leftButton = UIBarButtonItem(image: backImage, style: .plain, target: self, action: nil)
+        
+        let leftButton = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(back))
+        leftButton.tintColor = UIColor.black
+        navigationItem.leftBarButtonItem = leftButton
+    }
+    
+    @objc func back()->Void
+    {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
