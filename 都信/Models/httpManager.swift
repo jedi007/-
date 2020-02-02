@@ -47,8 +47,8 @@ class httpManager {
                 {
                     print(jsonObj)
                     print(type(of: jsonObj["user"]))
-//                    let test = 
-//                    print( jsonObj["user"] )
+                    let test = jsonObj["user"] as? NSDictionary
+                    print( test!["telephone"]! )
 //                    if let jsonObj_user:NSDictionary = try JSONSerialization.jsonObject(with: jsonObj["user"], options: JSONSerialization.ReadingOptions()) as? NSDictionary
 //                    {
 //                        print("jsonObj_user: \(jsonObj_user)")

@@ -62,7 +62,11 @@ class ViewController: UIViewController {
         //let Action2 = UIAlertAction(title: "取消", style: .cancel, handler: nil)
         alertController.addAction(Action1)
         //alertController.addAction(Action2)
-        self.present(alertController, animated: true, completion: nil)
+        //self.present(alertController, animated: true, completion: nil)
+        
+        if let vc = UIViewController.currentViewController() {
+            vc.present(alertController, animated: true, completion: nil)
+        }
     }
     
 }
