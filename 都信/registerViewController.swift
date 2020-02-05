@@ -106,7 +106,6 @@ class reisterViewController: UIViewController {
     
     
     @objc func backViewClick()->Void {
-        print("backViewClicked")
         self.view.endEditing(true)
     }
     

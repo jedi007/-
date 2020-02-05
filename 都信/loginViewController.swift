@@ -27,6 +27,14 @@ class loginViewController: UIViewController {
         let leftButton = UIBarButtonItem(barButtonSystemItem: .reply, target: self, action: #selector(back))
         leftButton.tintColor = UIColor.black
         navigationItem.leftBarButtonItem = leftButton
+        
+        let viewSingleTapGesture = UITapGestureRecognizer(target: self, action: #selector(backViewClick))
+        self.view.addGestureRecognizer(viewSingleTapGesture)
+        self.view.isUserInteractionEnabled = true
+    }
+    
+    @objc func backViewClick(){
+        self.view.endEditing(true)
     }
     
     @objc func back()->Void
@@ -34,4 +42,8 @@ class loginViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func login(_ sender: UIButton) {
+        
+        print("login clicked")
+    }
 }

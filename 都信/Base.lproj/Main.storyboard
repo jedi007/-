@@ -121,7 +121,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="中国大陆(+86)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XQC-Bc-okg">
-                                <rect key="frame" x="143.5" y="189.5" width="127" height="23"/>
+                                <rect key="frame" x="143.5" y="189.5" width="126.5" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" red="0.0" green="0.79596658360000005" blue="0.25893621579999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -135,7 +135,7 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请填写手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="unb-JF-oKF">
                                 <rect key="frame" x="143.5" y="243" width="110.5" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlh-Tj-Xv0" userLabel="View_line1" colorLabel="IBBuiltInLabel-Gray">
                                 <rect key="frame" x="10" y="275.5" width="394" height="2"/>
@@ -182,15 +182,37 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="login:" destination="hYN-bF-2SZ" eventType="touchUpInside" id="89U-1c-dMi"/>
+                                </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="10" baselineRelativeArrangement="YES" translatesAutoresizingMaskIntoConstraints="NO" id="enf-CX-KOb">
+                                <rect key="frame" x="89" y="758" width="236" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xC9-1p-2Hc" userLabel="Button1">
+                                        <rect key="frame" x="0.0" y="0.0" width="62" height="30"/>
+                                        <state key="normal" title="找回密码"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7T-sX-fmz" userLabel="Button2">
+                                        <rect key="frame" x="72" y="0.0" width="62" height="30"/>
+                                        <state key="normal" title="紧急冻结"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PVv-wK-6lM" userLabel="Button3">
+                                        <rect key="frame" x="144" y="0.0" width="92" height="30"/>
+                                        <state key="normal" title="都信安全中心"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Wo-Nh-QYq" firstAttribute="bottom" secondItem="enf-CX-KOb" secondAttribute="bottom" constant="20" id="3sz-T4-CgB"/>
                             <constraint firstItem="Z2p-sC-s9D" firstAttribute="top" secondItem="6Wo-Nh-QYq" secondAttribute="top" constant="50" id="5kg-t1-Xg3"/>
                             <constraint firstItem="hOB-Od-Gvi" firstAttribute="top" secondItem="xlh-Tj-Xv0" secondAttribute="bottom" constant="20" id="5v5-R4-i9C"/>
                             <constraint firstItem="6Wo-Nh-QYq" firstAttribute="trailing" secondItem="tBg-46-j8l" secondAttribute="trailing" constant="10" id="CC0-v3-eNU"/>
                             <constraint firstItem="xlh-Tj-Xv0" firstAttribute="leading" secondItem="Fva-cO-0OM" secondAttribute="leading" constant="10" id="Evo-8h-a8o"/>
                             <constraint firstItem="unb-JF-oKF" firstAttribute="centerY" secondItem="RHJ-es-yOx" secondAttribute="centerY" id="PjZ-gg-h1q"/>
+                            <constraint firstItem="enf-CX-KOb" firstAttribute="centerX" secondItem="Fva-cO-0OM" secondAttribute="centerX" id="Sl3-j8-KgI"/>
                             <constraint firstItem="tBg-46-j8l" firstAttribute="top" secondItem="hOB-Od-Gvi" secondAttribute="bottom" constant="10" id="V68-KI-9Je"/>
                             <constraint firstItem="bJa-Rr-88N" firstAttribute="centerY" secondItem="hOB-Od-Gvi" secondAttribute="centerY" id="WJW-Ew-AS3"/>
                             <constraint firstItem="XQC-Bc-okg" firstAttribute="centerY" secondItem="QId-mZ-Nqa" secondAttribute="centerY" id="Wau-nW-1eB"/>
