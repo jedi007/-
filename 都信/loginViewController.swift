@@ -23,6 +23,10 @@ class loginViewController: UIViewController {
         //fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        print("loginViewController deinit")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,11 +54,12 @@ class loginViewController: UIViewController {
     @IBAction func login(_ sender: UIButton) {
         print("login clicked")
         
-        guard checkForm() else {
-            return
-        }
+//        guard checkForm() else {
+//            return
+//        }
         
-        httpManager.shared.login(telephone: telephoneTextField.text!, password: passwordTextField.text!.md5,failed:{(errorCode:Int) in
+        //httpManager.shared.login(telephone: telephoneTextField.text!, password: passwordTextField.text!.md5,failed:{(errorCode:Int) in
+        httpManager.shared.login(telephone: "13568991512", password: "qqqqqqqq".md5,failed:{(errorCode:Int) in
             print("get failed info at out, errorCode: \(errorCode)")
             
             if errorCode == -1
@@ -71,7 +76,23 @@ class loginViewController: UIViewController {
             }
         } ){
             print("get success info at out")
-            self.alertDialog(title: "登陆成功", message: "登陆成功", actionText: "OK", actionHandler: nil)
+            //self.alertDialog(title: "登陆成功", message: "登陆成功", actionText: "OK", actionHandler: nil)
+            
+            
+            DispatchQueue.main.async{
+                let sb = UIStoryboard(name: "Main", bundle: nil)
+                let main_vc = sb.instantiateViewController(withIdentifier: "mainTabBarController")
+                
+                //self.navigationController?.popToRootViewController(animated: false)
+                self.dismiss(animated: false, completion: {
+                    if let vc = UIViewController.currentViewController() {
+                        main_vc.modalPresentationStyle = .fullScreen
+                        vc.present(main_vc, animated: true, completion: nil)
+                    }
+                })
+            }
+            
+            
         }
     }
     

@@ -11,6 +11,14 @@
 		6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */; };
 		6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */; };
 		6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D223E6B19900CC4C58 /* 返回.png */; };
+		6A9D0B0123EAAB390078AA19 /* 都信.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A9D0AFD23EAAB380078AA19 /* 都信.png */; };
+		6A9D0B0223EAAB390078AA19 /* 发现.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A9D0AFE23EAAB390078AA19 /* 发现.png */; };
+		6A9D0B0323EAAB390078AA19 /* 通讯录.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A9D0AFF23EAAB390078AA19 /* 通讯录.png */; };
+		6A9D0B0423EAAB390078AA19 /* 头像.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A9D0B0023EAAB390078AA19 /* 头像.png */; };
+		6A9D0B0623EAAC1E0078AA19 /* mainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D0B0523EAAC1E0078AA19 /* mainTabBarController.swift */; };
+		6A9D0B0823EAB2220078AA19 /* messagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D0B0723EAB2220078AA19 /* messagesViewController.swift */; };
+		6A9D0B0A23EAB82F0078AA19 /* extensionImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D0B0923EAB82F0078AA19 /* extensionImage.swift */; };
+		6A9D0B0C23EABE310078AA19 /* addressBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A9D0B0B23EABE310078AA19 /* addressBookViewController.swift */; };
 		6AAFFE4823E427E300665DBE /* RegularTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAFFE4723E427E300665DBE /* RegularTools.swift */; };
 		6AAFFE4A23E42A8B00665DBE /* extensionMd5.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AAFFE4923E42A8B00665DBE /* extensionMd5.swift */; };
 		6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */; };
@@ -33,6 +41,14 @@
 		6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D223E6B19900CC4C58 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
+		6A9D0AFD23EAAB380078AA19 /* 都信.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "都信.png"; sourceTree = "<group>"; };
+		6A9D0AFE23EAAB390078AA19 /* 发现.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发现.png"; sourceTree = "<group>"; };
+		6A9D0AFF23EAAB390078AA19 /* 通讯录.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "通讯录.png"; sourceTree = "<group>"; };
+		6A9D0B0023EAAB390078AA19 /* 头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像.png"; sourceTree = "<group>"; };
+		6A9D0B0523EAAC1E0078AA19 /* mainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabBarController.swift; sourceTree = "<group>"; };
+		6A9D0B0723EAB2220078AA19 /* messagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesViewController.swift; sourceTree = "<group>"; };
+		6A9D0B0923EAB82F0078AA19 /* extensionImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionImage.swift; sourceTree = "<group>"; };
+		6A9D0B0B23EABE310078AA19 /* addressBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addressBookViewController.swift; sourceTree = "<group>"; };
 		6AAFFE4723E427E300665DBE /* RegularTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegularTools.swift; sourceTree = "<group>"; };
 		6AAFFE4923E42A8B00665DBE /* extensionMd5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionMd5.swift; sourceTree = "<group>"; };
 		6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-unchecked.jpg"; sourceTree = "<group>"; };
@@ -70,6 +86,7 @@
 				6AAFFE4723E427E300665DBE /* RegularTools.swift */,
 				6AAFFE4923E42A8B00665DBE /* extensionMd5.swift */,
 				6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */,
+				6A9D0B0923EAB82F0078AA19 /* extensionImage.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -77,6 +94,10 @@
 		6AC05DD823E2DD56009BD223 /* 图标 */ = {
 			isa = PBXGroup;
 			children = (
+				6A9D0AFD23EAAB380078AA19 /* 都信.png */,
+				6A9D0AFE23EAAB390078AA19 /* 发现.png */,
+				6A9D0AFF23EAAB390078AA19 /* 通讯录.png */,
+				6A9D0B0023EAAB390078AA19 /* 头像.png */,
 				6A8BF6D223E6B19900CC4C58 /* 返回.png */,
 				6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */,
 				6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */,
@@ -125,6 +146,9 @@
 				CDA465D2238145A5007D794C /* Info.plist */,
 				6A0905DA23E1AB1D003A2788 /* registerViewController.swift */,
 				6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */,
+				6A9D0B0523EAAC1E0078AA19 /* mainTabBarController.swift */,
+				6A9D0B0723EAB2220078AA19 /* messagesViewController.swift */,
+				6A9D0B0B23EABE310078AA19 /* addressBookViewController.swift */,
 			);
 			path = "都信";
 			sourceTree = "<group>";
@@ -196,12 +220,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A9D0B0423EAAB390078AA19 /* 头像.png in Resources */,
+				6A9D0B0323EAAB390078AA19 /* 通讯录.png in Resources */,
 				CDA465D1238145A5007D794C /* LaunchScreen.storyboard in Resources */,
 				6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */,
 				CDA465CE238145A5007D794C /* Assets.xcassets in Resources */,
 				CDA465DA238145F4007D794C /* 登录背景.jpg in Resources */,
 				6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */,
+				6A9D0B0123EAAB390078AA19 /* 都信.png in Resources */,
 				6AC05DE023E2DD7C009BD223 /* Wi-Fi.jpg in Resources */,
+				6A9D0B0223EAAB390078AA19 /* 发现.png in Resources */,
 				6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */,
 				6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */,
 				CDA465CC238145A4007D794C /* Main.storyboard in Resources */,
@@ -220,10 +248,14 @@
 				6AC05DE523E30700009BD223 /* httpManager.swift in Sources */,
 				CDA465C5238145A4007D794C /* AppDelegate.swift in Sources */,
 				CDA465C7238145A4007D794C /* SceneDelegate.swift in Sources */,
+				6A9D0B0623EAAC1E0078AA19 /* mainTabBarController.swift in Sources */,
+				6A9D0B0C23EABE310078AA19 /* addressBookViewController.swift in Sources */,
 				6AC05DE323E30461009BD223 /* dateTools.swift in Sources */,
 				6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */,
 				6AAFFE4823E427E300665DBE /* RegularTools.swift in Sources */,
 				6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */,
+				6A9D0B0A23EAB82F0078AA19 /* extensionImage.swift in Sources */,
+				6A9D0B0823EAB2220078AA19 /* messagesViewController.swift in Sources */,
 				6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
