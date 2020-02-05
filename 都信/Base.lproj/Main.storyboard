@@ -102,7 +102,6 @@
         <!--Login View Controller-->
         <scene sceneID="Xab-Dr-ZB1">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="hvr-Mj-kEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController id="hYN-bF-2SZ" customClass="loginViewController" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fva-cO-0OM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
@@ -237,7 +236,12 @@
                         <viewLayoutGuide key="safeArea" id="6Wo-Nh-QYq"/>
                     </view>
                     <navigationItem key="navigationItem" id="xxQ-dJ-8r5"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="bJa-Rr-88N" id="wdF-zN-19k"/>
+                        <outlet property="telephoneTextField" destination="unb-JF-oKF" id="Hhi-zI-t7L"/>
+                    </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hvr-Mj-kEf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1005.7971014492755" y="904.6875"/>
         </scene>

@@ -57,7 +57,6 @@ class reisterViewController: UIViewController {
         
         if sureAgreement {
             guard checkForm() else {
-                print("资料有待完善")
                 return
             }
             

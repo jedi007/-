@@ -9,6 +9,11 @@
 import UIKit
 
 class loginViewController: UIViewController {
+    
+    @IBOutlet weak var telephoneTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
+    
+    
 
     required init?(coder: NSCoder) {
         super.init(coder:coder)
@@ -43,7 +48,60 @@ class loginViewController: UIViewController {
     }
     
     @IBAction func login(_ sender: UIButton) {
-        
         print("login clicked")
+        
+        guard checkForm() else {
+            return
+        }
+        
+        httpManager.shared.login(telephone: telephoneTextField.text!, password: passwordTextField.text!.md5,failed:{(errorCode:Int) in
+            print("get failed info at out, errorCode: \(errorCode)")
+            
+            if errorCode == -1
+            {
+                DispatchQueue.main.async{
+                    self.alertDialog(title: "登陆失败", message: "该账号已经注册", actionText: "知道了")
+                }
+            }
+            else
+            {
+                DispatchQueue.main.async{
+                    self.alertDialog(title: "登陆失败", message: "错误码： \(errorCode)", actionText: "知道了")
+                }
+            }
+        } ){
+            print("get success info at out")
+            self.alertDialog(title: "登陆成功", message: "登陆成功", actionText: "OK", actionHandler: nil)
+        }
     }
+    
+    func alertDialog(title:String, message:String, actionText:String, actionHandler:((UIAlertAction) -> Void)? = nil ) ->Void {
+        let alertController = UIAlertController(title: title, message: message,preferredStyle: .alert)
+        let Action1 = UIAlertAction(title: actionText, style: .destructive, handler: actionHandler)
+        //let Action2 = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+        alertController.addAction(Action1)
+        //alertController.addAction(Action2)
+        //self.present(alertController, animated: true, completion: nil)
+        
+        if let vc = UIViewController.currentViewController() {
+            vc.present(alertController, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func checkForm() -> Bool {
+        
+        guard let telephone = telephoneTextField.text, !RegularTools.shared.RegularExpression(regex: "^1\\d{10}$", validateString: telephone).isEmpty else {
+            alertDialog(title: "提示", message: "手机号码填写不正确", actionText: "知道了")
+            return false
+        }
+        
+        guard let password = passwordTextField.text, !RegularTools.shared.RegularExpression(regex: "^[0-9a-zA-Z]{8,}$", validateString: password).isEmpty else {
+            alertDialog(title: "提示", message: "密码最少为8位数字和字符的组合", actionText: "知道了")
+            return false
+        }
+        
+        return true
+    }
+    
 }
