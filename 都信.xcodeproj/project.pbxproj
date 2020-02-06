@@ -29,6 +29,7 @@
 		6ABBFE3623EBE04C008E6C97 /* 相册.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3223EBE04B008E6C97 /* 相册.png */; };
 		6ABBFE3723EBE04C008E6C97 /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3323EBE04B008E6C97 /* 设置.png */; };
 		6ABBFE3923EBE89A008E6C97 /* alertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3823EBE89A008E6C97 /* alertDialog.swift */; };
+		6ABBFE3B23EBF314008E6C97 /* extensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3A23EBF314008E6C97 /* extensionColor.swift */; };
 		6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */; };
 		6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */; };
 		6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */; };
@@ -67,6 +68,7 @@
 		6ABBFE3223EBE04B008E6C97 /* 相册.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "相册.png"; sourceTree = "<group>"; };
 		6ABBFE3323EBE04B008E6C97 /* 设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置.png"; sourceTree = "<group>"; };
 		6ABBFE3823EBE89A008E6C97 /* alertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertDialog.swift; sourceTree = "<group>"; };
+		6ABBFE3A23EBF314008E6C97 /* extensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionColor.swift; sourceTree = "<group>"; };
 		6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-unchecked.jpg"; sourceTree = "<group>"; };
 		6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-checked.jpg"; sourceTree = "<group>"; };
 		6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-wrong.jpg"; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 				6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */,
 				6A9D0B0923EAB82F0078AA19 /* extensionImage.swift */,
 				6ABBFE3823EBE89A008E6C97 /* alertDialog.swift */,
+				6ABBFE3A23EBF314008E6C97 /* extensionColor.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */,
 				6AAFFE4823E427E300665DBE /* RegularTools.swift in Sources */,
 				6ABBFE2F23EBC0A0008E6C97 /* mineSpaceViewController.swift in Sources */,
+				6ABBFE3B23EBF314008E6C97 /* extensionColor.swift in Sources */,
 				6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */,
 				6A9D0B0A23EAB82F0078AA19 /* extensionImage.swift in Sources */,
 				6A9D0B0823EAB2220078AA19 /* messagesViewController.swift in Sources */,

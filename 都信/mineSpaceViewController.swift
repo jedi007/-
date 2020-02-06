@@ -55,12 +55,30 @@ class mineSspaceViewController: UIViewController {
     @objc func viewLongPress(recognizer:UISwipeGestureRecognizer)
     {
         print("viewLongPress called")
-        recognizer.view?.backgroundColor = UIColor.red
+        
+        print(recognizer.state.rawValue)
+        
+        if recognizer.state == .changed {
+            //按住不放并且手指滑动时会触发该状态
+            return
+        }
+        
+        if recognizer.state == .began {
+            recognizer.view?.backgroundColor = UIColor.hexColor(hex: "#D6D6D6", alpha: 0.5)
+        }
+        else
+        {
+            recognizer.view?.backgroundColor = UIColor.systemBackground
+            
+            AlertDialog.shared.alertDialog(title: "敬请期待", message: "功能暂未开放", actionText: "知道了")
+        }
     }
     
     @objc func viewClicked(recognizer:UISwipeGestureRecognizer)
     {
         print("viewclicked called")
         print("view tag : \(String(describing: recognizer.view?.tag))")
+        
+        AlertDialog.shared.alertDialog(title: "敬请期待", message: "功能暂未开放", actionText: "知道了")
     }
 }
