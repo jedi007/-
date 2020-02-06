@@ -30,6 +30,11 @@
 		6ABBFE3723EBE04C008E6C97 /* 设置.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3323EBE04B008E6C97 /* 设置.png */; };
 		6ABBFE3923EBE89A008E6C97 /* alertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3823EBE89A008E6C97 /* alertDialog.swift */; };
 		6ABBFE3B23EBF314008E6C97 /* extensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3A23EBF314008E6C97 /* extensionColor.swift */; };
+		6ABBFE3E23EC1967008E6C97 /* 示例头像.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3D23EC1967008E6C97 /* 示例头像.png */; };
+		6ABBFE4323EC1FAC008E6C97 /* 群聊.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE3F23EC1FAC008E6C97 /* 群聊.png */; };
+		6ABBFE4423EC1FAC008E6C97 /* 新的朋友.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE4023EC1FAC008E6C97 /* 新的朋友.png */; };
+		6ABBFE4523EC1FAC008E6C97 /* 标签.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE4123EC1FAC008E6C97 /* 标签.png */; };
+		6ABBFE4623EC1FAC008E6C97 /* 公众号.png in Resources */ = {isa = PBXBuildFile; fileRef = 6ABBFE4223EC1FAC008E6C97 /* 公众号.png */; };
 		6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */; };
 		6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */; };
 		6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */; };
@@ -69,6 +74,11 @@
 		6ABBFE3323EBE04B008E6C97 /* 设置.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "设置.png"; sourceTree = "<group>"; };
 		6ABBFE3823EBE89A008E6C97 /* alertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertDialog.swift; sourceTree = "<group>"; };
 		6ABBFE3A23EBF314008E6C97 /* extensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionColor.swift; sourceTree = "<group>"; };
+		6ABBFE3D23EC1967008E6C97 /* 示例头像.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "示例头像.png"; sourceTree = "<group>"; };
+		6ABBFE3F23EC1FAC008E6C97 /* 群聊.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "群聊.png"; sourceTree = "<group>"; };
+		6ABBFE4023EC1FAC008E6C97 /* 新的朋友.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新的朋友.png"; sourceTree = "<group>"; };
+		6ABBFE4123EC1FAC008E6C97 /* 标签.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "标签.png"; sourceTree = "<group>"; };
+		6ABBFE4223EC1FAC008E6C97 /* 公众号.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "公众号.png"; sourceTree = "<group>"; };
 		6AC05DD923E2DD7C009BD223 /* RadioButton-unchecked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-unchecked.jpg"; sourceTree = "<group>"; };
 		6AC05DDA23E2DD7C009BD223 /* RadioButton-checked.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-checked.jpg"; sourceTree = "<group>"; };
 		6AC05DDB23E2DD7C009BD223 /* RadioButton-wrong.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "RadioButton-wrong.jpg"; sourceTree = "<group>"; };
@@ -122,6 +132,18 @@
 				6ABBFE3A23EBF314008E6C97 /* extensionColor.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		6ABBFE3C23EC1934008E6C97 /* 通讯录 */ = {
+			isa = PBXGroup;
+			children = (
+				6ABBFE4123EC1FAC008E6C97 /* 标签.png */,
+				6ABBFE4223EC1FAC008E6C97 /* 公众号.png */,
+				6ABBFE3F23EC1FAC008E6C97 /* 群聊.png */,
+				6ABBFE4023EC1FAC008E6C97 /* 新的朋友.png */,
+				6ABBFE3D23EC1967008E6C97 /* 示例头像.png */,
+			);
+			path = "通讯录";
 			sourceTree = "<group>";
 		};
 		6AC05DD823E2DD56009BD223 /* 图标 */ = {
@@ -190,6 +212,7 @@
 		CDA465D8238145D2007D794C /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6ABBFE3C23EC1934008E6C97 /* 通讯录 */,
 				6A9D0B0D23EAEEC00078AA19 /* 我 */,
 				6AC05DD823E2DD56009BD223 /* 图标 */,
 				CDA465D9238145F4007D794C /* 登录背景.jpg */,
@@ -261,9 +284,13 @@
 				6ABBFE3523EBE04C008E6C97 /* 收藏.png in Resources */,
 				6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */,
 				CDA465CE238145A5007D794C /* Assets.xcassets in Resources */,
+				6ABBFE4523EC1FAC008E6C97 /* 标签.png in Resources */,
+				6ABBFE4323EC1FAC008E6C97 /* 群聊.png in Resources */,
 				6ABBFE2D23EBBEAC008E6C97 /* 支付.png in Resources */,
 				6ABBFE3723EBE04C008E6C97 /* 设置.png in Resources */,
+				6ABBFE4423EC1FAC008E6C97 /* 新的朋友.png in Resources */,
 				6ABBFE3423EBE04C008E6C97 /* 表情.png in Resources */,
+				6ABBFE4623EC1FAC008E6C97 /* 公众号.png in Resources */,
 				CDA465DA238145F4007D794C /* 登录背景.jpg in Resources */,
 				6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */,
 				6A9D0B0123EAAB390078AA19 /* 都信.png in Resources */,
@@ -274,6 +301,7 @@
 				6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */,
 				CDA465CC238145A4007D794C /* Main.storyboard in Resources */,
 				6ABBFE3623EBE04C008E6C97 /* 相册.png in Resources */,
+				6ABBFE3E23EC1967008E6C97 /* 示例头像.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

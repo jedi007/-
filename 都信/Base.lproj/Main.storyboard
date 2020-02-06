@@ -252,10 +252,50 @@
                     <view key="view" contentMode="scaleToFill" id="vIp-RD-aUc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yvc-eA-Lc0">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="TAE-RZ-2yZ">
+                                        <barButtonItem key="leftBarButtonItem" title="通讯录" id="Mnd-Pc-qtK">
+                                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Item" image="plus.circle" catalog="system" id="X75-ZW-beW">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </barButtonItem>
+                                            <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="5t9-Cn-m8n">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </barButtonItem>
+                                        </rightBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yEy-Ql-Riu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="yvc-eA-Lc0" firstAttribute="trailing" secondItem="ATw-vm-5PL" secondAttribute="trailing" id="25H-dl-Dnr"/>
+                            <constraint firstItem="yEy-Ql-Riu" firstAttribute="top" secondItem="yvc-eA-Lc0" secondAttribute="bottom" id="6uN-rG-cGA"/>
+                            <constraint firstItem="yvc-eA-Lc0" firstAttribute="leading" secondItem="ATw-vm-5PL" secondAttribute="leading" id="K9T-6u-76Q"/>
+                            <constraint firstItem="ATw-vm-5PL" firstAttribute="bottom" secondItem="yEy-Ql-Riu" secondAttribute="bottom" id="THW-c6-1dd"/>
+                            <constraint firstItem="ATw-vm-5PL" firstAttribute="trailing" secondItem="yEy-Ql-Riu" secondAttribute="trailing" id="Zbq-vr-QGC"/>
+                            <constraint firstItem="yvc-eA-Lc0" firstAttribute="top" secondItem="ATw-vm-5PL" secondAttribute="top" id="azD-LF-R3i"/>
+                            <constraint firstItem="yEy-Ql-Riu" firstAttribute="leading" secondItem="ATw-vm-5PL" secondAttribute="leading" id="vMR-Or-rDF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ATw-vm-5PL"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="通讯录" id="wYy-tf-U28"/>
+                    <connections>
+                        <outlet property="addItem" destination="X75-ZW-beW" id="WaR-fo-9cm"/>
+                        <outlet property="searchItem" destination="5t9-Cn-m8n" id="ige-X3-EGZ"/>
+                        <outlet property="tableView" destination="yEy-Ql-Riu" id="QoN-ap-mVa"/>
+                        <outlet property="titleItem" destination="Mnd-Pc-qtK" id="P1t-kq-feT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kRF-8M-3fu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -861,6 +901,8 @@
         <image name="arrowshape.turn.up.left" catalog="system" width="64" height="52"/>
         <image name="camera.on.rectangle" catalog="system" width="64" height="48"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
+        <image name="magnifyingglass" catalog="system" width="64" height="56"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
         <image name="qrcode" catalog="system" width="64" height="56"/>
         <image name="头像.png" width="360" height="360"/>
         <image name="支付.png" width="204" height="217.44000244140625"/>
