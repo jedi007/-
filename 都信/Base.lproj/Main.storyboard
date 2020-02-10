@@ -320,6 +320,9 @@
                                         <rightBarButtonItems>
                                             <barButtonItem title="Item" image="plus.circle" catalog="system" id="1YA-5r-S2y">
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="addClicked:" destination="gUo-WH-GLL" id="T2E-Oe-9hx"/>
+                                                </connections>
                                             </barButtonItem>
                                             <barButtonItem title="Item" image="magnifyingglass" catalog="system" id="Tzd-EU-L1k">
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
