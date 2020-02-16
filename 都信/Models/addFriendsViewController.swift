@@ -47,6 +47,13 @@ class addFriendsViewController: UIViewController,UISearchBarDelegate {
         }, success: { (userInfo:UserInfo) in
             print("searchUser successed")
             print(userInfo.name)
+            
+            let sb = UIStoryboard(name: "models", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "UserInfoShowVCID") as! searchedUserInfoShowVC
+            vc.userInfo = userInfo
+            
+            
+            self.present(vc, animated: true, completion: nil)
         })
     }
     
