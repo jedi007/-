@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0905DA23E1AB1D003A2788 /* registerViewController.swift */; };
+		6A0D2A2F23F8F72B00B2DFF8 /* models.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0D2A2E23F8F72B00B2DFF8 /* models.storyboard */; };
+		6A0D2A3123F8F78900B2DFF8 /* addFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D2A3023F8F78900B2DFF8 /* addFriendsViewController.swift */; };
+		6A0D2A3323F9264400B2DFF8 /* userInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D2A3223F9264400B2DFF8 /* userInfo.swift */; };
 		6A20216023EE7DCF002D2DFB /* messageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A20215F23EE7DCF002D2DFB /* messageItem.swift */; };
 		6A20216223EE900B002D2DFB /* discoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A20216123EE900B002D2DFB /* discoverViewController.swift */; };
 		6A20216D23EE97D0002D2DFB /* 游戏.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216423EE97CF002D2DFB /* 游戏.png */; };
@@ -69,6 +72,9 @@
 
 /* Begin PBXFileReference section */
 		6A0905DA23E1AB1D003A2788 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
+		6A0D2A2E23F8F72B00B2DFF8 /* models.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = models.storyboard; sourceTree = "<group>"; };
+		6A0D2A3023F8F78900B2DFF8 /* addFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFriendsViewController.swift; sourceTree = "<group>"; };
+		6A0D2A3223F9264400B2DFF8 /* userInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = userInfo.swift; sourceTree = "<group>"; };
 		6A20215F23EE7DCF002D2DFB /* messageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messageItem.swift; sourceTree = "<group>"; };
 		6A20216123EE900B002D2DFB /* discoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = discoverViewController.swift; sourceTree = "<group>"; };
 		6A20216423EE97CF002D2DFB /* 游戏.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "游戏.png"; sourceTree = "<group>"; };
@@ -220,6 +226,9 @@
 			isa = PBXGroup;
 			children = (
 				6AC05DE423E30700009BD223 /* httpManager.swift */,
+				6A0D2A2E23F8F72B00B2DFF8 /* models.storyboard */,
+				6A0D2A3023F8F78900B2DFF8 /* addFriendsViewController.swift */,
+				6A0D2A3223F9264400B2DFF8 /* userInfo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -373,6 +382,7 @@
 				6A9D0B0F23EAEF110078AA19 /* camera.png in Resources */,
 				6AC05DE023E2DD7C009BD223 /* Wi-Fi.jpg in Resources */,
 				6A9D0B0223EAAB390078AA19 /* 发现.png in Resources */,
+				6A0D2A2F23F8F72B00B2DFF8 /* models.storyboard in Resources */,
 				6A20216F23EE97D0002D2DFB /* 扫一扫2.png in Resources */,
 				6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */,
 				6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */,
@@ -403,6 +413,7 @@
 				6A9D0B0C23EABE310078AA19 /* addressBookViewController.swift in Sources */,
 				6AC05DE323E30461009BD223 /* dateTools.swift in Sources */,
 				6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */,
+				6A0D2A3323F9264400B2DFF8 /* userInfo.swift in Sources */,
 				6AAFFE4823E427E300665DBE /* RegularTools.swift in Sources */,
 				6ABBFE2F23EBC0A0008E6C97 /* mineSpaceViewController.swift in Sources */,
 				6A20216023EE7DCF002D2DFB /* messageItem.swift in Sources */,
@@ -410,6 +421,7 @@
 				6ABBFE3B23EBF314008E6C97 /* extensionColor.swift in Sources */,
 				6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */,
 				6A9D0B0A23EAB82F0078AA19 /* extensionImage.swift in Sources */,
+				6A0D2A3123F8F78900B2DFF8 /* addFriendsViewController.swift in Sources */,
 				6A9D0B0823EAB2220078AA19 /* messagesViewController.swift in Sources */,
 				6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */,
 				6A20216223EE900B002D2DFB /* discoverViewController.swift in Sources */,

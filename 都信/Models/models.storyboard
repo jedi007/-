@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Add Friends View Controller-->
+        <scene sceneID="0oM-hc-mAe">
+            <objects>
+                <viewController storyboardIdentifier="addFriensVCID" id="47O-jg-Hki" customClass="addFriendsViewController" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RX7-Hw-DIb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="相信号/手机号" translatesAutoresizingMaskIntoConstraints="NO" id="O04-pO-sft">
+                                <rect key="frame" x="0.0" y="88" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5el-UZ-6wm">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <navigationItem id="Q58-jM-WXO">
+                                        <leftBarButtonItems>
+                                            <barButtonItem title="Item" image="chevron.left" catalog="system" id="cE2-6O-zro">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="gobackClicked:" destination="47O-jg-Hki" id="Kfh-a3-ePa"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem title="添加朋友" id="FUS-9C-JNq">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </barButtonItem>
+                                        </leftBarButtonItems>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="o2r-NX-owa">
+                                <rect key="frame" x="141" y="154" width="132.5" height="18.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="我的相信号: jedi " image="qrcode" catalog="system">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.60392156862745094" green="0.60392156862745094" blue="0.60392156862745094" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="O04-pO-sft" firstAttribute="leading" secondItem="65p-79-6Dq" secondAttribute="leading" id="0Ua-2F-dgE"/>
+                            <constraint firstItem="5el-UZ-6wm" firstAttribute="top" secondItem="65p-79-6Dq" secondAttribute="top" id="1Ri-H5-Irl"/>
+                            <constraint firstItem="O04-pO-sft" firstAttribute="trailing" secondItem="65p-79-6Dq" secondAttribute="trailing" id="1uR-3L-40x"/>
+                            <constraint firstItem="5el-UZ-6wm" firstAttribute="trailing" secondItem="65p-79-6Dq" secondAttribute="trailing" id="Fvb-hP-rYH"/>
+                            <constraint firstItem="o2r-NX-owa" firstAttribute="centerX" secondItem="RX7-Hw-DIb" secondAttribute="centerX" id="SO5-7b-KvR"/>
+                            <constraint firstItem="O04-pO-sft" firstAttribute="top" secondItem="5el-UZ-6wm" secondAttribute="bottom" id="b8r-dz-arA"/>
+                            <constraint firstItem="o2r-NX-owa" firstAttribute="top" secondItem="O04-pO-sft" secondAttribute="bottom" constant="10" id="cfH-eZ-E9B"/>
+                            <constraint firstItem="5el-UZ-6wm" firstAttribute="leading" secondItem="65p-79-6Dq" secondAttribute="leading" id="rOg-cX-4Hs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="65p-79-6Dq"/>
+                    </view>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="modalPresentationStyle" value=".fullscreen"/>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="myQrcode" destination="o2r-NX-owa" id="w2M-E0-vyx"/>
+                        <outlet property="navigationBar" destination="5el-UZ-6wm" id="r77-tO-82x"/>
+                        <outlet property="searchBar" destination="O04-pO-sft" id="rlc-72-uGZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vhC-HT-je4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-704" y="89"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
+        <image name="qrcode" catalog="system" width="64" height="56"/>
+    </resources>
+</document>

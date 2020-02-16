@@ -22,19 +22,23 @@ class discoverViewController: UIViewController {
         let img5 = UIImage(named: "帮助与反馈")?.withTintColor(UIColor.white)
         
         let imgSource: [UIImage] = [img1!, img2!, img3!, img4!, img5!]
-        NavigationMenuShared.showPopMenuSelecteWithFrameWidth(width: itemWidth, height: 160, point: CGPoint(x: ScreenInfo.Width - 30, y: 12), items: items, imgs: imgSource) { (index) in
+        NavigationMenuShared.showPopMenuSelecteWithFrameWidth(width: itemWidth, height: 160, point: CGPoint(x: ScreenInfo.Width - 30, y: 0), items: items, imgs: imgSource) { (index) in
             ///点击回调
             switch index {
             case 0:
-                print("点击测试1")
+                print("点击-- 发起群聊")
             case 1:
-                print("点击测试2")
+                print("点击-- 添加朋友")
+                let sb = UIStoryboard(name: "models", bundle: nil)
+                let vc = sb.instantiateViewController(withIdentifier: "addFriensVCID")
+                self.present(vc, animated: true, completion: nil)
+                
             case 2:
-                print("点击测试3")
+                print("点击-- 扫一扫")
             case 3:
-                print("点击测试4")
+                print("点击-- 收付款")
             case 4:
-                print("点击测试5")
+                print("点击-- 帮助")
             default:
                 break
             }
