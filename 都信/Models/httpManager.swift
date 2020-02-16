@@ -195,4 +195,47 @@ class httpManager {
         }
         task.resume()
     }
+    
+    func addFriend( InfoDic:Dictionary<String,String>, failed:@escaping (_ errorCode:Int)->Void, success:@escaping ()->Void ) {
+        let session = URLSession(configuration: .default)
+        
+        let url = "\(baseUrl)/addFriend"
+        var request = URLRequest(url: URL(string: url)!, timeoutInterval: 5)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        let postString = InfoDic.compactMap({ (key, value) -> String in
+            return "\(key)=\(value)"
+        }).joined(separator: "&")
+        request.httpBody = postString.data(using: .utf8)
+        
+        let task = session.dataTask(with: request) {(data, response, error) in
+            if error != nil
+            {
+                print("error : \(error!.localizedDescription)")
+                failed(-201)
+                return;
+            }
+            
+            do{
+                if let jsonObj:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? NSDictionary
+                {
+                    if let result_code = jsonObj["result"] as? Int{
+                        if result_code == 0 {
+                            DispatchQueue.main.async{
+                                success()
+                            }
+                        } else {
+                            failed(result_code)
+                        }
+                    } else {
+                        failed(-202)
+                    }
+                }
+            } catch{
+                failed(-203)
+            }
+        }
+        task.resume()
+    }
 }

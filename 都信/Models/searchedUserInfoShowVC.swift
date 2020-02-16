@@ -80,11 +80,29 @@ class searchedUserInfoShowVC: UIViewController {
         {
             recognizer.view?.backgroundColor = UIColor.systemBackground
             
-            AlertDialog.shared.alertDialog(title: "敬请期待2", message: "功能暂未开放", actionText: "知道了")
+            print("add friend")
+            
+            let infoDic:[String:String] = ["telephone":"\(mainUserInfo.telephone!)", "friendTel":"\(userInfo?.telephone! ?? "")"]
+            
+            print(infoDic)
+            httpManager.shared.addFriend(InfoDic: infoDic, failed: {(errcode) in
+                print("errcode is \(errcode)")
+            }, success: {
+                print("addSuccess")
+            })
         }
     }
     
     @objc func addTheUserVButtonClicked(recognizer:UISwipeGestureRecognizer){
-        AlertDialog.shared.alertDialog(title: "敬请期待2", message: "功能暂未开放", actionText: "知道了")
+                    print("add friend")
+        
+        let infoDic:[String:String] = ["telephone":"\(mainUserInfo.telephone!)", "friendTel":"\(userInfo?.telephone! ?? "")"]
+        
+        print(infoDic)
+        httpManager.shared.addFriend(InfoDic: infoDic, failed: {(errcode) in
+            print("errcode is \(errcode)")
+        }, success: {
+            print("addSuccess")
+        })
     }
 }

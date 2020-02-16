@@ -19,3 +19,5 @@ class UserInfo {
         print("UserInfo init")
     }
 }
+
+let mainUserInfo:UserInfo = UserInfo()
