@@ -80,22 +80,15 @@ class searchedUserInfoShowVC: UIViewController {
         {
             recognizer.view?.backgroundColor = UIColor.systemBackground
             
-            print("add friend")
-            
-            let infoDic:[String:String] = ["telephone":"\(mainUserInfo.telephone!)", "friendTel":"\(userInfo?.telephone! ?? "")"]
-            
-            print(infoDic)
-            httpManager.shared.addFriend(InfoDic: infoDic, failed: {(errcode) in
-                print("errcode is \(errcode)")
-            }, success: {
-                print("addSuccess")
-            })
+            addFriend()
         }
     }
     
     @objc func addTheUserVButtonClicked(recognizer:UISwipeGestureRecognizer){
-                    print("add friend")
-        
+        addFriend()
+    }
+    
+    func addFriend() {
         let infoDic:[String:String] = ["telephone":"\(mainUserInfo.telephone!)", "friendTel":"\(userInfo?.telephone! ?? "")"]
         
         print(infoDic)

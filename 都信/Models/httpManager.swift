@@ -45,14 +45,13 @@ class httpManager {
                 //              将二进制数据转换为字典对象
                 if let jsonObj:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? NSDictionary
                 {
-                    print(jsonObj)
-                    print(type(of: jsonObj["user"]))
-                    let test = jsonObj["user"] as? NSDictionary
-                    print( test!["telephone"]! )
-//                    if let jsonObj_user:NSDictionary = try JSONSerialization.jsonObject(with: jsonObj["user"], options: JSONSerialization.ReadingOptions()) as? NSDictionary
-//                    {
-//                        print("jsonObj_user: \(jsonObj_user)")
-//                    }
+                    if let uInfoDic = jsonObj["user"] as? NSDictionary
+                    {
+                        mainUserInfo.telephone = uInfoDic["telephone"] as? String
+                        mainUserInfo.name      = uInfoDic["name"] as? String
+                        mainUserInfo.sex       = uInfoDic["sex"] as? String
+                        mainUserInfo.birthday  = uInfoDic["birthday"] as? String
+                    }
                     if let result_code = jsonObj["result"] as? Int{
                         print( type(of: result_code) )
                         

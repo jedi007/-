@@ -75,9 +75,7 @@ class loginViewController: UIViewController {
                 }
             }
         } ){
-            print("get success info at out")
-            //self.alertDialog(title: "登陆成功", message: "登陆成功", actionText: "OK", actionHandler: nil)
-            mainUserInfo.telephone = "13568991512"
+            print("login success")
             
             DispatchQueue.main.async{
                 let sb = UIStoryboard(name: "Main", bundle: nil)
