@@ -20,4 +20,13 @@ class UserInfo {
     }
 }
 
+class FriendInfo {
+    var telephone:String?
+    var name:String?
+    var sex:String?
+    var birthday:String?
+    var addDate:String?
+}
+
 let mainUserInfo:UserInfo = UserInfo()
+var friendsList:[FriendInfo] = []

@@ -52,6 +52,25 @@ class httpManager {
                         mainUserInfo.sex       = uInfoDic["sex"] as? String
                         mainUserInfo.birthday  = uInfoDic["birthday"] as? String
                     }
+                    
+                    if let friendsInfo = jsonObj["friends"] as? [Any]
+                    {
+                        friendsList.removeAll()
+                        for friendInfo in friendsInfo {
+                            if let fInfoDic = friendInfo as? NSDictionary
+                            {
+                                let fInfo:FriendInfo = FriendInfo()
+                                fInfo.telephone = fInfoDic["telephone"] as? String
+                                fInfo.name = fInfoDic["name"] as? String
+                                fInfo.sex = fInfoDic["sex"] as? String
+                                fInfo.birthday = fInfoDic["birthday"] as? String
+                                fInfo.addDate = fInfoDic["addDate"] as? String
+                                friendsList.append(fInfo)
+                            }
+                        }
+                        print(friendsList[1].addDate!)
+                    }
+                    
                     if let result_code = jsonObj["result"] as? Int{
                         print( type(of: result_code) )
                         
