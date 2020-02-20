@@ -15,7 +15,6 @@ class addressBookViewController: UIViewController,UITableViewDelegate,UITableVie
     @IBOutlet weak var tableView: UITableView!
     
     
-    var dataArray:Array<String>?
     var systemDataArray:Array<String> = ["新的朋友", "群聊", "标签", "公众号"]
     var titleArray:[String]?
     
@@ -25,17 +24,10 @@ class addressBookViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.tabBarItem.image = UIImage(named: "通讯录")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-//        self.tabBarItem.selectedImage = UIImage(named: "通讯录")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
-        
-        
-        dataArray = Array<String>()
-        for _ in 0...3 {
-            dataArray?.append("联系人")
-        }
         titleArray = ["🌟","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","#"]
         
-        tableView.register(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: "TableViewCellId")
+        //tableView.register(NSClassFromString("UITableViewCell"), forCellReuseIdentifier: "TableViewCellId")
+        //tableView.register(AddressBookCell.self, forCellReuseIdentifier: "AddressBookCellID")
         //设置数据源与代理
         tableView.delegate = self
         tableView.dataSource = self
@@ -43,7 +35,7 @@ class addressBookViewController: UIViewController,UITableViewDelegate,UITableVie
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 44
+        return 56
     }
     
     //设置列表有多少行
@@ -51,31 +43,23 @@ class addressBookViewController: UIViewController,UITableViewDelegate,UITableVie
         if section == 0 {
             return 4
         }
-        return dataArray!.count
+        return friendsList.count
     }
     //设置每行数据的数据载体Cell视图
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.section == 0
         {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellId", for: indexPath)
-            cell.textLabel?.text = systemDataArray[indexPath.row]
-            cell.imageView?.image = UIImage(named: systemDataArray[indexPath.row])?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "AddressBookCell", for: indexPath) as! AddressBookCell
+            cell.nameLabel?.text = systemDataArray[indexPath.row]
+            cell.headImage?.image = UIImage(named: systemDataArray[indexPath.row])?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
             return cell
         }
         
         
         //获取到载体Cell
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCellId", for: indexPath)
-        cell.textLabel?.text = dataArray![indexPath.row]
-        
-        cell.imageView?.image = UIImage(named: "示例头像")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
-        
-//        let model = dataArray![indexPath.row]
-//        //对cell进行设置
-//        cell.iconView.image = UIImage(named: model.imageName!)
-//        cell.proTitle.text = model.name
-//        cell.proDetail.text = model.subTitle
-//        cell.price.text = model.price
+        let cell = tableView.dequeueReusableCell(withIdentifier: "AddressBookCell", for: indexPath)  as! AddressBookCell
+        cell.nameLabel?.text = friendsList[indexPath.row].name
+        cell.headImage?.image = UIImage(named: "示例头像")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         return cell
     }
     //设置列表的分区数
@@ -96,5 +80,13 @@ class addressBookViewController: UIViewController,UITableViewDelegate,UITableVie
     //这个方法将索引栏上的文字与具体的分区进行绑定
     func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
         return index
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+        if indexPath.section > 0 {
+            let tel = friendsList[indexPath.row].telephone!
+            print(tel)
+        }
     }
 }

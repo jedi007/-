@@ -60,7 +60,7 @@ class httpManager {
                             if let fInfoDic = friendInfo as? NSDictionary
                             {
                                 let fInfo:FriendInfo = FriendInfo()
-                                fInfo.telephone = fInfoDic["telephone"] as? String
+                                fInfo.telephone = fInfoDic["friendTel"] as? String
                                 fInfo.name = fInfoDic["name"] as? String
                                 fInfo.sex = fInfoDic["sex"] as? String
                                 fInfo.birthday = fInfoDic["birthday"] as? String
@@ -68,7 +68,7 @@ class httpManager {
                                 friendsList.append(fInfo)
                             }
                         }
-                        print(friendsList[1].addDate!)
+                        print(friendsList[1].telephone!)
                     }
                     
                     if let result_code = jsonObj["result"] as? Int{
