@@ -85,8 +85,11 @@ class addressBookViewController: UIViewController,UITableViewDelegate,UITableVie
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         if indexPath.section > 0 {
-            let tel = friendsList[indexPath.row].telephone!
-            print(tel)
+            let sb = UIStoryboard(name: "models", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "FriendInfoVCID") as! FriendInfoViewController
+            vc.friendInfo = friendsList[indexPath.row]
+            self.present(vc, animated: true, completion: nil)
+            
         }
     }
 }
