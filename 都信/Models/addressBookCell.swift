@@ -13,8 +13,7 @@ class AddressBookCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     
     var telephone:String?
-    
-    
+        
     
     //实现系统设置了首选字体后自动更新字体大小， 还需在storyBoard中也做相应设置
     override func awakeFromNib() {

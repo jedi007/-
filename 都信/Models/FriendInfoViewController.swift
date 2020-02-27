@@ -81,6 +81,11 @@ class FriendInfoViewController: UIViewController {
     {
         if tag == 4 {
             print("发送消息")
+            let sb = UIStoryboard(name: "models", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "ChatVCID")
+            
+            present(vc, animated: true, completion: nil)
+            
         }else if tag == 5 {
             print("发起视屏")
         } else {
