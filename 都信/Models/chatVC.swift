@@ -10,4 +10,12 @@ import UIKit
 
 class ChatViewController: UIViewController {
     
+    @IBOutlet weak var nameLabel: UIBarButtonItem!
+    
+    var currentFriendsList:[FriendInfo] = []
+    
+    
+    override func viewDidLoad() {
+        nameLabel.title = currentFriendsList[0].name
+    }
 }

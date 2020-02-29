@@ -82,7 +82,9 @@ class FriendInfoViewController: UIViewController {
         if tag == 4 {
             print("发送消息")
             let sb = UIStoryboard(name: "models", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "ChatVCID")
+            let vc = sb.instantiateViewController(withIdentifier: "ChatVCID") as! ChatViewController
+            vc.currentFriendsList.append(friendInfo!)
+            
             
             present(vc, animated: true, completion: nil)
             

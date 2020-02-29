@@ -697,6 +697,9 @@
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="modalPresentationStyle" value="fullscreen"/>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="nameLabel" destination="gkv-sf-WR3" id="JHH-we-lk6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8X1-HY-j1B" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
