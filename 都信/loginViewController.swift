@@ -41,13 +41,6 @@ class loginViewController: UIViewController {
         self.view.addGestureRecognizer(viewSingleTapGesture)
         self.view.isUserInteractionEnabled = true
         
-        getIFAddresses()
-        //var manager:NetworkManager
-        NetworkManager.getPublicIP222(backBlock: {
-            str in
-            print(str)
-            mainUserInfo.publicIP = str
-        })
     }
     
     @objc func backViewClick(){

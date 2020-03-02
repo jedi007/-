@@ -70,8 +70,9 @@ class NetworkManager {
                 print(dict["cip"] as? String ?? "")
             }
             backBlock(dict?["cip"] as? String ?? "")
+        } else {
+            backBlock("")
         }
-        backBlock("")
     }
 }
 
