@@ -8,7 +8,6 @@
 
 import Foundation
 
-var publicIP:String = "0.0.0.0"
 class NetworkManager {
 //    //获取本机的公网IP
 //    public static func string GetIP()
@@ -70,7 +69,6 @@ class NetworkManager {
                 print("\(dict)")
                 print(dict["cip"] as? String ?? "")
             }
-            publicIP = dict?["cip"] as? String ?? "0.0.0.0"
             backBlock(dict?["cip"] as? String ?? "")
         }
         backBlock("")

@@ -14,6 +14,7 @@ class UserInfo {
     var name:String?
     var sex:String?
     var birthday:String?
+    var publicIP:String = "0.0.0.0"
     
     init() {
         print("UserInfo init")
@@ -26,6 +27,8 @@ class FriendInfo {
     var sex:String?
     var birthday:String?
     var addDate:String?
+    var publicIP:String?
+    var loginDate:String?
 }
 
 let mainUserInfo:UserInfo = UserInfo()

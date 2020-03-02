@@ -66,10 +66,11 @@ class httpManager {
                                 fInfo.sex = fInfoDic["sex"] as? String
                                 fInfo.birthday = fInfoDic["birthday"] as? String
                                 fInfo.addDate = fInfoDic["addDate"] as? String
+                                fInfo.publicIP = fInfoDic["loginIP"] as? String
                                 friendsList.append(fInfo)
                             }
                         }
-                        print(friendsList[1].telephone!)
+                        print(friendsList[1].publicIP!)
                     }
                     
                     if let result_code = jsonObj["result"] as? Int{

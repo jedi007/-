@@ -17,5 +17,7 @@ class ChatViewController: UIViewController {
     
     override func viewDidLoad() {
         nameLabel.title = currentFriendsList[0].name
+        
+        print("the friend IP is : \(currentFriendsList[0].publicIP!)")
     }
 }
