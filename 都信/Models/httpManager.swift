@@ -18,8 +18,9 @@ class httpManager {
     }
     
     
-    func login( telephone:String, password:String,  failed:@escaping (_ errorCode:Int)->Void, success:@escaping ()->Void )
+    func login( telephone:String, password:String,  publicIP:String, failed:@escaping (_ errorCode:Int)->Void, success:@escaping ()->Void )
     {
+        print("in login publicIP: \(publicIP)")
         let session = URLSession(configuration: .default)
         // 设置URL(该地址不可用，写你自己的服务器地址)
         let url = "\(baseUrl)/login"
@@ -27,7 +28,7 @@ class httpManager {
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         request.httpMethod = "POST"
         // 设置要post的内容，字典格式
-        let postData = ["telephone":"\(telephone)", "password":"\(password)"]
+        let postData = ["telephone":"\(telephone)", "password":"\(password)", "loginIP":"\(publicIP)"]
         let postString = postData.compactMap({ (key, value) -> String in
             return "\(key)=\(value)"
         }).joined(separator: "&")

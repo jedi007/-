@@ -40,6 +40,13 @@ class loginViewController: UIViewController {
         let viewSingleTapGesture = UITapGestureRecognizer(target: self, action: #selector(backViewClick))
         self.view.addGestureRecognizer(viewSingleTapGesture)
         self.view.isUserInteractionEnabled = true
+        
+        getIFAddresses()
+        //var manager:NetworkManager
+        NetworkManager.getPublicIP222(backBlock: {
+            str in
+            print(str)
+        })
     }
     
     @objc func backViewClick(){
@@ -59,7 +66,7 @@ class loginViewController: UIViewController {
 //        }
         
         //httpManager.shared.login(telephone: telephoneTextField.text!, password: passwordTextField.text!.md5,failed:{(errorCode:Int) in
-        httpManager.shared.login(telephone: "13568991512", password: "qqqqqqqq".md5,failed:{(errorCode:Int) in
+        httpManager.shared.login(telephone: "13568991512", password: "qqqqqqqq".md5, publicIP: publicIP, failed:{(errorCode:Int) in
             print("get failed info at out, errorCode: \(errorCode)")
             
             if errorCode == -1
@@ -89,7 +96,6 @@ class loginViewController: UIViewController {
                     }
                 })
             }
-            
             
         }
     }
