@@ -13,7 +13,6 @@ class loginViewController: UIViewController {
     @IBOutlet weak var telephoneTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
 
     required init?(coder: NSCoder) {
         super.init(coder:coder)
@@ -41,6 +40,7 @@ class loginViewController: UIViewController {
         self.view.addGestureRecognizer(viewSingleTapGesture)
         self.view.isUserInteractionEnabled = true
         
+        UdpManager.shared
     }
     
     @objc func backViewClick(){
