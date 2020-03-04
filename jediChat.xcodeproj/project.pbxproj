@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1147B0364E6DC1C7FF6C2AAC /* Pods_jediChat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 13CCB0CFB2DED49E86ACEB97 /* Pods_jediChat.framework */; };
 		6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0905DA23E1AB1D003A2788 /* registerViewController.swift */; };
 		6A0D2A2F23F8F72B00B2DFF8 /* models.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A0D2A2E23F8F72B00B2DFF8 /* models.storyboard */; };
 		6A0D2A3123F8F78900B2DFF8 /* addFriendsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0D2A3023F8F78900B2DFF8 /* addFriendsViewController.swift */; };
@@ -24,6 +25,7 @@
 		6A20217323EE97D0002D2DFB /* 摇一摇.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216A23EE97D0002D2DFB /* 摇一摇.png */; };
 		6A20217423EE97D0002D2DFB /* 附近的人.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216B23EE97D0002D2DFB /* 附近的人.png */; };
 		6A20217523EE97D0002D2DFB /* 小程序.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216C23EE97D0002D2DFB /* 小程序.png */; };
+		6A34CEB7240FDA1A00CA408A /* udpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34CEB6240FDA1A00CA408A /* udpManager.swift */; };
 		6A4C07E0240A2941006B679C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C07DF240A2941006B679C /* NetworkManager.swift */; };
 		6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */; };
 		6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */; };
@@ -76,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		13CCB0CFB2DED49E86ACEB97 /* Pods_jediChat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_jediChat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0905DA23E1AB1D003A2788 /* registerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = registerViewController.swift; sourceTree = "<group>"; };
 		6A0D2A2E23F8F72B00B2DFF8 /* models.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = models.storyboard; sourceTree = "<group>"; };
 		6A0D2A3023F8F78900B2DFF8 /* addFriendsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addFriendsViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +96,7 @@
 		6A20216A23EE97D0002D2DFB /* 摇一摇.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摇一摇.png"; sourceTree = "<group>"; };
 		6A20216B23EE97D0002D2DFB /* 附近的人.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "附近的人.png"; sourceTree = "<group>"; };
 		6A20216C23EE97D0002D2DFB /* 小程序.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小程序.png"; sourceTree = "<group>"; };
+		6A34CEB6240FDA1A00CA408A /* udpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = udpManager.swift; sourceTree = "<group>"; };
 		6A4C07DF240A2941006B679C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +139,8 @@
 		6AC3705D23F1843C008EB52B /* 发起群聊.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发起群聊.png"; sourceTree = "<group>"; };
 		6AC3705F23F1843C008EB52B /* 帮助与反馈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "帮助与反馈.png"; sourceTree = "<group>"; };
 		6AC3706323F18B9B008EB52B /* 扫一扫.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫一扫.png"; sourceTree = "<group>"; };
+		9BCAA83A8E22DCD848BAFD0B /* Pods-jediChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jediChat.debug.xcconfig"; path = "Target Support Files/Pods-jediChat/Pods-jediChat.debug.xcconfig"; sourceTree = "<group>"; };
+		AC25F5B1AF1D4F0A713795E1 /* Pods-jediChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jediChat.release.xcconfig"; path = "Target Support Files/Pods-jediChat/Pods-jediChat.release.xcconfig"; sourceTree = "<group>"; };
 		CDA465C1238145A4007D794C /* jediChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jediChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA465C4238145A4007D794C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA465C6238145A4007D794C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +157,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1147B0364E6DC1C7FF6C2AAC /* Pods_jediChat.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -244,6 +251,7 @@
 				6AAEF81923FE514500330767 /* FriendInfoViewController.swift */,
 				6A14A6542407F28900376F38 /* chatVC.swift */,
 				6A4C07DF240A2941006B679C /* NetworkManager.swift */,
+				6A34CEB6240FDA1A00CA408A /* udpManager.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,12 +266,31 @@
 			path = jediPopMenu;
 			sourceTree = "<group>";
 		};
+		753DF63158BD6D8EFA411A9F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9BCAA83A8E22DCD848BAFD0B /* Pods-jediChat.debug.xcconfig */,
+				AC25F5B1AF1D4F0A713795E1 /* Pods-jediChat.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		9DF68499297C90BA1B0F71A1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				13CCB0CFB2DED49E86ACEB97 /* Pods_jediChat.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CDA465B8238145A4007D794C = {
 			isa = PBXGroup;
 			children = (
 				CDA465D8238145D2007D794C /* images */,
 				CDA465C3238145A4007D794C /* code */,
 				CDA465C2238145A4007D794C /* Products */,
+				753DF63158BD6D8EFA411A9F /* Pods */,
+				9DF68499297C90BA1B0F71A1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -318,9 +345,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CDA465D5238145A5007D794C /* Build configuration list for PBXNativeTarget "jediChat" */;
 			buildPhases = (
+				F2C8D6FDB55988434A821EAA /* [CP] Check Pods Manifest.lock */,
 				CDA465BD238145A4007D794C /* Sources */,
 				CDA465BE238145A4007D794C /* Frameworks */,
 				CDA465BF238145A4007D794C /* Resources */,
+				85D4AAE109199F96F4D4E855 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -411,6 +440,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		85D4AAE109199F96F4D4E855 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-jediChat/Pods-jediChat-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-jediChat/Pods-jediChat-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-jediChat/Pods-jediChat-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2C8D6FDB55988434A821EAA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-jediChat-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CDA465BD238145A4007D794C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -441,6 +512,7 @@
 				6ABBFE3B23EBF314008E6C97 /* extensionColor.swift in Sources */,
 				6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */,
 				6A9D0B0A23EAB82F0078AA19 /* extensionImage.swift in Sources */,
+				6A34CEB7240FDA1A00CA408A /* udpManager.swift in Sources */,
 				6A0D2A3123F8F78900B2DFF8 /* addFriendsViewController.swift in Sources */,
 				6A9D0B0823EAB2220078AA19 /* messagesViewController.swift in Sources */,
 				6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */,
@@ -586,6 +658,7 @@
 		};
 		CDA465D6238145A5007D794C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BCAA83A8E22DCD848BAFD0B /* Pods-jediChat.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -604,6 +677,7 @@
 		};
 		CDA465D7238145A5007D794C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC25F5B1AF1D4F0A713795E1 /* Pods-jediChat.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
