@@ -135,7 +135,7 @@
 		6AC3705D23F1843C008EB52B /* 发起群聊.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "发起群聊.png"; sourceTree = "<group>"; };
 		6AC3705F23F1843C008EB52B /* 帮助与反馈.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "帮助与反馈.png"; sourceTree = "<group>"; };
 		6AC3706323F18B9B008EB52B /* 扫一扫.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫一扫.png"; sourceTree = "<group>"; };
-		CDA465C1238145A4007D794C /* 都信.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "都信.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA465C1238145A4007D794C /* jediChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jediChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA465C4238145A4007D794C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA465C6238145A4007D794C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CDA465C8238145A4007D794C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -262,7 +262,7 @@
 			isa = PBXGroup;
 			children = (
 				CDA465D8238145D2007D794C /* images */,
-				CDA465C3238145A4007D794C /* 都信 */,
+				CDA465C3238145A4007D794C /* code */,
 				CDA465C2238145A4007D794C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -270,12 +270,12 @@
 		CDA465C2238145A4007D794C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDA465C1238145A4007D794C /* 都信.app */,
+				CDA465C1238145A4007D794C /* jediChat.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CDA465C3238145A4007D794C /* 都信 */ = {
+		CDA465C3238145A4007D794C /* code */ = {
 			isa = PBXGroup;
 			children = (
 				6AAFFE4623E4279E00665DBE /* Tools */,
@@ -296,7 +296,7 @@
 				6A20215F23EE7DCF002D2DFB /* messageItem.swift */,
 				6A20216123EE900B002D2DFB /* discoverViewController.swift */,
 			);
-			path = "都信";
+			path = code;
 			sourceTree = "<group>";
 		};
 		CDA465D8238145D2007D794C /* images */ = {
@@ -314,9 +314,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CDA465C0238145A4007D794C /* 都信 */ = {
+		CDA465C0238145A4007D794C /* jediChat */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CDA465D5238145A5007D794C /* Build configuration list for PBXNativeTarget "都信" */;
+			buildConfigurationList = CDA465D5238145A5007D794C /* Build configuration list for PBXNativeTarget "jediChat" */;
 			buildPhases = (
 				CDA465BD238145A4007D794C /* Sources */,
 				CDA465BE238145A4007D794C /* Frameworks */,
@@ -326,9 +326,9 @@
 			);
 			dependencies = (
 			);
-			name = "都信";
+			name = jediChat;
 			productName = "都信";
-			productReference = CDA465C1238145A4007D794C /* 都信.app */;
+			productReference = CDA465C1238145A4007D794C /* jediChat.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -346,7 +346,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CDA465BC238145A4007D794C /* Build configuration list for PBXProject "都信" */;
+			buildConfigurationList = CDA465BC238145A4007D794C /* Build configuration list for PBXProject "jediChat" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -359,7 +359,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CDA465C0238145A4007D794C /* 都信 */,
+				CDA465C0238145A4007D794C /* jediChat */,
 			);
 		};
 /* End PBXProject section */
@@ -590,7 +590,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 626MCCPRK2;
-				INFOPLIST_FILE = "都信/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/code/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -608,7 +608,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 626MCCPRK2;
-				INFOPLIST_FILE = "都信/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/code/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,7 +623,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CDA465BC238145A4007D794C /* Build configuration list for PBXProject "都信" */ = {
+		CDA465BC238145A4007D794C /* Build configuration list for PBXProject "jediChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDA465D3238145A5007D794C /* Debug */,
@@ -632,7 +632,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CDA465D5238145A5007D794C /* Build configuration list for PBXNativeTarget "都信" */ = {
+		CDA465D5238145A5007D794C /* Build configuration list for PBXNativeTarget "jediChat" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CDA465D6238145A5007D794C /* Debug */,
