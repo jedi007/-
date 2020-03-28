@@ -73,7 +73,6 @@ class httpManager {
                                 friendsList.append(fInfo)
                             }
                         }
-                        print(friendsList[1].publicIP!)
                     }
                     
                     if let result_code = jsonObj["result"] as? Int{

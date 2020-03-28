@@ -10,7 +10,7 @@
         <!--Add Friends View Controller-->
         <scene sceneID="0oM-hc-mAe">
             <objects>
-                <viewController storyboardIdentifier="addFriensVCID" id="47O-jg-Hki" customClass="addFriendsViewController" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="addFriensVCID" id="47O-jg-Hki" customClass="addFriendsViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RX7-Hw-DIb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,7 +76,7 @@
         <!--Title-->
         <scene sceneID="Oam-me-n7M">
             <objects>
-                <viewController storyboardIdentifier="UserInfoShowVCID" id="gFp-7E-BNc" customClass="searchedUserInfoShowVC" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UserInfoShowVCID" id="gFp-7E-BNc" customClass="searchedUserInfoShowVC" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="lA3-AO-LEn">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -267,7 +267,7 @@
         <!--Friend Info View Controller-->
         <scene sceneID="RdE-uD-ZKI">
             <objects>
-                <viewController storyboardIdentifier="FriendInfoVCID" id="deu-DV-NQj" customClass="FriendInfoViewController" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="FriendInfoVCID" id="deu-DV-NQj" customClass="FriendInfoViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4di-7r-wkF">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -608,7 +608,7 @@
         <!--Chat View Controller-->
         <scene sceneID="TUh-78-yZB">
             <objects>
-                <viewController storyboardIdentifier="ChatVCID" id="L1z-zO-T0D" customClass="ChatViewController" customModule="都信" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChatVCID" id="L1z-zO-T0D" customClass="ChatViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="pME-51-ZCh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -666,6 +666,9 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="sendMessage:" destination="L1z-zO-T0D" eventType="touchUpInside" id="I24-5c-OfO"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lVZ-2M-szC">
                                 <rect key="frame" x="314" y="811" width="20" height="22"/>
@@ -698,6 +701,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="modalPresentationStyle" value="fullscreen"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="messageTV" destination="oUK-Hg-kGf" id="79i-nA-Hip"/>
                         <outlet property="nameLabel" destination="gkv-sf-WR3" id="JHH-we-lk6"/>
                     </connections>
                 </viewController>
