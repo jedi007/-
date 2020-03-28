@@ -9,35 +9,8 @@
 import Foundation
 
 class NetworkManager {
-//    //获取本机的公网IP
-//    public static func string GetIP()
-//    {
-//        string tempip = "";
-//        try
-//        {
-//            WebRequest request = WebRequest.Create("http://ip.qq.com/");
-//            request.Timeout = 10000;
-//            WebResponse response = request.GetResponse();
-//            Stream resStream = response.GetResponseStream();
-//            StreamReader sr = new StreamReader(resStream, System.Text.Encoding.Default);
-//            string htmlinfo = sr.ReadToEnd();
-//            //匹配IP的正则表达式
-//            Regex r = new Regex("((25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)\\.){3}(25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|[1-9])", RegexOptions.None);
-//            Match mc = r.Match(htmlinfo);
-//            //获取匹配到的IP
-//            tempip = mc.Groups[0].Value;
-//
-//            resStream.Close();
-//            sr.Close();
-//        }
-//        catch (Exception err)
-//        {
-//            tempip = err.Message;
-//        }
-//        return tempip;
-//    }
-    
-    static func getPublicIP222(backBlock: @escaping ((String)->())){
+    //获取本机的公网IP
+    static func getPublicIP(backBlock: @escaping ((String)->())){
         print(" Thread = \(Thread.current)")
          
         let ipURL = URL(string: "http://pv.sohu.com/cityjson?ie=utf-8")

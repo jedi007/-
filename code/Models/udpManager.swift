@@ -16,7 +16,7 @@ class UdpManager:NSObject {
     var udp:GCDAsyncUdpSocket!
     var udpError:String?
     
-    let localPort:UInt16 = 8009
+    let localPort:UInt16 = 8008
     
     private override init() {
         super.init()
@@ -35,7 +35,7 @@ class UdpManager:NSObject {
         }
         
         //开始广播(toHost 255.255.255.255 即为广播)
-        udp.send("test".data(using: String.Encoding.utf8)!, toHost: "171.92.69.102", port: 8008, withTimeout: -1, tag: 0)
+        udp.send("test".data(using: String.Encoding.utf8)!, toHost: "171.216.249.223", port: 8009, withTimeout: -1, tag: 0)
     }
 }
  

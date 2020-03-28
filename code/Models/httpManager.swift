@@ -9,7 +9,7 @@
 import Foundation
 
 class httpManager {
-    var baseUrl:String = "http://192.168.31.113/believe"
+    var baseUrl:String = "http://49.235.167.93:8001/believe"//"http://192.168.31.113/believe"
     
     static let shared = httpManager()
     
@@ -42,6 +42,7 @@ class httpManager {
                 return;
             }
             print(" in response ")
+            print(response)
             do{
                 //              将二进制数据转换为字典对象
                 if let jsonObj:NSDictionary = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions()) as? NSDictionary

@@ -17,7 +17,7 @@ class UserInfo {
     var publicIP:String = "0.0.0.0"
     
     init() {
-        NetworkManager.getPublicIP222(backBlock: {
+        NetworkManager.getPublicIP(backBlock: {
             str in
             print("UserInfo init : \(str)")
             self.publicIP = str
