@@ -13,6 +13,8 @@ import CocoaAsyncSocket
 class UdpManager:NSObject {
     static let shared = UdpManager()
     
+    var timer:DispatchSourceTimer!
+    
     var clientSocket: GCDAsyncSocket!   // 服务器socket
     var udp:GCDAsyncUdpSocket!
     var udpError:String?
@@ -30,6 +32,12 @@ class UdpManager:NSObject {
         do
         {
             try udp.enableBroadcast(true)
+            print("do bindport")
+            if bindPort(toPort: localPort) {
+                print("do bindport success")
+                startTimer()
+            }
+            
         }
         catch{
             print("catch:\(udpError)")
@@ -56,6 +64,35 @@ class UdpManager:NSObject {
     func close() -> Void {
         udp.close()
     }
+    
+    //建立与服务器的心跳连接
+    func startTimer() {
+        print("startTimer")
+       // 在global线程里创建一个时间源
+       timer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
+       // 设定这个时间源是每秒循环一次，立即开始
+       timer.schedule(deadline: .now(), repeating: .seconds(5))
+       // 设定时间源的触发事件
+       timer.setEventHandler(handler: {
+            print("心跳触发")
+            if let telephone = mainUserInfo.telephone
+            {
+                var dic : [String: AnyObject] = [:]
+                dic["telephone"] = telephone as AnyObject?
+                dic["action"] = 0 as AnyObject?
+                let convertStr:String = JSONTools.shared.convertDictionaryToString(dict: dic)
+                let senddata = convertStr.data(using: .utf8)!
+                self.sendData(data: senddata, toHost: httpManager.shared.serverIP, port: httpManager.shared.serverPort)
+            }
+        
+//           // 返回主线程处理一些事件，更新UI等等
+//           DispatchQueue.main.async {
+//
+//           }
+       })
+       // 启动时间源
+       timer.resume()
+    }
 }
  
 extension UdpManager: GCDAsyncUdpSocketDelegate {
@@ -65,6 +102,7 @@ extension UdpManager: GCDAsyncUdpSocketDelegate {
         {
             let fromHost = String( hostInfo.split(separator: ":").last! )
             let fromPort = GCDAsyncUdpSocket.port(fromAddress: address)
+            print("receive data : \(data)")
             if let recvievH = receiveHandle {
                 recvievH(data,fromHost,fromPort)
             }
