@@ -7,6 +7,7 @@
 //
 
 import Foundation
+
 import CocoaAsyncSocket
 
 class UdpManager:NSObject {
@@ -15,6 +16,8 @@ class UdpManager:NSObject {
     var clientSocket: GCDAsyncSocket!   // 服务器socket
     var udp:GCDAsyncUdpSocket!
     var udpError:String?
+    
+    var receiveHandle: ((_ data: Data,_ host: String,_ port: UInt16) -> Void)?
     
     let localPort:UInt16 = 8008
     
@@ -27,26 +30,45 @@ class UdpManager:NSObject {
         do
         {
             try udp.enableBroadcast(true)
-            try udp.bind(toPort: localPort, interface:udpError)
-            try udp.beginReceiving()
         }
         catch{
             print("catch:\(udpError)")
         }
-        
+    }
+    
+    func sendData(data: Data, toHost: String, port: UInt16) -> Void {
         //开始广播(toHost 255.255.255.255 即为广播)
-        udp.send("test".data(using: String.Encoding.utf8)!, toHost: "171.216.249.223", port: 8009, withTimeout: -1, tag: 0)
+        udp.send(data, toHost: toHost, port: port, withTimeout: -1, tag: 0)
+    }
+    
+    func bindPort(toPort: UInt16)->Bool
+    {
+        do {
+            try udp.bind(toPort: toPort, interface:udpError)
+            try udp.beginReceiving()
+        } catch  {
+            print("catch:\(udpError)")
+            return false
+        }
+        return true
+    }
+    
+    func close() -> Void {
+        udp.close()
     }
 }
  
 extension UdpManager: GCDAsyncUdpSocketDelegate {
     
     func udpSocket(_ sock: GCDAsyncUdpSocket, didReceive data: Data, fromAddress address: Data, withFilterContext filterContext: Any?) {
-        let receiveData = String(data: data, encoding: String.Encoding.utf8)
-        print("data=" , data.toHexString()  , "\n" ,  "receiveData=" , receiveData!)
-        
-        let fromAddress2 = String(data: address, encoding: String.Encoding.utf8)
-        print("fromAddressData=" , address.toHexString()  , "\n" ,  "fromAddress=" , fromAddress2)
+        if let hostInfo = GCDAsyncUdpSocket.host(fromAddress: address)
+        {
+            let fromHost = String( hostInfo.split(separator: ":").last! )
+            let fromPort = GCDAsyncUdpSocket.port(fromAddress: address)
+            if let recvievH = receiveHandle {
+                recvievH(data,fromHost,fromPort)
+            }
+        }
     }
     
     func udpSocket(_ sock:GCDAsyncUdpSocket, didSendDataWithTag tag:Int) {
@@ -127,5 +149,6 @@ extension Array where Element == UInt8 {
         }
     }
 }
+
 
 

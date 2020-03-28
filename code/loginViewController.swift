@@ -79,6 +79,13 @@ class loginViewController: UIViewController {
             print("login success")
             
             DispatchQueue.main.async{
+                var dic : [String: AnyObject] = [:]
+                dic["telephone"] = mainUserInfo.telephone! as AnyObject?
+                dic["action"] = 0 as AnyObject?
+                let convertStr:String = JSONTools.shared.convertDictionaryToString(dict: dic)
+                let senddata = convertStr.data(using: .utf8)!
+                UdpManager.shared.sendData(data: senddata, toHost: httpManager.shared.serverIP, port: httpManager.shared.serverPort)
+                
                 let sb = UIStoryboard(name: "Main", bundle: nil)
                 let main_vc = sb.instantiateViewController(withIdentifier: "mainTabBarController")
                 
@@ -90,7 +97,6 @@ class loginViewController: UIViewController {
                     }
                 })
             }
-            
         }
     }
     

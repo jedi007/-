@@ -9,6 +9,8 @@
 import Foundation
 
 class httpManager {
+    var serverIP:String = "49.235.167.93"
+    var serverPort:UInt16 = 8009
     var baseUrl:String = "http://49.235.167.93:8001/believe"//"http://192.168.31.113/believe"
     
     static let shared = httpManager()
