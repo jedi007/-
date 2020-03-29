@@ -26,6 +26,24 @@ class mainTabBarController: UITabBarController {
         
         items[3].selectedImage = UIImage(named: "头像")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
         items[3].image = UIImage(named: "头像")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
+        
+        
+        UdpManager.shared.receiveHandle = {(data: Data,host: String,port: UInt16) -> Void in
+            print("in receiveHandle")
+            let receiveData = String(data: data, encoding: String.Encoding.utf8)
+            
+            
+            let dateNow = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")
+            
+            
+            if let dic = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSDictionary
+            {
+                print("receive messageDic: \(dic)")
+                print("receive messageDic: \(dic["messageName"] as? String)")
+                print("receive messageDic: \(dic["messageID"] as? String)")
+                print("receive messageDic: \(dic["messageFrom"] as? String)")
+            }
+        }
     }
     
 }
