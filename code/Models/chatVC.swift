@@ -14,6 +14,7 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var messageTV: UITextView!
     
+    var originFrame:CGRect?
     
     var currentFriendsList:[FriendInfo] = []
     var messageID:String!
@@ -21,6 +22,8 @@ class ChatViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        super.viewDidLoad()
+        
         nameLabel.title = currentFriendsList[0].name
         
         messageName = "messageName"
@@ -28,6 +31,41 @@ class ChatViewController: UIViewController {
         print("messageID: \(messageID)")
         
         print("the friend IP is : \(currentFriendsList[0].publicIP!)")
+        
+        
+        let viewSingleTapGesture = UITapGestureRecognizer(target: self, action: #selector(backViewClick))
+        self.view.addGestureRecognizer(viewSingleTapGesture)
+        self.view.isUserInteractionEnabled = true
+        
+        originFrame = self.view.frame
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    
+    
+    @objc func backViewClick(){
+        self.view.endEditing(true)
+    }
+    
+    @objc private func keyboardWillShow(notification: NSNotification) {
+        let info = notification.userInfo!
+        let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
+        
+        view.frame.origin.y = -(keyboardFrame?.size.height)!
+    }
+    
+    @objc private func keyboardWillHide(notification: NSNotification) {
+        view.frame = originFrame!
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
