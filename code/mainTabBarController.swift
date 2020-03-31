@@ -34,14 +34,21 @@ class mainTabBarController: UITabBarController {
             
             
             let dateNow = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")
+            print("dateNow: \(dateNow)")
             
             
             if let dic = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSDictionary
             {
                 print("receive messageDic: \(dic)")
-                print("receive messageDic: \(dic["messageName"] as? String)")
+                print("receive messageDic: \(dic["messageType"] as? String)")
                 print("receive messageDic: \(dic["messageID"] as? String)")
+                print("receive messageDic: \(dic["messageName"] as? String)")
                 print("receive messageDic: \(dic["messageFrom"] as? String)")
+                if let messageData = dic["messageData"] as? Data
+                {
+                    print("receive messageDic: \(messageData.toHexString())")
+                    print("receive messageDic: \(String(data: messageData, encoding: .utf8))")
+                }
             }
         }
     }

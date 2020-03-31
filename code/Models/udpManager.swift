@@ -71,7 +71,7 @@ class UdpManager:NSObject {
        // 在global线程里创建一个时间源
        timer = DispatchSource.makeTimerSource(queue: DispatchQueue.global())
        // 设定这个时间源是每秒循环一次，立即开始
-       timer.schedule(deadline: .now(), repeating: .seconds(5))
+       timer.schedule(deadline: .now(), repeating: .seconds(48))
        // 设定时间源的触发事件
        timer.setEventHandler(handler: {
             print("心跳触发")
