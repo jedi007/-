@@ -15,4 +15,8 @@ class messagesViewController: UIViewController {
 //        self.tabBarItem.image = UIImage(named: "都信")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
 //        self.tabBarItem.selectedImage = UIImage(named: "都信")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
     }
+    
+    func testMessageID(messageID:String) -> Void {
+        print("receive messageID: \(messageID)")
+    }
 }

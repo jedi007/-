@@ -44,6 +44,10 @@ class mainTabBarController: UITabBarController {
                 print("receive messageDic: \(dic["messageID"] as? String)")
                 print("receive messageDic: \(dic["messageName"] as? String)")
                 print("receive messageDic: \(dic["messageFrom"] as? String)")
+                let messagesNVC = self.viewControllers?[0] as! UINavigationController
+                let messagesVC = messagesNVC.viewControllers[0] as! messagesViewController
+                messagesVC.testMessageID(messageID: dic["messageID"] as! String)
+                
                 if let messageData = dic["messageData"] as? Data
                 {
                     print("receive messageDic: \(messageData.toHexString())")

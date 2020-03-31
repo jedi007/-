@@ -27,7 +27,8 @@ class ChatViewController: UIViewController {
         nameLabel.title = currentFriendsList[0].name
         
         messageName = "messageName"
-        messageID = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")
+        let randomNumber = arc4random() % 100000
+        messageID = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")+"+\(randomNumber)"
         print("messageID: \(messageID)")
         
         print("the friend IP is : \(currentFriendsList[0].publicIP!)")
