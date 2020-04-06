@@ -16,7 +16,19 @@ class messagesViewController: UIViewController {
 //        self.tabBarItem.selectedImage = UIImage(named: "都信")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
     }
     
-    func testMessageID(messageID:String) -> Void {
-        print("receive messageID: \(messageID)")
+    func onReceiveMessage(messageDic:NSDictionary) -> Void {
+        print("messagesViewController receive messageDic: \(messageDic)")
+        print("messagesViewController receive messageDic: \(messageDic["messageType"] as? String)")
+        print("messagesViewController receive messageDic: \(messageDic["messageID"] as? String)")
+        print("messagesViewController receive messageDic: \(messageDic["messageName"] as? String)")
+        print("messagesViewController receive messageDic: \(messageDic["messageFrom"] as? String)")
+        
+        
+        if let messageData = messageDic["messageData"] as? Data
+        {
+            print("receive messageDic: \(messageData.toHexString())")
+            print("receive messageDic: \(String(data: messageData, encoding: .utf8))")
+        }
+        
     }
 }

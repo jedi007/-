@@ -39,19 +39,16 @@ class mainTabBarController: UITabBarController {
             
             if let dic = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSDictionary
             {
-                print("receive messageDic: \(dic)")
-                print("receive messageDic: \(dic["messageType"] as? String)")
-                print("receive messageDic: \(dic["messageID"] as? String)")
-                print("receive messageDic: \(dic["messageName"] as? String)")
-                print("receive messageDic: \(dic["messageFrom"] as? String)")
-                let messagesNVC = self.viewControllers?[0] as! UINavigationController
-                let messagesVC = messagesNVC.viewControllers[0] as! messagesViewController
-                messagesVC.testMessageID(messageID: dic["messageID"] as! String)
-                
-                if let messageData = dic["messageData"] as? Data
+                if let messageType = dic["messageType"] as? String
                 {
-                    print("receive messageDic: \(messageData.toHexString())")
-                    print("receive messageDic: \(String(data: messageData, encoding: .utf8))")
+                    switch messageType {
+                    case "friendsMessage":
+                        let messagesNVC = self.viewControllers?[0] as! UINavigationController
+                        let messagesVC = messagesNVC.viewControllers[0] as! messagesViewController
+                        messagesVC.onReceiveMessage(messageDic: dic)
+                    default:
+                        print("default")
+                    }
                 }
             }
         }
