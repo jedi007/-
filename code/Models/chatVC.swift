@@ -86,6 +86,7 @@ class ChatViewController: UIViewController {
                 messageDic["messageFrom"] = mainUserInfo.telephone as AnyObject?
                 messageDic["messageID"] = messageID as AnyObject?
                 messageDic["messageName"] = messageName as AnyObject?
+                messageDic["messageDataType"] = "String" as AnyObject?
                 messageDic["messageData"] = messageData as AnyObject?
                 
                 print("messageDic: \(messageDic)")

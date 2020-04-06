@@ -83,11 +83,14 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
                 }
             }
             
-            if let mdata = dic["messageData"] as? Data {
-                cell.abstract.text = String(data: mdata, encoding: .utf8)
+            if let mdata = dic["messageData"] as? Data,
+               let messageDataType = dic["messageDataType"] as? String
+            {
+                if messageDataType == "String" {
+                    cell.abstract.text = String(data: mdata, encoding: .utf8)
+                }
             }
         }
-      
         
         return cell
     }
