@@ -63,12 +63,31 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
     
     //设置列表有多少行
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print("\n\n\n\n\n\n =============== set rowcount : \(messagesDics.count)")
         return messagesDics.count
     }
     //设置每行数据的数据载体Cell视图
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessagesCell", for: indexPath) as! MessagesCell
+        
+        let keys = messagesDics.keys.sorted()
+        
+        if let dic = messagesDics[keys[indexPath.row]]?.last {
+            let fromTelephone = dic["messageFrom"] as! String
+            
+            for friendinfo in friendsList {
+                if friendinfo.telephone == fromTelephone {
+                    print("find the from friend")
+                    cell.messageName.text = friendinfo.name
+                    break
+                }
+            }
+            
+            if let mdata = dic["messageData"] as? Data {
+                cell.abstract.text = String(data: mdata, encoding: .utf8)
+            }
+        }
+      
         
         return cell
     }

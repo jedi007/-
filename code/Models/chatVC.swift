@@ -26,7 +26,7 @@ class ChatViewController: UIViewController {
         
         nameLabel.title = currentFriendsList[0].name
         
-        messageName = "messageName"
+        messageName = "deafult messageName"
         let randomNumber = arc4random() % 100000
         messageID = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")+"+\(randomNumber)"
         print("messageID: \(messageID)")

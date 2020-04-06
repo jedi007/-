@@ -894,6 +894,11 @@
                                                 <constraint firstItem="gtf-nJ-he4" firstAttribute="leading" secondItem="fOh-RX-Fur" secondAttribute="leading" id="zct-yN-9iE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="abstract" destination="gtf-nJ-he4" id="tY7-im-Ls0"/>
+                                            <outlet property="headIV" destination="mdE-nP-xnT" id="Y06-GM-jRJ"/>
+                                            <outlet property="messageName" destination="fOh-RX-Fur" id="Tpu-38-53c"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
