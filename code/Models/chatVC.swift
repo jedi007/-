@@ -96,8 +96,8 @@ class ChatViewController: UIViewController {
                 //let messageDicData = NSKeyedArchiver.archivedData(withRootObject: <#T##Any#>, requiringSecureCoding: <#T##Bool#>)
                 print("messageDicData: \(messageDicData)")
                 
-                let dic = NSKeyedUnarchiver.unarchiveObject(with: messageDicData) as! NSDictionary
-                print("unarchiveObject messageDic: \(dic)")
+                //let dic = NSKeyedUnarchiver.unarchiveObject(with: messageDicData) as! NSDictionary
+                //print("unarchiveObject messageDic: \(dic)")
                 
                 let sendData = "\(convertStr)####DATA####".data(using: .utf8)! + messageDicData
                 

@@ -31,7 +31,7 @@ class messagesViewController: UIViewController {
         print("messagesViewController receive messageDic: \(messageDic["messageID"] as? String)")
         print("messagesViewController receive messageDic: \(messageDic["messageName"] as? String)")
         print("messagesViewController receive messageDic: \(messageDic["messageFrom"] as? String)")
-        
+        let mdic:NSMutableDictionary = messageDic.mutableCopy() as! NSMutableDictionary
         
         if let messageData = messageDic["messageData"] as? Data
         {
@@ -40,12 +40,16 @@ class messagesViewController: UIViewController {
         }
         
         if let messageID = messageDic["messageID"] as? String {
+            
+            let dateNow = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")
+            mdic["receiveDate"] = dateNow
+            
             if (messagesDics.keys.contains(messageID)) {
                 print("has key: \(messageID)")
-                messagesDics[messageID]?.append(messageDic)
+                messagesDics[messageID]?.append(mdic as NSDictionary)
             } else {
                 print("didn't has key: \(messageID)")
-                messagesDics[messageID] = [messageDic]
+                messagesDics[messageID] = [mdic as NSDictionary]
             }
             
             tableView.reloadData()
@@ -84,11 +88,13 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
             }
             
             if let mdata = dic["messageData"] as? Data,
-               let messageDataType = dic["messageDataType"] as? String
+               let messageDataType = dic["messageDataType"] as? String,
+               let receiveDate = dic["receiveDate"] as? String
             {
                 if messageDataType == "String" {
                     cell.abstract.text = String(data: mdata, encoding: .utf8)
                 }
+                cell.lastMessageTime.text = receiveDate
             }
         }
         

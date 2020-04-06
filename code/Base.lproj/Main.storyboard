@@ -884,20 +884,42 @@
                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lastMessageTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUA-up-Rgc">
+                                                    <rect key="frame" x="287" y="21" width="119" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="Wlp-aR-abS"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fXd-w7-M4f">
+                                                    <rect key="frame" x="361" y="48.5" width="25" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="25" id="NN9-Ib-xoG"/>
+                                                        <constraint firstAttribute="width" constant="25" id="knu-D9-8Yb"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="gtf-nJ-he4" firstAttribute="bottom" secondItem="mdE-nP-xnT" secondAttribute="bottom" id="65k-ea-sK1"/>
+                                                <constraint firstItem="fXd-w7-M4f" firstAttribute="centerY" secondItem="gtf-nJ-he4" secondAttribute="centerY" constant="5" id="AiQ-6N-rxe"/>
                                                 <constraint firstItem="mdE-nP-xnT" firstAttribute="centerY" secondItem="O39-uY-jLc" secondAttribute="centerY" id="I4m-hK-lVs"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="fXd-w7-M4f" secondAttribute="trailing" constant="8" id="RUD-gp-zee"/>
                                                 <constraint firstItem="fOh-RX-Fur" firstAttribute="top" secondItem="mdE-nP-xnT" secondAttribute="top" id="VFT-N4-lXO"/>
+                                                <constraint firstAttribute="trailing" secondItem="SUA-up-Rgc" secondAttribute="trailing" constant="8" id="Wpb-C4-RCM"/>
                                                 <constraint firstItem="fOh-RX-Fur" firstAttribute="leading" secondItem="mdE-nP-xnT" secondAttribute="trailing" constant="10" id="aiY-1D-4PN"/>
                                                 <constraint firstItem="mdE-nP-xnT" firstAttribute="leading" secondItem="O39-uY-jLc" secondAttribute="leading" constant="20" id="bTQ-cw-rhP"/>
+                                                <constraint firstItem="SUA-up-Rgc" firstAttribute="centerY" secondItem="fOh-RX-Fur" secondAttribute="centerY" id="qYy-3R-XHo"/>
                                                 <constraint firstItem="gtf-nJ-he4" firstAttribute="leading" secondItem="fOh-RX-Fur" secondAttribute="leading" id="zct-yN-9iE"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="abstract" destination="gtf-nJ-he4" id="tY7-im-Ls0"/>
                                             <outlet property="headIV" destination="mdE-nP-xnT" id="Y06-GM-jRJ"/>
+                                            <outlet property="lastMessageTime" destination="SUA-up-Rgc" id="QFc-ij-Pxj"/>
                                             <outlet property="messageName" destination="fOh-RX-Fur" id="Tpu-38-53c"/>
+                                            <outlet property="stateIV" destination="fXd-w7-M4f" id="BMw-vA-uhv"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

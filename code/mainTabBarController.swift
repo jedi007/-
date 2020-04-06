@@ -39,6 +39,7 @@ class mainTabBarController: UITabBarController {
             
             if let dic = NSKeyedUnarchiver.unarchiveObject(with: data) as? NSDictionary
             {
+                print("NSMutableDictionary success")
                 if let messageType = dic["messageType"] as? String
                 {
                     switch messageType {

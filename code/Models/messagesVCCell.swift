@@ -13,6 +13,8 @@ class MessagesCell: UITableViewCell {
     @IBOutlet weak var headIV: UIImageView!
     @IBOutlet weak var messageName: UILabel!
     @IBOutlet weak var abstract: UILabel!
+    @IBOutlet weak var lastMessageTime: UILabel!
+    @IBOutlet weak var stateIV: UIImageView!
     
     
     var messageID:String?
