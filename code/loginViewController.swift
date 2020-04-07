@@ -40,7 +40,12 @@ class loginViewController: UIViewController {
         self.view.addGestureRecognizer(viewSingleTapGesture)
         self.view.isUserInteractionEnabled = true
         
-        UdpManager.shared
+        UdpManager.shared//激活、初始化
+        
+        let dic = SaveInfo.readInfo()
+        if dic.keys.contains("telephone") {
+            login(failedAlert: false, telephone: dic["telephone"] as! String, password: dic["password"] as! String)
+        }
     }
     
     @objc func backViewClick(){
@@ -59,28 +64,34 @@ class loginViewController: UIViewController {
 //            return
 //        }
         
-        httpManager.shared.login(telephone: telephoneTextField.text!, password: passwordTextField.text!.md5, publicIP: mainUserInfo.publicIP, failed:{(errorCode:Int) in
+        login(failedAlert: true,telephone: telephoneTextField.text!,password: passwordTextField.text!.md5)
+    }
+    
+    func login(failedAlert:Bool,telephone:String,password:String) -> Void {
+        httpManager.shared.login(telephone: telephone, password: password, publicIP: mainUserInfo.publicIP, failed:{(errorCode:Int) in
         //httpManager.shared.login(telephone: "13568991512", password: "qqqqqqqq".md5, publicIP: mainUserInfo.publicIP, failed:{(errorCode:Int) in
             print("get failed info at out, errorCode: \(errorCode)")
             
-            if errorCode == -1
-            {
-                DispatchQueue.main.async{
-                    self.alertDialog(title: "登陆失败", message: "该账号已经注册", actionText: "知道了")
+            if failedAlert {
+                if errorCode == -1
+                {
+                    DispatchQueue.main.async{
+                        self.alertDialog(title: "登陆失败", message: "该账号已经注册", actionText: "知道了")
+                    }
                 }
-            }
-            else
-            {
-                DispatchQueue.main.async{
-                    self.alertDialog(title: "登陆失败", message: "错误码： \(errorCode)", actionText: "知道了")
+                else
+                {
+                    DispatchQueue.main.async{
+                        self.alertDialog(title: "登陆失败", message: "错误码： \(errorCode)", actionText: "知道了")
+                    }
                 }
             }
         } ){
             print("login success")
             
             var dic = SaveInfo.readInfo()
-            dic["telephone"] = self.telephoneTextField.text! as AnyObject
-            dic["password"]  = self.passwordTextField.text!.md5 as AnyObject
+            dic["telephone"] = telephone as AnyObject
+            dic["password"]  = password as AnyObject
             SaveInfo.writeInfo(infoDic: dic)
             
             DispatchQueue.main.async{
