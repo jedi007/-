@@ -28,6 +28,7 @@
 		6A34CEB7240FDA1A00CA408A /* udpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A34CEB6240FDA1A00CA408A /* udpManager.swift */; };
 		6A387D9F243B301B002D0DCD /* messagesVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A387D9E243B301B002D0DCD /* messagesVCCell.swift */; };
 		6A4C07E0240A2941006B679C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C07DF240A2941006B679C /* NetworkManager.swift */; };
+		6A7272C0243CAD9F00FB4F61 /* SaveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */; };
 		6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */; };
 		6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */; };
 		6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D223E6B19900CC4C58 /* 返回.png */; };
@@ -100,6 +101,7 @@
 		6A34CEB6240FDA1A00CA408A /* udpManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = udpManager.swift; sourceTree = "<group>"; };
 		6A387D9E243B301B002D0DCD /* messagesVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesVCCell.swift; sourceTree = "<group>"; };
 		6A4C07DF240A2941006B679C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfo.swift; sourceTree = "<group>"; };
 		6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D223E6B19900CC4C58 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				6ABBFE3823EBE89A008E6C97 /* alertDialog.swift */,
 				6ABBFE3A23EBF314008E6C97 /* extensionColor.swift */,
 				6A1E3063242F1F4C0094E6EC /* JSONTools.swift */,
+				6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				6AC3705823F17003008EB52B /* jediPopMenu.swift in Sources */,
 				6A1E3064242F1F4C0094E6EC /* JSONTools.swift in Sources */,
 				6AAFFE4A23E42A8B00665DBE /* extensionMd5.swift in Sources */,
+				6A7272C0243CAD9F00FB4F61 /* SaveInfo.swift in Sources */,
 				6AAEF81A23FE514500330767 /* FriendInfoViewController.swift in Sources */,
 				6AC3705A23F1719B008EB52B /* jediPopMenuView.swift in Sources */,
 				6AAEF81823FE317200330767 /* addressBookCell.swift in Sources */,

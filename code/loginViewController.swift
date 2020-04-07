@@ -78,6 +78,11 @@ class loginViewController: UIViewController {
         } ){
             print("login success")
             
+            var dic = SaveInfo.readInfo()
+            dic["telephone"] = self.telephoneTextField.text! as AnyObject
+            dic["password"]  = self.passwordTextField.text!.md5 as AnyObject
+            SaveInfo.writeInfo(infoDic: dic)
+            
             DispatchQueue.main.async{
                 var dic : [String: AnyObject] = [:]
                 dic["telephone"] = mainUserInfo.telephone! as AnyObject?
