@@ -16,6 +16,22 @@ class ChatViewController: UIViewController {
     
     var originFrame:CGRect?
     
+    var messagesArr:Array<NSDictionary> = []{
+        didSet
+        {
+            print("已经改变的时候");
+            print(messagesArr)
+            
+            for dic in messagesArr {
+                if let friendList = dic["friendList"] as? [FriendInfo]{
+                    print(friendList)
+                    currentFriendsList = friendList
+                }
+            }
+            
+        }
+    }
+    
     var currentFriendsList:[FriendInfo] = []
     var messageID:String!
     var messageName:String!
@@ -24,9 +40,35 @@ class ChatViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.title = currentFriendsList[0].name
+        if currentFriendsList.count < 3
+        {
+            for fInfo in currentFriendsList {
+                if fInfo.telephone != mainUserInfo.telephone {
+                    nameLabel.title = fInfo.name
+                    messageName = fInfo.telephone
+                }
+            }
+        } else {
+            var title:String = ""
+            for fInfo in currentFriendsList {
+                if fInfo.telephone == mainUserInfo.telephone {
+                    continue
+                }
+                title = title + "," + (fInfo.name ?? "")
+            }
+            nameLabel.title = title
+            messageName = title
+        }
         
-        messageName = "deafult messageName"
+        if currentFriendsList.count == 1 {
+            let meInfo = FriendInfo()
+            meInfo.telephone = mainUserInfo.telephone
+            meInfo.name = mainUserInfo.name
+            meInfo.sex = mainUserInfo.sex
+            meInfo.publicIP = mainUserInfo.publicIP
+            currentFriendsList.append(meInfo)
+        }
+        
         let randomNumber = arc4random() % 100000
         messageID = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")+"+\(randomNumber)"
         print("messageID: \(messageID)")
@@ -88,6 +130,7 @@ class ChatViewController: UIViewController {
                 messageDic["messageName"] = messageName as AnyObject?
                 messageDic["messageDataType"] = "String" as AnyObject?
                 messageDic["messageData"] = messageData as AnyObject?
+                messageDic["friendList"] = currentFriendsList as AnyObject?
                 
                 print("messageDic: \(messageDic)")
                 

@@ -120,12 +120,14 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
-        if indexPath.section > 0 {
-            let sb = UIStoryboard(name: "models", bundle: nil)
-            let vc = sb.instantiateViewController(withIdentifier: "FriendInfoVCID") as! FriendInfoViewController
-            vc.friendInfo = friendsList[indexPath.row]
-            self.present(vc, animated: true, completion: nil)
-            
+        
+        let sb = UIStoryboard(name: "models", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "ChatVCID") as! ChatViewController
+        
+        let keys = messagesDics.keys.sorted()
+        if let arr = messagesDics[keys[indexPath.row]] {
+            vc.messagesArr = arr
+            present(vc, animated: true, completion: nil)
         }
     }
 }
