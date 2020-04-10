@@ -147,7 +147,7 @@
 		6AC3706323F18B9B008EB52B /* 扫一扫.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扫一扫.png"; sourceTree = "<group>"; };
 		9BCAA83A8E22DCD848BAFD0B /* Pods-jediChat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jediChat.debug.xcconfig"; path = "Target Support Files/Pods-jediChat/Pods-jediChat.debug.xcconfig"; sourceTree = "<group>"; };
 		AC25F5B1AF1D4F0A713795E1 /* Pods-jediChat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jediChat.release.xcconfig"; path = "Target Support Files/Pods-jediChat/Pods-jediChat.release.xcconfig"; sourceTree = "<group>"; };
-		CDA465C1238145A4007D794C /* jediChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = jediChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDA465C1238145A4007D794C /* 相信.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "相信.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDA465C4238145A4007D794C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CDA465C6238145A4007D794C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		CDA465C8238145A4007D794C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -307,7 +307,7 @@
 		CDA465C2238145A4007D794C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CDA465C1238145A4007D794C /* jediChat.app */,
+				CDA465C1238145A4007D794C /* 相信.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -366,7 +366,7 @@
 			);
 			name = jediChat;
 			productName = "都信";
-			productReference = CDA465C1238145A4007D794C /* jediChat.app */;
+			productReference = CDA465C1238145A4007D794C /* 相信.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -681,7 +681,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jedi-Chat.--";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "相信";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -700,7 +700,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "jedi-Chat.--";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "相信";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
