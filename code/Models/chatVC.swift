@@ -14,6 +14,9 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var messageTV: UITextView!
     
+    @IBOutlet weak var tableView: UITableView!
+    
+    
     var originFrame:CGRect?
     
     var messagesArr:Array<NSDictionary> = []{
@@ -81,6 +84,9 @@ class ChatViewController: UIViewController {
         self.view.isUserInteractionEnabled = true
         
         originFrame = self.view.frame
+        
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -153,4 +159,50 @@ class ChatViewController: UIViewController {
         
     }
     
+}
+
+
+extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 70
+    }
+    
+    //设置列表有多少行
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return messagesArr.count
+    }
+    //设置每行数据的数据载体Cell视图
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
+        
+        let dic = messagesArr[indexPath.row]
+        if let messagedata = dic["messageData"] as? Data,
+            let messagestr = String(data: messagedata, encoding: .utf8){
+            cell.showlabel.text = messagestr
+        }
+        
+        return cell
+    }
+    
+    //设置列表的分区数
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    //设置索引栏标题
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return nil
+    }
+    //设置分区头部标题
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return nil
+    }
+    //这个方法将索引栏上的文字与具体的分区进行绑定
+    func tableView(_ tableView: UITableView, sectionForSectionIndexTitle title: String, at index: Int) -> Int {
+        return index
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+    }
 }
