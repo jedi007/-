@@ -620,6 +620,9 @@
                                         <leftBarButtonItems>
                                             <barButtonItem title="Item" image="chevron.left" catalog="system" id="axt-ed-gUf">
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <connections>
+                                                    <action selector="goBack:" destination="L1z-zO-T0D" id="cIs-Ut-OUJ"/>
+                                                </connections>
                                             </barButtonItem>
                                             <barButtonItem title="name" id="gkv-sf-WR3">
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

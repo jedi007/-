@@ -100,6 +100,11 @@ class ChatViewController: UIViewController {
         NotificationCenter.default.removeObserver(self)
     }
     
+    @IBAction func goBack(_ sender: UIBarButtonItem) {
+        print("go back clicked")
+        
+        dismiss(animated: true, completion: nil)
+    }
     
     
     @objc func backViewClick(){
