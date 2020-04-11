@@ -180,9 +180,10 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         
         let size = messagestr.count
         
-        var height:CGFloat = CGFloat(20+(1+size/15)*30)
+        var height:CGFloat = CGFloat(10+(1+size/20)*20)
         height = height<50 ? 50:height
         
+        print("height: \(height)")
         return height
     }
     
@@ -199,13 +200,9 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         let dic = messagesArr[indexPath.row]
         if let messagedata = dic["messageData"] as? Data,
             let messagestr = String(data: messagedata, encoding: .utf8){
-            //cell.showlabel.text = messagestr
-            //cell.showlabel.attributedText
+            cell.messageBV.setMessageStr(message: messagestr)
         }
         
-        //两行代码实现label自动换行
-        cell.showlabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.showlabel.numberOfLines = 0
         return cell
     }
     

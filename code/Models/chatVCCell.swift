@@ -9,7 +9,7 @@
 import UIKit
 
 class ChatVCCell: UITableViewCell {
-    @IBOutlet weak var showlabel: UILabel!
+    @IBOutlet weak var messageBV: ChatBubbleView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
