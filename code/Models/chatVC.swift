@@ -170,7 +170,7 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 170
     }
     
     //设置列表有多少行
@@ -188,6 +188,9 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
             cell.showlabel.text = messagestr
         }
         
+        //两行代码实现label自动换行
+        cell.showlabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell.showlabel.numberOfLines = 0
         return cell
     }
     
