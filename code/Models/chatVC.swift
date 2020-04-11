@@ -170,7 +170,20 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 170
+        print("return cell height")
+        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+        let dic = messagesArr[indexPath.row]
+        var messagestr = ""
+        if let messagedata = dic["messageData"] as? Data{
+            messagestr = String(data: messagedata, encoding: .utf8) ?? ""
+        }
+        
+        let size = messagestr.count
+        
+        var height:CGFloat = CGFloat(10+(1+size/20)*25)
+        height = height<50 ? 50:height
+        
+        return height
     }
     
     //设置列表有多少行
@@ -179,6 +192,7 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     }
     //设置每行数据的数据载体Cell视图
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        print("return cell view")
         print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
         
