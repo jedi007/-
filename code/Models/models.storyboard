@@ -656,11 +656,11 @@
                                                                 <constraint firstAttribute="width" constant="40" id="YUE-cZ-Jav"/>
                                                             </constraints>
                                                         </imageView>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-ZX-eEd">
-                                                            <rect key="frame" x="55" y="5" width="299" height="51"/>
+                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gLh-ZX-eEd" customClass="ChatBubbleView" customModule="相信" customModuleProvider="target">
+                                                            <rect key="frame" x="47" y="5" width="307" height="51"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="showlabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dTh-tZ-Yxo">
-                                                                    <rect key="frame" x="5" y="0.0" width="289" height="51"/>
+                                                                    <rect key="frame" x="11" y="0.0" width="291" height="51"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -668,7 +668,7 @@
                                                             </subviews>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             <constraints>
-                                                                <constraint firstItem="dTh-tZ-Yxo" firstAttribute="leading" secondItem="gLh-ZX-eEd" secondAttribute="leading" constant="5" id="HJU-uv-P48"/>
+                                                                <constraint firstItem="dTh-tZ-Yxo" firstAttribute="leading" secondItem="gLh-ZX-eEd" secondAttribute="leading" constant="11" id="HJU-uv-P48"/>
                                                                 <constraint firstItem="dTh-tZ-Yxo" firstAttribute="top" secondItem="gLh-ZX-eEd" secondAttribute="top" id="ds4-Gh-XcH"/>
                                                                 <constraint firstAttribute="bottom" secondItem="dTh-tZ-Yxo" secondAttribute="bottom" id="owK-Ko-Hxz"/>
                                                                 <constraint firstAttribute="trailing" secondItem="dTh-tZ-Yxo" secondAttribute="trailing" constant="5" id="xsu-qf-Qfg"/>
@@ -686,7 +686,7 @@
                                                         <constraint firstItem="gLh-ZX-eEd" firstAttribute="top" secondItem="fp5-HG-x7Y" secondAttribute="top" constant="5" id="PJ4-fv-0Ff"/>
                                                         <constraint firstItem="fwQ-fv-WyQ" firstAttribute="top" secondItem="fp5-HG-x7Y" secondAttribute="top" constant="5" id="m2v-RE-CRd"/>
                                                         <constraint firstAttribute="bottom" secondItem="gLh-ZX-eEd" secondAttribute="bottom" constant="5" id="spF-6N-QbP"/>
-                                                        <constraint firstItem="gLh-ZX-eEd" firstAttribute="leading" secondItem="fwQ-fv-WyQ" secondAttribute="trailing" constant="10" id="wQK-Rp-TQe"/>
+                                                        <constraint firstItem="gLh-ZX-eEd" firstAttribute="leading" secondItem="fwQ-fv-WyQ" secondAttribute="trailing" constant="2" id="wQK-Rp-TQe"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

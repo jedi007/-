@@ -180,7 +180,7 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         
         let size = messagestr.count
         
-        var height:CGFloat = CGFloat(10+(1+size/15)*25)
+        var height:CGFloat = CGFloat(20+(1+size/15)*30)
         height = height<50 ? 50:height
         
         return height
