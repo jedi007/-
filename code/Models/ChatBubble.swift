@@ -42,6 +42,14 @@ class ChatBubbleView: UIView {
         layer.path = path.cgPath
         
         self.layer.mask = layer
+        
+        let showlabel = UILabel(frame: CGRect(x: 11, y: 5, width: viewWidth-16, height: viewHeight-10))
+        showlabel.text = "tshahfjhasdfkljhajklsdhfkjladshflkhaskdjhfladshfjk321"
+        //两行代码实现label自动换行
+        showlabel.lineBreakMode = NSLineBreakMode.byWordWrapping
+        showlabel.numberOfLines = 0
+        
+        self.addSubview(showlabel)
     }
     
     override func draw(_ rect: CGRect) {

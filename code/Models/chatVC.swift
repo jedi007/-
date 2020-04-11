@@ -199,7 +199,8 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         let dic = messagesArr[indexPath.row]
         if let messagedata = dic["messageData"] as? Data,
             let messagestr = String(data: messagedata, encoding: .utf8){
-            cell.showlabel.text = messagestr
+            //cell.showlabel.text = messagestr
+            //cell.showlabel.attributedText
         }
         
         //两行代码实现label自动换行
