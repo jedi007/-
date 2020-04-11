@@ -20,6 +20,7 @@ class messagesViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none;//去掉Cell之间的间隔线
         
 //        self.tabBarItem.image = UIImage(named: "都信")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysTemplate)
 //        self.tabBarItem.selectedImage = UIImage(named: "都信")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)

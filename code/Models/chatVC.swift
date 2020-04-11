@@ -87,6 +87,7 @@ class ChatViewController: UIViewController {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none;//去掉Cell之间的间隔线
     }
     
     override func viewDidAppear(_ animated: Bool) {
