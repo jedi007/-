@@ -43,12 +43,16 @@ class mainTabBarController: UITabBarController {
                 if let messageType = dic["messageType"] as? String
                 {
                     switch messageType {
-                    case "friendsMessage":
-                        let messagesNVC = self.viewControllers?[0] as! UINavigationController
-                        let messagesVC = messagesNVC.viewControllers[0] as! messagesViewController
-                        messagesVC.onReceiveMessage(messageDic: dic)
-                    default:
-                        print("default")
+                        case "friendsMessage":
+                            if let vc = UIViewController.currentViewController() as? ChatViewController{
+                                vc.appendMessage(dic: dic)
+                            } else {
+                                let messagesNVC = self.viewControllers?[0] as! UINavigationController
+                                let messagesVC = messagesNVC.viewControllers[0] as! messagesViewController
+                                messagesVC.onReceiveMessage(messageDic: dic)
+                            }
+                        default:
+                            print("default")
                     }
                 }
             }

@@ -169,6 +169,10 @@ class ChatViewController: UIViewController {
         
     }
     
+    func appendMessage(dic:NSDictionary) -> Void {
+        messagesArr.append(dic)
+        tableView.reloadData()
+    }
 }
 
 
