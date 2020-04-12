@@ -689,7 +689,7 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lR0-9A-avx" customClass="MineChatBubbleView" customModule="相信" customModuleProvider="target">
                                                             <rect key="frame" x="60" y="5" width="307" height="63"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                            <color key="backgroundColor" red="0.61960784313725492" green="0.91764705882352937" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
                                                         </view>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="s7M-N7-Mgx">
                                                             <rect key="frame" x="369" y="5" width="40" height="40"/>
