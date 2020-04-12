@@ -158,11 +158,10 @@ class ChatViewController: UIViewController {
                 
                 print("send messageDicData")
                 
-                messagesArr.append(messageDic as NSDictionary)
+                appendMessage(dic: messageDic as NSDictionary)
                 
-                print(messagesArr)
-                
-                tableView.reloadData()
+                messageTV.text = ""
+                self.view.endEditing(true)
             }
             
         }
