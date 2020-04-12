@@ -178,22 +178,22 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         print("return cell height")
-        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         let dic = messagesArr[indexPath.row]
         var messagestr = ""
         if let messagedata = dic["messageData"] as? Data{
             messagestr = String(data: messagedata, encoding: .utf8) ?? ""
-            print("messagestr: \(messagestr)")
-            print("messagestr.count: \(messagestr.count)")
             
             let size = messagedata.count
-            print("size: \(size)")
             
-            var height:CGFloat = CGFloat(10+(1+size/20)*20)
+            var height = 10+(1+size/25)*25
+            
+            let returnCount = RegularTools.shared.RegularExpression(regex: "\n", validateString: messagestr).count
+            
+            height += returnCount*25
+            
             height = height<50 ? 50:height
             
-            print("height: \(height)")
-            return height
+            return CGFloat(height)
         }
         
         return 50

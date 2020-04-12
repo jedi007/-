@@ -6,6 +6,8 @@
 //  Copyright © 2020 李杰. All rights reserved.
 //
 
+import Foundation
+
 func judgeStringIncludeChineseWord(string: String) -> Bool {
     
     for (_, value) in string.enumerated() {
