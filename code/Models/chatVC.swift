@@ -22,16 +22,11 @@ class ChatViewController: UIViewController {
     var messagesArr:Array<NSDictionary> = []{
         didSet
         {
-            print("已经改变的时候");
-            print(messagesArr)
-            
-            for dic in messagesArr {
-                if let friendList = dic["friendList"] as? [FriendInfo]{
-                    print(friendList)
-                    currentFriendsList = friendList
-                }
+            print("messagesArr 被修改");
+            if let dic = messagesArr.last,
+               let friendList = dic["friendList"] as? [FriendInfo]{
+                currentFriendsList = friendList
             }
-            
         }
     }
     
@@ -128,6 +123,9 @@ class ChatViewController: UIViewController {
         if let messageData = messageTV.text.data(using: .utf8) {
             
             for finfo in currentFriendsList {
+                if finfo.telephone==mainUserInfo.telephone {
+                    continue
+                }
                 
                 var optionDic : [String: AnyObject] = [:]
                 optionDic["telephone"] = mainUserInfo.telephone as AnyObject?
@@ -159,6 +157,12 @@ class ChatViewController: UIViewController {
                 UdpManager.shared.sendData(data: sendData, toHost: httpManager.shared.serverIP, port: httpManager.shared.serverPort)
                 
                 print("send messageDicData")
+                
+                messagesArr.append(messageDic as NSDictionary)
+                
+                print(messagesArr)
+                
+                tableView.reloadData()
             }
             
         }
@@ -195,9 +199,21 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("return cell view")
         print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
         
         let dic = messagesArr[indexPath.row]
+        if dic["messageFrom"] as? String == mainUserInfo.telephone {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatVCellID", for: indexPath) as! MineChatVCCell
+            
+            if let messagedata = dic["messageData"] as? Data,
+                let messagestr = String(data: messagedata, encoding: .utf8){
+                cell.messageBV.setMessageStr(message: messagestr)
+            }
+            
+            return cell
+        }
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
+        
         if let messagedata = dic["messageData"] as? Data,
             let messagestr = String(data: messagedata, encoding: .utf8){
             cell.messageBV.setMessageStr(message: messagestr)
