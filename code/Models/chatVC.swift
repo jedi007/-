@@ -183,15 +183,20 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         var messagestr = ""
         if let messagedata = dic["messageData"] as? Data{
             messagestr = String(data: messagedata, encoding: .utf8) ?? ""
+            print("messagestr: \(messagestr)")
+            print("messagestr.count: \(messagestr.count)")
+            
+            let size = messagedata.count
+            print("size: \(size)")
+            
+            var height:CGFloat = CGFloat(10+(1+size/20)*20)
+            height = height<50 ? 50:height
+            
+            print("height: \(height)")
+            return height
         }
         
-        let size = messagestr.count
-        
-        var height:CGFloat = CGFloat(10+(1+size/20)*20)
-        height = height<50 ? 50:height
-        
-        print("height: \(height)")
-        return height
+        return 50
     }
     
     //设置列表有多少行
