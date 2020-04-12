@@ -191,6 +191,15 @@
 			path = "发现";
 			sourceTree = "<group>";
 		};
+		6A306B3B2442AD3900DB52CA /* chatVCCell */ = {
+			isa = PBXGroup;
+			children = (
+				6A4A53922440B45000F29021 /* chatVCCell.swift */,
+				6ACAAB922441AAC5000B8542 /* ChatBubble.swift */,
+			);
+			path = chatVCCell;
+			sourceTree = "<group>";
+		};
 		6A9D0B0D23EAEEC00078AA19 /* 我 */ = {
 			isa = PBXGroup;
 			children = (
@@ -252,6 +261,7 @@
 		6AC05DE123E30436009BD223 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				6A306B3B2442AD3900DB52CA /* chatVCCell */,
 				6AC05DE423E30700009BD223 /* httpManager.swift */,
 				6A0D2A2E23F8F72B00B2DFF8 /* models.storyboard */,
 				6A0D2A3023F8F78900B2DFF8 /* addFriendsViewController.swift */,
@@ -263,8 +273,6 @@
 				6A4C07DF240A2941006B679C /* NetworkManager.swift */,
 				6A34CEB6240FDA1A00CA408A /* udpManager.swift */,
 				6A387D9E243B301B002D0DCD /* messagesVCCell.swift */,
-				6A4A53922440B45000F29021 /* chatVCCell.swift */,
-				6ACAAB922441AAC5000B8542 /* ChatBubble.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
