@@ -687,25 +687,25 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="73"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="s7M-N7-Mgx">
-                                                            <rect key="frame" x="349" y="16" width="40" height="40"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="40" id="KWD-pS-rIc"/>
-                                                                <constraint firstAttribute="height" constant="40" id="frx-wZ-uEl"/>
-                                                            </constraints>
-                                                        </imageView>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lR0-9A-avx" customClass="MineChatBubbleView" customModule="相信" customModuleProvider="target">
-                                                            <rect key="frame" x="80" y="16" width="267" height="51"/>
+                                                            <rect key="frame" x="60" y="5" width="307" height="63"/>
                                                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                         </view>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="s7M-N7-Mgx">
+                                                            <rect key="frame" x="369" y="5" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="hjM-pn-Bh9"/>
+                                                                <constraint firstAttribute="width" constant="40" id="pbw-rC-J74"/>
+                                                            </constraints>
+                                                        </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="lR0-9A-avx" firstAttribute="bottom" secondItem="Cyz-XY-WMb" secondAttribute="bottomMargin" constant="5" id="5Sk-KG-nuq"/>
-                                                        <constraint firstItem="lR0-9A-avx" firstAttribute="leading" secondItem="Cyz-XY-WMb" secondAttribute="leadingMargin" constant="60" id="69Z-bd-lXe"/>
-                                                        <constraint firstItem="s7M-N7-Mgx" firstAttribute="leading" secondItem="lR0-9A-avx" secondAttribute="trailing" constant="2" id="YQX-7W-YZK"/>
-                                                        <constraint firstItem="lR0-9A-avx" firstAttribute="top" secondItem="Cyz-XY-WMb" secondAttribute="topMargin" constant="5" id="a4e-Ki-0Mo"/>
-                                                        <constraint firstAttribute="trailingMargin" secondItem="s7M-N7-Mgx" secondAttribute="trailing" constant="5" id="q7N-s1-Vpj"/>
-                                                        <constraint firstItem="s7M-N7-Mgx" firstAttribute="top" secondItem="Cyz-XY-WMb" secondAttribute="topMargin" constant="5" id="qko-6a-mFm"/>
+                                                        <constraint firstItem="lR0-9A-avx" firstAttribute="top" secondItem="Cyz-XY-WMb" secondAttribute="top" constant="5" id="3nV-VM-pL9"/>
+                                                        <constraint firstItem="s7M-N7-Mgx" firstAttribute="top" secondItem="lR0-9A-avx" secondAttribute="top" id="SUf-yP-4f7"/>
+                                                        <constraint firstAttribute="trailing" secondItem="lR0-9A-avx" secondAttribute="trailing" constant="47" id="hcS-d1-rmh"/>
+                                                        <constraint firstItem="s7M-N7-Mgx" firstAttribute="leading" secondItem="lR0-9A-avx" secondAttribute="trailing" constant="2" id="jFd-9b-0wd"/>
+                                                        <constraint firstAttribute="bottom" secondItem="lR0-9A-avx" secondAttribute="bottom" constant="5" id="naF-TC-TDU"/>
+                                                        <constraint firstItem="lR0-9A-avx" firstAttribute="leading" secondItem="Cyz-XY-WMb" secondAttribute="leading" constant="60" id="ntx-cN-5Vj"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

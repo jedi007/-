@@ -36,13 +36,15 @@ class MineChatBubbleView: UIView {
         print("MineChatBubbleView draw is called")
         viewWidth = CGFloat(self.frame.width)
         viewHeight = CGFloat(self.frame.height)
+        
+        print("viewHeight: \(viewHeight)")
 
         let path = UIBezierPath()
         
         let radius:CGFloat = 5
         
         //画圆角,clockwise: true 顺时针方向
-        path.addArc(withCenter: CGPoint(x: viewWidth!-6-radius, y: radius), radius: radius, startAngle: CGFloat(Double.pi)*1.5, endAngle: CGFloat(Double.pi), clockwise: true)
+        path.addArc(withCenter: CGPoint(x: viewWidth!-6-radius, y: radius), radius: radius, startAngle: CGFloat(Double.pi)*1.5, endAngle: 0, clockwise: true)
         
         //画气泡尖
         path.addLine(to: CGPoint(x:viewWidth!-6, y:14))
@@ -59,6 +61,12 @@ class MineChatBubbleView: UIView {
         path.addArc(withCenter: CGPoint(x: radius, y: radius), radius: radius, startAngle: CGFloat(Double.pi)*1.5, endAngle: 0, clockwise: true)
 
         path.addLine(to: CGPoint(x:viewWidth!-6-radius, y:0))
+        
+        UIColor.red.setFill()
+        UIColor.black.setStroke()
+
+        path.fill()
+        path.stroke()
         
 
         let layer = CAShapeLayer()
