@@ -57,6 +57,10 @@ class mainTabBarController: UITabBarController {
                 }
             }
         }
+    
+        if let bytes = MyFileManager.readBytesFromFile() {
+            messagesDics = NSKeyedUnarchiver.unarchiveObject(with: bytes) as? NSDictionary as! Dictionary<String, Array<NSDictionary>>
+        }
     }
     
 }

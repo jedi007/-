@@ -171,6 +171,9 @@ class ChatViewController: UIViewController {
     func appendMessage(dic:NSDictionary) -> Void {
         messagesDics[messageID]?.append(dic as NSDictionary)
         tableView.reloadData()
+        
+        let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messagesDics as NSDictionary)
+        MyFileManager.saveBytesToFile(bytes: messageDicData)
     }
 }
 
