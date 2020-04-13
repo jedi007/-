@@ -7,9 +7,9 @@
 //
 import UIKit
 
+var messagesDics:Dictionary<String, Array<NSDictionary>> = [:]
+
 class messagesViewController: UIViewController {
-    
-    var messagesDics:Dictionary<String, Array<NSDictionary>> = [:]
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -127,7 +127,7 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
         
         let keys = messagesDics.keys.sorted()
         if let arr = messagesDics[keys[indexPath.row]] {
-            vc.messagesArr = arr
+            vc.messageID = arr.last?["messageID"] as? String
             present(vc, animated: true, completion: nil)
         }
     }

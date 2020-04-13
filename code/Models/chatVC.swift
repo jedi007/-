@@ -19,19 +19,17 @@ class ChatViewController: UIViewController {
     
     var originFrame:CGRect?
     
-    var messagesArr:Array<NSDictionary> = []{
+    var currentFriendsList:[FriendInfo] = []
+    var messageID:String!{
         didSet
         {
-            print("messagesArr 被修改");
-            if let dic = messagesArr.last,
+            print("set messageID to : \(messageID)")
+            if let dic = messagesDics[messageID]?.last,
                let friendList = dic["friendList"] as? [FriendInfo]{
                 currentFriendsList = friendList
             }
         }
     }
-    
-    var currentFriendsList:[FriendInfo] = []
-    var messageID:String!
     var messageName:String!
     
     
@@ -68,7 +66,9 @@ class ChatViewController: UIViewController {
         }
         
         let randomNumber = arc4random() % 100000
-        messageID = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")+"+\(randomNumber)"
+        if messageID == nil {
+            messageID = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")+"+\(randomNumber)"
+        }
         print("messageID: \(messageID)")
         
         print("the friend IP is : \(currentFriendsList[0].publicIP!)")
@@ -169,7 +169,7 @@ class ChatViewController: UIViewController {
     }
     
     func appendMessage(dic:NSDictionary) -> Void {
-        messagesArr.append(dic)
+        messagesDics[messageID]?.append(dic as NSDictionary)
         tableView.reloadData()
     }
 }
@@ -178,9 +178,9 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         print("return cell height")
-        let dic = messagesArr[indexPath.row]
         var messagestr = ""
-        if let messagedata = dic["messageData"] as? Data{
+        if let dic = messagesDics[messageID]?[indexPath.row],
+           let messagedata = dic["messageData"] as? Data{
             messagestr = String(data: messagedata, encoding: .utf8) ?? ""
             
             let size = messagedata.count
@@ -201,18 +201,18 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     
     //设置列表有多少行
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messagesArr.count
+        return messagesDics[messageID]?.count ?? 0
     }
     //设置每行数据的数据载体Cell视图
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         print("return cell view")
         print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         
-        let dic = messagesArr[indexPath.row]
-        if dic["messageFrom"] as? String == mainUserInfo.telephone {
+        let dic = messagesDics[messageID]?[indexPath.row]
+        if dic?["messageFrom"] as? String == mainUserInfo.telephone {
             let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatVCellID", for: indexPath) as! MineChatVCCell
             
-            if let messagedata = dic["messageData"] as? Data,
+            if let messagedata = dic?["messageData"] as? Data,
                 let messagestr = String(data: messagedata, encoding: .utf8){
                 cell.messageBV.setMessageStr(message: messagestr)
             }
@@ -222,7 +222,7 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
         
-        if let messagedata = dic["messageData"] as? Data,
+        if let messagedata = dic?["messageData"] as? Data,
             let messagestr = String(data: messagedata, encoding: .utf8){
             cell.messageBV.setMessageStr(message: messagestr)
         }
