@@ -12,7 +12,7 @@ class MyFileManager {
     static func saveBytesToFile(bytes:Data,fileName:String = "AllMessages.dat") -> Void {
         let fileManager = FileManager.default
         let file = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
-        let path = file! + fileName
+        let path = file! + "/"+fileName
 
         fileManager.createFile(atPath: path, contents:nil, attributes:nil)
 
@@ -23,7 +23,7 @@ class MyFileManager {
     static func readBytesFromFile(fileName:String = "AllMessages.dat")->Data? {
         let fileManager = FileManager.default
         let file = NSSearchPathForDirectoriesInDomains(FileManager.SearchPathDirectory.documentDirectory, FileManager.SearchPathDomainMask.userDomainMask, true).first
-        let path = file! + fileName
+        let path = file! + "/"+fileName
     
         if let url = URL.init(string: path) {
             if fileManager.fileExists(atPath: url.path) {
