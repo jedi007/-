@@ -55,8 +55,7 @@ class messagesViewController: UIViewController {
                 messagesDics[messageID] = [mdic as NSDictionary]
             }
             
-            let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messagesDics as NSDictionary)
-            MyFileManager.saveBytesToFile(bytes: messageDicData)
+            MyFileManager.saveMessagesDic()
             
             tableView.reloadData()
         }

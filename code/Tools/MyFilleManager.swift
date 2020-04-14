@@ -35,40 +35,11 @@ class MyFileManager {
         return nil
     }
     
-    func readPathLossFile(_ path: String) -> [[Substring]]? {
-        let fileManager = FileManager.default
-        if let url = URL.init(string: path) {
-            if fileManager.fileExists(atPath: url.path) {
-                let txtData = fileManager.contents(atPath: url.path)
-                var dataArray:[[Substring]] = []
-                if txtData == nil {
-                    return nil
-                }
-                let readString = String(data: txtData!, encoding: String.Encoding.utf8)
-                print("readString: \(String(describing: readString))")
-                if readString!.contains("\r\n") {
-                    let dataOfRowArray = readString?.split(separator: "\r\n")
-                    for (_,rowString) in dataOfRowArray!.enumerated() {
-                        let rowArray = rowString.split(separator: ",")
-                        if rowArray.count > 0 {
-                            dataArray.append(rowArray)
-                        }
-                    }
-                } else {
-                    let dataOfRowArray = readString?.split(separator: "\r")
-                    for (_,rowString) in dataOfRowArray!.enumerated() {
-                        let rowArray = rowString.split(separator: ",")
-                        if rowArray.count > 0 {
-                            dataArray.append(rowArray)
-                        }
-                    }
-                }
-                return dataArray
-            }else {
-                print("Path loss file is not exists")
-                return nil
-            }
+    static func saveMessagesDic() -> Void {
+        let queue = DispatchQueue(label: "saveMessagesDic")
+        queue.async {  //异步方法不阻塞UI
+            let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messagesDics as NSDictionary)
+            MyFileManager.saveBytesToFile(bytes: messageDicData)
         }
-        return []
     }
 }
