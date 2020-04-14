@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -102,7 +102,7 @@
         <!--Login View Controller-->
         <scene sceneID="Xab-Dr-ZB1">
             <objects>
-                <viewController id="hYN-bF-2SZ" customClass="loginViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hYN-bF-2SZ" customClass="loginViewController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fva-cO-0OM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -248,7 +248,7 @@
         <!--通讯录-->
         <scene sceneID="Lrj-Oj-7tX">
             <objects>
-                <viewController id="cVp-5X-MfQ" customClass="addressBookViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cVp-5X-MfQ" customClass="addressBookViewController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vIp-RD-aUc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +276,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressBookCell" id="hAI-Z7-LJ6" customClass="AddressBookCell" customModule="jediChat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddressBookCell" id="hAI-Z7-LJ6" customClass="AddressBookCell" customModule="相信" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hAI-Z7-LJ6" id="8fn-ec-i1m">
@@ -339,7 +339,7 @@
         <!--发现-->
         <scene sceneID="ofU-w4-DHZ">
             <objects>
-                <viewController id="gUo-WH-GLL" customClass="discoverViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gUo-WH-GLL" customClass="discoverViewController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Fag-qO-J40">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -843,7 +843,7 @@
         <!--jediChat-->
         <scene sceneID="lqs-e3-TwV">
             <objects>
-                <viewController id="eAY-N5-CM9" customClass="messagesViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eAY-N5-CM9" customClass="messagesViewController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9n8-rC-oFB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -852,7 +852,7 @@
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessagesCell" rowHeight="87" id="0Ui-u6-bmd" customClass="MessagesCell" customModule="jediChat" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessagesCell" rowHeight="87" id="0Ui-u6-bmd" customClass="MessagesCell" customModule="相信" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0Ui-u6-bmd" id="O39-uY-jLc">
@@ -876,20 +876,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtf-nJ-he4">
-                                                    <rect key="frame" x="80" y="43.5" width="37.5" height="25"/>
+                                                    <rect key="frame" x="80" y="43.5" width="35.5" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="rAX-bH-yf3"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lastMessageTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SUA-up-Rgc">
-                                                    <rect key="frame" x="287" y="21" width="119" height="25"/>
+                                                    <rect key="frame" x="308.5" y="21" width="97.5" height="25"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="25" id="Wlp-aR-abS"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -960,7 +960,7 @@
         <!--Main Tab Bar Controller-->
         <scene sceneID="ETV-Wc-WsI">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabBarController" id="s5b-d3-9kb" customClass="mainTabBarController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarController" id="s5b-d3-9kb" customClass="mainTabBarController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="26Y-Sf-NCR"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TKU-qz-pkh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -983,7 +983,7 @@
         <!--我-->
         <scene sceneID="OOy-SU-4hl">
             <objects>
-                <viewController id="Q7F-N8-IFk" customClass="mineSspaceViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Q7F-N8-IFk" customClass="mineSspaceViewController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CpE-Uu-V47">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1322,7 +1322,7 @@
         <!--Reister View Controller-->
         <scene sceneID="j0P-vq-cU6">
             <objects>
-                <viewController id="zfK-RM-kev" customClass="reisterViewController" customModule="jediChat" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zfK-RM-kev" customClass="reisterViewController" customModule="相信" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="h5g-aT-PcZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -26,6 +26,10 @@ class messagesViewController: UIViewController {
 //        self.tabBarItem.selectedImage = UIImage(named: "都信")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
     func onReceiveMessage(messageDic:NSDictionary) -> Void {
         print("messagesViewController receive messageDic: \(messageDic)")
         print("messagesViewController receive messageDic: \(messageDic["messageType"] as? String)")
@@ -46,12 +50,13 @@ class messagesViewController: UIViewController {
             mdic["receiveDate"] = dateNow
             
             if (messagesDics.keys.contains(messageID)) {
-                print("has key: \(messageID)")
                 messagesDics[messageID]?.append(mdic as NSDictionary)
             } else {
-                print("didn't has key: \(messageID)")
                 messagesDics[messageID] = [mdic as NSDictionary]
             }
+            
+            let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messagesDics as NSDictionary)
+            MyFileManager.saveBytesToFile(bytes: messageDicData)
             
             tableView.reloadData()
         }
@@ -89,13 +94,17 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
             }
             
             if let mdata = dic["messageData"] as? Data,
-               let messageDataType = dic["messageDataType"] as? String,
-               let receiveDate = dic["receiveDate"] as? String
+               let messageDataType = dic["messageDataType"] as? String
             {
                 if messageDataType == "String" {
                     cell.abstract.text = String(data: mdata, encoding: .utf8)
                 }
-                cell.lastMessageTime.text = receiveDate
+                
+                if let receiveDate = dic["receiveDate"] as? String {
+                    cell.lastMessageTime.text = receiveDate
+                } else {
+                    cell.lastMessageTime.text = "waiting for message"
+                }
             }
         }
         

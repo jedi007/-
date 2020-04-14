@@ -169,12 +169,12 @@ class ChatViewController: UIViewController {
     }
     
     func appendMessage(dic:NSDictionary) -> Void {
-        if messagesDics[messageID] == nil {
-            let dicarr:Array<NSDictionary> = [dic as NSDictionary]
-            messagesDics[messageID] = dicarr
+        if (messagesDics.keys.contains(messageID)) {
+            messagesDics[messageID]?.append(dic as NSDictionary)
         } else {
-            messagesDics[messageID]!.append(dic as NSDictionary)
+            messagesDics[messageID] = [dic as NSDictionary]
         }
+        
         tableView.reloadData()
         
         let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messagesDics as NSDictionary)
