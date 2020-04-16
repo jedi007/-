@@ -41,19 +41,13 @@ class ChatViewController: UIViewController {
             for fInfo in currentFriendsList {
                 if fInfo.telephone != mainUserInfo.telephone {
                     nameLabel.title = fInfo.name
-                    messageName = fInfo.telephone
+                    messageName = fInfo.name
                 }
             }
         } else {
-            var title:String = ""
-            for fInfo in currentFriendsList {
-                if fInfo.telephone == mainUserInfo.telephone {
-                    continue
-                }
-                title = title + "," + (fInfo.name ?? "")
-            }
-            nameLabel.title = title
-            messageName = title
+            print("more than 2 friends's message")
+            nameLabel.title = "多人聊天，还未设置"
+            messageName = "多人聊天，还未设置"
         }
         
         if currentFriendsList.count == 1 {
@@ -65,11 +59,12 @@ class ChatViewController: UIViewController {
             currentFriendsList.append(meInfo)
         }
         
-        let randomNumber = arc4random() % 100000
         if messageID == nil {
-            messageID = DateTools.shared.dateConvertString(date: Date(), dateFormat: "yyyy-MM-dd HH:mm:ss")+"+\(randomNumber)"
+            currentFriendsList.sort(by: { (f2:FriendInfo,f1:FriendInfo) ->Bool in  //f2是后面的那个元素currentFriendsList[1]，f2是前面的那个元素currentFriendsList[0]。是反序
+                return f2.telephone! < f1.telephone!;
+            })
+            messageID = "\(currentFriendsList[0].telephone!)-\(currentFriendsList[1].telephone!)".md5
         }
-        print("messageID: \(messageID)")
         
         print("the friend IP is : \(currentFriendsList[0].publicIP!)")
         
