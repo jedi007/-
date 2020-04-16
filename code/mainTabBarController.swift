@@ -44,7 +44,8 @@ class mainTabBarController: UITabBarController {
                 {
                     switch messageType {
                         case "friendsMessage":
-                            if let vc = UIViewController.currentViewController() as? ChatViewController{
+                            if let vc = UIViewController.currentViewController() as? ChatViewController,
+                               vc.messageID == dic["messageID"] as? String{
                                 vc.appendMessage(dic: dic)
                             } else {
                                 let messagesNVC = self.viewControllers?[0] as! UINavigationController
