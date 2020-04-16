@@ -82,14 +82,13 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
         let keys = messagesDics.keys.sorted()
         
         if let dic = messagesDics[keys[indexPath.row]]?.last {
-            let fromTelephone = dic["messageFrom"] as! String
-            
-            for friendinfo in friendsList {
-                if friendinfo.telephone == fromTelephone {
-                    print("find the from friend")
-                    cell.messageName.text = friendinfo.name
-                    break
-                }
+            let messageFriendlist = dic["friendList"] as! [FriendInfo]
+            if messageFriendlist.count == 2 {
+                let index = messageFriendlist[0].telephone != mainUserInfo.telephone ? 0 : 1
+                cell.messageName.text = messageFriendlist[index].name
+            } else {
+                cell.messageName.text = "3人会话还未做处理"
+                return cell
             }
             
             if let mdata = dic["messageData"] as? Data,
