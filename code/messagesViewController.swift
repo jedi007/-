@@ -59,8 +59,6 @@ class messagesViewController: UIViewController {
             
             tableView.reloadData()
         }
-        
-        
     }
 }
 

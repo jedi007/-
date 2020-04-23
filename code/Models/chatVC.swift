@@ -172,6 +172,19 @@ class ChatViewController: UIViewController {
         
         tableView.reloadData()
         
+        DispatchQueue.main.async{
+            self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
+        }
+        
+        print("\n\n\n\n\n ============== messagesDics:")
+        for i in (0..<messagesDics[messageID]!.count) {
+             if let dic = messagesDics[messageID]?[i],
+                let messagedata = dic["messageData"] as? Data{
+                    let messagestr = String(data: messagedata, encoding: .utf8) ?? ""
+                    print("message\(i): \(messagestr)")
+            }
+        }
+        
         MyFileManager.saveMessagesDic()
     }
 }
@@ -180,10 +193,12 @@ class ChatViewController: UIViewController {
 extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         print("return cell height")
+        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         var messagestr = ""
         if let dic = messagesDics[messageID]?[indexPath.row],
            let messagedata = dic["messageData"] as? Data{
             messagestr = String(data: messagedata, encoding: .utf8) ?? ""
+            print("messagestr: \(messagestr)")
             
             let size = messagedata.count
             
@@ -216,6 +231,7 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
             
             if let messagedata = dic?["messageData"] as? Data,
                 let messagestr = String(data: messagedata, encoding: .utf8){
+                print("messagestr: \(messagestr)")
                 cell.messageBV.setMessageStr(message: messagestr)
             }
             
@@ -226,6 +242,7 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         
         if let messagedata = dic?["messageData"] as? Data,
             let messagestr = String(data: messagedata, encoding: .utf8){
+            print("messagestr: \(messagestr)")
             cell.messageBV.setMessageStr(message: messagestr)
         }
         
@@ -250,6 +267,12 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+        print("in didSelectRowAt indexPath indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
     }
+    
+//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+//        print("in  willDisplay cell indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+//    }
+    
+    
 }
