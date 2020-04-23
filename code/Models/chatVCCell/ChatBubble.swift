@@ -13,6 +13,7 @@ class ChatBubbleView: UIView {
     var viewWidth:CGFloat?
     var viewHeight:CGFloat?
     var messageStr:String?
+    var showlabel:UILabel?
     
     public override init(frame: CGRect)
     {
@@ -28,6 +29,7 @@ class ChatBubbleView: UIView {
     
     func setMessageStr(message:String) -> Void {
         messageStr = message
+        setNeedsDisplay()
     }
     
     override func draw(_ rect: CGRect) {
@@ -74,14 +76,17 @@ class ChatBubbleView: UIView {
         
         self.layer.mask = layer
         
-        let showlabel = UILabel(frame: CGRect(x: 6+radius, y: radius, width: viewWidth!-16, height: viewHeight!-10))
-        showlabel.text = messageStr
+        if showlabel != nil {
+            showlabel!.removeFromSuperview()
+        }
+        showlabel = UILabel(frame: CGRect(x: 6+radius, y: radius, width: viewWidth!-16, height: viewHeight!-10))
+        showlabel!.text = messageStr
         
         //两行代码实现label自动换行
-        showlabel.lineBreakMode = NSLineBreakMode.byWordWrapping
-        showlabel.numberOfLines = 0
+        showlabel!.lineBreakMode = NSLineBreakMode.byWordWrapping
+        showlabel!.numberOfLines = 0
         
-        self.addSubview(showlabel)
+        self.addSubview(showlabel!)
     }
     
 }
