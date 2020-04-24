@@ -23,7 +23,7 @@ class MineChatBubbleView: UIView {
 
     public required init?(coder: NSCoder){
         super.init(coder: coder)
-        print("MineChatBubbleView init with coder called")
+        //print("MineChatBubbleView init with coder called")
         
     }
     
@@ -35,11 +35,9 @@ class MineChatBubbleView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        print("MineChatBubbleView draw is called")
+        //print("MineChatBubbleView draw is called")
         viewWidth = CGFloat(self.frame.width)
         viewHeight = CGFloat(self.frame.height)
-        
-        print("viewHeight: \(viewHeight)")
 
         let path = UIBezierPath()
         

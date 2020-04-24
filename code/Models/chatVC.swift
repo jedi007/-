@@ -106,11 +106,11 @@ class ChatViewController: UIViewController {
         let info = notification.userInfo!
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
         
-        view.frame.origin.y = -(keyboardFrame?.size.height)!
+        self.view.frame.origin.y = -(keyboardFrame?.size.height)!
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        view.frame = originFrame!
+        self.view.frame = originFrame!
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
@@ -137,12 +137,8 @@ class ChatViewController: UIViewController {
                 messageDic["messageData"] = messageData as AnyObject?
                 messageDic["friendList"] = currentFriendsList as AnyObject?
                 
-                print("messageDic: \(messageDic)")
-                
-                //let messageDicData = try! JSONSerialization.data(withJSONObject: messageDic, options: .prettyPrinted)
                 let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messageDic as NSDictionary)
-                //let messageDicData = NSKeyedArchiver.archivedData(withRootObject: <#T##Any#>, requiringSecureCoding: <#T##Bool#>)
-                print("messageDicData: \(messageDicData)")
+                //print("messageDicData: \(messageDicData)")
                 
                 //let dic = NSKeyedUnarchiver.unarchiveObject(with: messageDicData) as! NSDictionary
                 //print("unarchiveObject messageDic: \(dic)")
@@ -150,8 +146,6 @@ class ChatViewController: UIViewController {
                 let sendData = "\(convertStr)####DATA####".data(using: .utf8)! + messageDicData
                 
                 UdpManager.shared.sendData(data: sendData, toHost: httpManager.shared.serverIP, port: httpManager.shared.serverPort)
-                
-                print("send messageDicData")
                 
                 appendMessage(dic: messageDic as NSDictionary)
                 
@@ -176,14 +170,14 @@ class ChatViewController: UIViewController {
             self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
         }
         
-        print("\n\n\n\n\n ============== messagesDics:")
-        for i in (0..<messagesDics[messageID]!.count) {
-             if let dic = messagesDics[messageID]?[i],
-                let messagedata = dic["messageData"] as? Data{
-                    let messagestr = String(data: messagedata, encoding: .utf8) ?? ""
-                    print("message\(i): \(messagestr)")
-            }
-        }
+//        print("\n\n\n\n\n ============== messagesDics:")
+//        for i in (0..<messagesDics[messageID]!.count) {
+//             if let dic = messagesDics[messageID]?[i],
+//                let messagedata = dic["messageData"] as? Data{
+//                    let messagestr = String(data: messagedata, encoding: .utf8) ?? ""
+//                    print("message\(i): \(messagestr)")
+//            }
+//        }
         
         MyFileManager.saveMessagesDic()
     }
@@ -192,13 +186,12 @@ class ChatViewController: UIViewController {
 
 extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        print("return cell height")
-        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+        //print("return cell height")
+        //print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         var messagestr = ""
         if let dic = messagesDics[messageID]?[indexPath.row],
            let messagedata = dic["messageData"] as? Data{
             messagestr = String(data: messagedata, encoding: .utf8) ?? ""
-            print("messagestr: \(messagestr)")
             
             let size = messagedata.count
             
@@ -222,8 +215,8 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
     }
     //设置每行数据的数据载体Cell视图
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("return cell view")
-        print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
+        //print("return cell view")
+        //print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         
         let dic = messagesDics[messageID]?[indexPath.row]
         if dic?["messageFrom"] as? String == mainUserInfo.telephone {
@@ -231,7 +224,6 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
             
             if let messagedata = dic?["messageData"] as? Data,
                 let messagestr = String(data: messagedata, encoding: .utf8){
-                print("messagestr: \(messagestr)")
                 cell.messageBV.setMessageStr(message: messagestr)
             }
             
@@ -242,7 +234,6 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         
         if let messagedata = dic?["messageData"] as? Data,
             let messagestr = String(data: messagedata, encoding: .utf8){
-            print("messagestr: \(messagestr)")
             cell.messageBV.setMessageStr(message: messagestr)
         }
         

@@ -23,7 +23,7 @@ class MessagesCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        print("messagesCell awakeFromNib")
+        //print("messagesCell awakeFromNib")
         
         //nameLabel.adjustsFontForContentSizeCategory = true
     }

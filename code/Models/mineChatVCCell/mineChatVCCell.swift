@@ -20,7 +20,7 @@ class MineChatVCCell: UITableViewCell {
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         //fatalError("init(coder:) has not been implemented")
-        print("ChatVCCell init called with coder")
+        //print("ChatVCCell init called with coder")
         
     }
     
@@ -28,7 +28,7 @@ class MineChatVCCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        print("messagesCell awakeFromNib")
+        //print("messagesCell awakeFromNib")
         
         //nameLabel.adjustsFontForContentSizeCategory = true
     }

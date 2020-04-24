@@ -23,7 +23,7 @@ class ChatBubbleView: UIView {
 
     public required init?(coder: NSCoder){
         super.init(coder: coder)
-        print("ChatBubbleView init with coder called")
+        //print("ChatBubbleView init with coder called")
         
     }
     
@@ -35,7 +35,7 @@ class ChatBubbleView: UIView {
     override func draw(_ rect: CGRect) {
         super.draw(rect)
         
-        print("ChatBubbleView draw is called")
+        //print("ChatBubbleView draw is called")
         viewWidth = CGFloat(self.frame.width)
         viewHeight = CGFloat(self.frame.height)
 
