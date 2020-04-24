@@ -17,6 +17,8 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
+    
+    
     var originFrame:CGRect?
     
     var currentFriendsList:[FriendInfo] = []
@@ -104,13 +106,23 @@ class ChatViewController: UIViewController {
     
     @objc private func keyboardWillShow(notification: NSNotification) {
         let info = notification.userInfo!
+        let duration = info[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
         
-        self.view.frame.origin.y = -(keyboardFrame?.size.height)!
+        //self.view.frame.origin.y = -(keyboardFrame?.size.height)!
+        UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
+            self.view.frame.size.height -= (keyboardFrame?.size.height)!
+        }, completion: { (flg) -> Void in
+            self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
+        })
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        self.view.frame = originFrame!
+        UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
+            self.view.frame = self.originFrame!
+        }, completion: { (flg) -> Void in
+            self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
+        })
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
