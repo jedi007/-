@@ -615,7 +615,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BlE-CJ-N66">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.92156862745098034" green="0.92156862745098034" blue="0.92156862745098034" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <items>
                                     <navigationItem id="wvW-Ol-gb9">
@@ -792,6 +792,7 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="modalPresentationStyle" value="fullscreen"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="contentView" destination="fHi-ya-yZ7" id="2Jw-If-8Da"/>
                         <outlet property="messageTV" destination="oUK-Hg-kGf" id="79i-nA-Hip"/>
                         <outlet property="nameLabel" destination="gkv-sf-WR3" id="JHH-we-lk6"/>
                         <outlet property="tableView" destination="zOr-xA-asm" id="L5m-Gw-Efc"/>

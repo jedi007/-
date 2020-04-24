@@ -16,10 +16,8 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var contentView: UIView!
     
-    
-    
-    var originFrame:CGRect?
     
     var currentFriendsList:[FriendInfo] = []
     var messageID:String!{
@@ -75,12 +73,17 @@ class ChatViewController: UIViewController {
         self.view.addGestureRecognizer(viewSingleTapGesture)
         self.view.isUserInteractionEnabled = true
         
-        originFrame = self.view.frame
-        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none;//去掉Cell之间的间隔线
+    
+        self.view.sendSubviewToBack(contentView)
+        let statusBarFram = UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame;
+        let statusBarView = UIView(frame: statusBarFram!)
+        statusBarView.backgroundColor = UIColor.hexColor(hex: "EBEBEB")
+        self.view.addSubview(statusBarView)
     }
+    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -111,17 +114,22 @@ class ChatViewController: UIViewController {
         
         //self.view.frame.origin.y = -(keyboardFrame?.size.height)!
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
-            self.view.frame.size.height -= (keyboardFrame?.size.height)!
+            //self.view.frame.size.height -= (keyboardFrame?.size.height)!
+            self.contentView.frame.origin.y -= (keyboardFrame?.size.height)!
         }, completion: { (flg) -> Void in
-            self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
+            //self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
         })
     }
     
     @objc private func keyboardWillHide(notification: NSNotification) {
-        UIView.animate(withDuration: 0.5, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
-            self.view.frame = self.originFrame!
+        let info = notification.userInfo!
+        let duration = info[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
+        let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
+        
+        UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
+            self.contentView.frame.origin.y += (keyboardFrame?.size.height)!
         }, completion: { (flg) -> Void in
-            self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
+            //self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
         })
     }
     
