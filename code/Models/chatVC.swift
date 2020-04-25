@@ -94,6 +94,10 @@ class ChatViewController: UIViewController {
         self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: false)
+    }
+    
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self)
     }

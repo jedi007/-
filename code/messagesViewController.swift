@@ -129,6 +129,7 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
         
         let sb = UIStoryboard(name: "models", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "ChatVCID") as! ChatViewController
+        vc.modalTransitionStyle = .flipHorizontal
         
         let keys = messagesDics.keys.sorted()
         if let arr = messagesDics[keys[indexPath.row]] {
