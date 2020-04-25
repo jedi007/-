@@ -729,14 +729,17 @@
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                                 </state>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CY9-Km-2zw">
-                                                <rect key="frame" x="363" y="0.0" width="31" height="40"/>
-                                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CY9-Km-2zw">
+                                                <rect key="frame" x="362" y="0.0" width="32" height="40"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="FCS-Zg-8aA"/>
+                                                    <constraint firstAttribute="width" constant="32" id="qfJ-An-ak5"/>
                                                 </constraints>
-                                                <state key="normal" title="发送">
+                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" image="plus.circle" catalog="system">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -748,7 +751,7 @@
                                                 </connections>
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="oUK-Hg-kGf">
-                                                <rect key="frame" x="50" y="0.0" width="253" height="40"/>
+                                                <rect key="frame" x="50" y="0.0" width="252" height="40"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="WN8-64-7iu"/>
@@ -763,13 +766,13 @@
                                                 </userDefinedRuntimeAttributes>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VJ-m4-wHI">
-                                                <rect key="frame" x="313" y="0.0" width="40" height="40"/>
+                                                <rect key="frame" x="312" y="0.0" width="40" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="7uQ-FC-hTV"/>
                                                     <constraint firstAttribute="width" constant="40" id="hdB-4Y-E3X"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <state key="normal" title="Button" image="smiley" catalog="system">
+                                                <state key="normal" image="smiley" catalog="system">
                                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="medium"/>
                                                 </state>
                                             </button>
@@ -822,6 +825,7 @@
                         <outlet property="messageTV" destination="oUK-Hg-kGf" id="79i-nA-Hip"/>
                         <outlet property="nameLabel" destination="gkv-sf-WR3" id="JHH-we-lk6"/>
                         <outlet property="sendMessageBtn" destination="CY9-Km-2zw" id="kad-mp-hp3"/>
+                        <outlet property="sendMessageBtnW" destination="qfJ-An-ak5" id="NPh-yR-wpm"/>
                         <outlet property="tableView" destination="zOr-xA-asm" id="L5m-Gw-Efc"/>
                     </connections>
                 </viewController>
@@ -835,6 +839,7 @@
         <image name="chevron.left" catalog="system" width="48" height="64"/>
         <image name="chevron.right" catalog="system" width="48" height="64"/>
         <image name="message" catalog="system" width="64" height="56"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
         <image name="qrcode" catalog="system" width="64" height="56"/>
         <image name="smiley" catalog="system" width="64" height="60"/>
         <image name="video" catalog="system" width="64" height="40"/>
