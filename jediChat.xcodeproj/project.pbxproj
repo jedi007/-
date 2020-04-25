@@ -34,6 +34,7 @@
 		6A4C07E0240A2941006B679C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C07DF240A2941006B679C /* NetworkManager.swift */; };
 		6A7272C0243CAD9F00FB4F61 /* SaveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */; };
 		6A7E68CF24542586006002B5 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7E68CE24542586006002B5 /* plus.png */; };
+		6A7E68D124544009006002B5 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7E68D024544009006002B5 /* smile.png */; };
 		6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */; };
 		6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */; };
 		6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D223E6B19900CC4C58 /* 返回.png */; };
@@ -114,6 +115,7 @@
 		6A4C07DF240A2941006B679C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfo.swift; sourceTree = "<group>"; };
 		6A7E68CE24542586006002B5 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
+		6A7E68D024544009006002B5 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
 		6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D223E6B19900CC4C58 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 		6AC05DD823E2DD56009BD223 /* 图标 */ = {
 			isa = PBXGroup;
 			children = (
+				6A7E68D024544009006002B5 /* smile.png */,
 				6A7E68CE24542586006002B5 /* plus.png */,
 				6A9D0AFD23EAAB380078AA19 /* 都信.png */,
 				6A9D0AFE23EAAB390078AA19 /* 发现.png */,
@@ -448,6 +451,7 @@
 				CDA465D1238145A5007D794C /* LaunchScreen.storyboard in Resources */,
 				6ABBFE3523EBE04C008E6C97 /* 收藏.png in Resources */,
 				6A20217523EE97D0002D2DFB /* 小程序.png in Resources */,
+				6A7E68D124544009006002B5 /* smile.png in Resources */,
 				6AC05DDE23E2DD7C009BD223 /* RadioButton-checked.jpg in Resources */,
 				CDA465CE238145A5007D794C /* Assets.xcassets in Resources */,
 				6ABBFE4523EC1FAC008E6C97 /* 标签.png in Resources */,

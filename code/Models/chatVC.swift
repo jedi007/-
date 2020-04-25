@@ -100,7 +100,8 @@ class ChatViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: false)
         
-        sendMessageBtn.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+        sendMessageBtn.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 28,height: 28))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+        emojiBtn.setImage(UIImage(named: "smile")?.reSizeImage(reSize: CGSize(width: 40,height: 40))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -147,7 +148,6 @@ class ChatViewController: UIViewController {
         
         if sender.tag == 1 {
             sender.tag = 0
-            print("step==========1")
             UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
                 self.sendMessageBtnW.constant = 32
                 self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width+28, height: self.messageTV.frame.height)
@@ -156,13 +156,12 @@ class ChatViewController: UIViewController {
                 
                 sender.setTitle("", for: .normal)
                 sender.backgroundColor = UIColor.clear
-                sender.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+                sender.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 28,height: 28))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
             }, completion: { (flg) -> Void in
                 
             })
         } else {
             sender.tag = 1
-            print("step==========2")
             sender.setTitle("发送", for: .normal)
             sender.backgroundColor = UIColor.systemGreen
             sender.setImage(nil, for: .normal)
