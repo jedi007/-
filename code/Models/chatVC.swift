@@ -148,15 +148,17 @@ class ChatViewController: UIViewController {
         if sender.tag == 1 {
             sender.tag = 0
             print("step==========1")
-            UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+            UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
                 self.sendMessageBtnW.constant = 32
                 self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width+28, height: self.messageTV.frame.height)
                 self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
                 self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: 32, height: 32)
-            }, completion: { (flg) -> Void in
-                sender.setTitle(" ", for: .normal)
+                
+                sender.setTitle("", for: .normal)
                 sender.backgroundColor = UIColor.clear
                 sender.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+            }, completion: { (flg) -> Void in
+                
             })
         } else {
             sender.tag = 1
@@ -164,7 +166,7 @@ class ChatViewController: UIViewController {
             sender.setTitle("发送", for: .normal)
             sender.backgroundColor = UIColor.systemGreen
             sender.setImage(nil, for: .normal)
-            UIView.animate(withDuration: 0.2, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+            UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
                 self.sendMessageBtnW.constant = 60
                 self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width-28, height: self.messageTV.frame.height)
                 self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
