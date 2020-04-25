@@ -90,6 +90,8 @@ class ChatViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
