@@ -18,6 +18,8 @@ class ChatViewController: UIViewController {
     
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var sendMessageBtn: UIButton!
+    @IBOutlet weak var emojiBtn: UIButton!
     
     var currentFriendsList:[FriendInfo] = []
     var messageID:String!{
@@ -96,6 +98,8 @@ class ChatViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: false)
+        
+        sendMessageBtn.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -118,9 +122,7 @@ class ChatViewController: UIViewController {
         let duration = info[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
         
-        //self.view.frame.origin.y = -(keyboardFrame?.size.height)!
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
-            //self.view.frame.size.height -= (keyboardFrame?.size.height)!
             self.contentView.frame.origin.y -= (keyboardFrame?.size.height)!
         }, completion: { (flg) -> Void in
             //self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
@@ -140,6 +142,31 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
+        print(sender.tag)
+        
+        if sender.tag == 1 {
+            sender.tag = 0
+            print("step==========1")
+            UIView.animate(withDuration: 1, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+                self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: 32, height: 32)
+            }, completion: { (flg) -> Void in
+                sender.setTitle(" ", for: .normal)
+                sender.backgroundColor = UIColor.clear
+                sender.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 32,height: 32))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+            })
+        } else {
+            sender.tag = 1
+            print("step==========2")
+            sender.setTitle("发送", for: .normal)
+            sender.backgroundColor = UIColor.systemGreen
+            sender.setImage(nil, for: .normal)
+            UIView.animate(withDuration: 1, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+                self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width-28, height: self.messageTV.frame.height)
+                self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
+                self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: 60, height: self.sendMessageBtn.frame.size.height)
+            }, completion: nil)
+            return
+        }
         
         if let messageData = messageTV.text.data(using: .utf8) {
             

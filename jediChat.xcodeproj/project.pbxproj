@@ -33,6 +33,7 @@
 		6A4A53932440B45000F29021 /* chatVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4A53922440B45000F29021 /* chatVCCell.swift */; };
 		6A4C07E0240A2941006B679C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C07DF240A2941006B679C /* NetworkManager.swift */; };
 		6A7272C0243CAD9F00FB4F61 /* SaveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */; };
+		6A7E68CF24542586006002B5 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7E68CE24542586006002B5 /* plus.png */; };
 		6A8BF6CF23E69ACE00CC4C58 /* loginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */; };
 		6A8BF6D123E69E6200CC4C58 /* extensionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */; };
 		6A8BF6D323E6B19900CC4C58 /* 返回.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A8BF6D223E6B19900CC4C58 /* 返回.png */; };
@@ -112,6 +113,7 @@
 		6A4A53922440B45000F29021 /* chatVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatVCCell.swift; sourceTree = "<group>"; };
 		6A4C07DF240A2941006B679C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfo.swift; sourceTree = "<group>"; };
+		6A7E68CE24542586006002B5 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		6A8BF6CE23E69ACE00CC4C58 /* loginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D023E69E6200CC4C58 /* extensionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionViewController.swift; sourceTree = "<group>"; };
 		6A8BF6D223E6B19900CC4C58 /* 返回.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "返回.png"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		6AC05DD823E2DD56009BD223 /* 图标 */ = {
 			isa = PBXGroup;
 			children = (
+				6A7E68CE24542586006002B5 /* plus.png */,
 				6A9D0AFD23EAAB380078AA19 /* 都信.png */,
 				6A9D0AFE23EAAB390078AA19 /* 发现.png */,
 				6A9D0AFF23EAAB390078AA19 /* 通讯录.png */,
@@ -469,6 +472,7 @@
 				6A0D2A2F23F8F72B00B2DFF8 /* models.storyboard in Resources */,
 				6A20216F23EE97D0002D2DFB /* 扫一扫2.png in Resources */,
 				6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */,
+				6A7E68CF24542586006002B5 /* plus.png in Resources */,
 				6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */,
 				CDA465CC238145A4007D794C /* Main.storyboard in Resources */,
 				6ABBFE3623EBE04C008E6C97 /* 相册.png in Resources */,
