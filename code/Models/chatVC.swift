@@ -35,6 +35,7 @@ class ChatViewController: UIViewController {
     }
     var messageName:String!
     var addview:AddView?
+    var moveH:CGFloat?
     
     
     override func viewDidLoad() {
@@ -86,6 +87,12 @@ class ChatViewController: UIViewController {
         let statusBarView = UIView(frame: statusBarFram!)
         statusBarView.backgroundColor = UIColor.hexColor(hex: "EBEBEB")
         self.view.addSubview(statusBarView)
+        
+        addview = (Bundle.main.loadNibNamed("AddView", owner: self, options: nil)?.last as! AddView)
+        let cfram = self.contentView.frame
+        moveH = cfram.size.height*0.4
+        addview!.frame = CGRect(x: cfram.origin.x, y: cfram.origin.y+cfram.size.height, width: cfram.size.width, height: moveH!)
+        self.view.addSubview(addview!)
     }
     
     
@@ -150,24 +157,11 @@ class ChatViewController: UIViewController {
         if sender.tag == 1 {
             setSendBtnTitletoPlus(senderBtn: sender)
         } else { //处于加号状态时点击
-            addview = nil;
-            addview = (Bundle.main.loadNibNamed("AddView", owner: self, options: nil)?.last as! AddView)
-            let cfram = self.contentView.frame
-            let moveH = cfram.size.height*0.4
-            print("self.view.frame: \(self.view.frame)")
-            addview!.frame = CGRect(x: cfram.origin.x, y: cfram.origin.y+cfram.size.height, width: cfram.size.width, height: moveH)
-            print(self.contentView.frame)
-            //self.view.addSubview(addview!)
-            //self.contentView.frame.origin.y -= moveH
-            print(self.contentView.frame)
             
-            UIView.animate(withDuration: 0.4, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
-                self.contentView.frame.origin.y -= moveH
-                //self.addview!.frame.origin.y -= moveH
-            }, completion: { (flg) -> Void in
-                print(self.contentView.frame)
+            UIView.animate(withDuration: 0.4, animations: { ()->Void in
+                self.addview!.frame.origin.y -= self.moveH!
+                self.contentView.frame.origin.y -= self.moveH!
             })
-            
             
             
             //setSendBtnTitleToSend(senderBtn: sender)
