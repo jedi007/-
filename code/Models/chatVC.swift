@@ -34,6 +34,7 @@ class ChatViewController: UIViewController {
         }
     }
     var messageName:String!
+    var addview:AddView?
     
     
     override func viewDidLoad() {
@@ -147,30 +148,29 @@ class ChatViewController: UIViewController {
         print(sender.tag)
         
         if sender.tag == 1 {
-            sender.tag = 0
-            UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
-                self.sendMessageBtnW.constant = 32
-                self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width+28, height: self.messageTV.frame.height)
-                self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
-                self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: 32, height: 32)
-                
-                sender.setTitle("", for: .normal)
-                sender.backgroundColor = UIColor.clear
-                sender.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 28,height: 28))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+            setSendBtnTitletoPlus(senderBtn: sender)
+        } else { //处于加号状态时点击
+            addview = nil;
+            addview = (Bundle.main.loadNibNamed("AddView", owner: self, options: nil)?.last as! AddView)
+            let cfram = self.contentView.frame
+            let moveH = cfram.size.height*0.4
+            print("self.view.frame: \(self.view.frame)")
+            addview!.frame = CGRect(x: cfram.origin.x, y: cfram.origin.y+cfram.size.height, width: cfram.size.width, height: moveH)
+            print(self.contentView.frame)
+            //self.view.addSubview(addview!)
+            //self.contentView.frame.origin.y -= moveH
+            print(self.contentView.frame)
+            
+            UIView.animate(withDuration: 0.4, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
+                self.contentView.frame.origin.y -= moveH
+                //self.addview!.frame.origin.y -= moveH
             }, completion: { (flg) -> Void in
-                
+                print(self.contentView.frame)
             })
-        } else {
-            sender.tag = 1
-            sender.setTitle("发送", for: .normal)
-            sender.backgroundColor = UIColor.systemGreen
-            sender.setImage(nil, for: .normal)
-            UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
-                self.sendMessageBtnW.constant = 60
-                self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width-28, height: self.messageTV.frame.height)
-                self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
-                self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: 60, height: self.sendMessageBtn.frame.size.height)
-            }, completion: nil)
+            
+            
+            
+            //setSendBtnTitleToSend(senderBtn: sender)
             return
         }
         
@@ -215,6 +215,37 @@ class ChatViewController: UIViewController {
         }
         
     }
+    
+    func setSendBtnTitletoPlus(senderBtn: UIButton) -> Void {
+        senderBtn.tag = 0
+        UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+            self.sendMessageBtnW.constant = 32
+            self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width+28, height: self.messageTV.frame.height)
+            self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
+            self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: 32, height: 32)
+            
+            senderBtn.setTitle("", for: .normal)
+            senderBtn.backgroundColor = UIColor.clear
+            senderBtn.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 28,height: 28))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
+        }, completion: { (flg) -> Void in
+            
+        })
+    }
+    
+    
+    func setSendBtnTitleToSend(senderBtn: UIButton) -> Void {
+        senderBtn.tag = 1
+        senderBtn.setTitle("发送", for: .normal)
+        senderBtn.backgroundColor = UIColor.systemGreen
+        senderBtn.setImage(nil, for: .normal)
+        UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+            self.sendMessageBtnW.constant = 60
+            self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width-28, height: self.messageTV.frame.height)
+            self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
+            self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: 60, height: self.sendMessageBtn.frame.size.height)
+        }, completion: nil)
+    }
+    
     
     func appendMessage(dic:NSDictionary) -> Void {
         if (messagesDics.keys.contains(messageID)) {

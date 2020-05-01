@@ -32,6 +32,8 @@
 		6A387D9F243B301B002D0DCD /* messagesVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A387D9E243B301B002D0DCD /* messagesVCCell.swift */; };
 		6A4A53932440B45000F29021 /* chatVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4A53922440B45000F29021 /* chatVCCell.swift */; };
 		6A4C07E0240A2941006B679C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C07DF240A2941006B679C /* NetworkManager.swift */; };
+		6A67D971245C029A0054B67D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67D970245C029A0054B67D /* AddView.swift */; };
+		6A67D973245C06270054B67D /* AddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A67D972245C06270054B67D /* AddView.xib */; };
 		6A7272C0243CAD9F00FB4F61 /* SaveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */; };
 		6A7E68CF24542586006002B5 /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7E68CE24542586006002B5 /* plus.png */; };
 		6A7E68D124544009006002B5 /* smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A7E68D024544009006002B5 /* smile.png */; };
@@ -113,6 +115,8 @@
 		6A387D9E243B301B002D0DCD /* messagesVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesVCCell.swift; sourceTree = "<group>"; };
 		6A4A53922440B45000F29021 /* chatVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatVCCell.swift; sourceTree = "<group>"; };
 		6A4C07DF240A2941006B679C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6A67D970245C029A0054B67D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
+		6A67D972245C06270054B67D /* AddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddView.xib; sourceTree = "<group>"; };
 		6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfo.swift; sourceTree = "<group>"; };
 		6A7E68CE24542586006002B5 /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		6A7E68D024544009006002B5 /* smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = smile.png; sourceTree = "<group>"; };
@@ -299,6 +303,8 @@
 				6A4C07DF240A2941006B679C /* NetworkManager.swift */,
 				6A34CEB6240FDA1A00CA408A /* udpManager.swift */,
 				6A387D9E243B301B002D0DCD /* messagesVCCell.swift */,
+				6A67D970245C029A0054B67D /* AddView.swift */,
+				6A67D972245C06270054B67D /* AddView.xib */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -476,6 +482,7 @@
 				6A0D2A2F23F8F72B00B2DFF8 /* models.storyboard in Resources */,
 				6A20216F23EE97D0002D2DFB /* 扫一扫2.png in Resources */,
 				6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */,
+				6A67D973245C06270054B67D /* AddView.xib in Resources */,
 				6A7E68CF24542586006002B5 /* plus.png in Resources */,
 				6AC05DDD23E2DD7C009BD223 /* RadioButton-unchecked.jpg in Resources */,
 				CDA465CC238145A4007D794C /* Main.storyboard in Resources */,
@@ -561,6 +568,7 @@
 				6ACAAB932441AAC5000B8542 /* ChatBubble.swift in Sources */,
 				6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */,
 				6A0D2A3323F9264400B2DFF8 /* userInfo.swift in Sources */,
+				6A67D971245C029A0054B67D /* AddView.swift in Sources */,
 				6A14A6552407F28900376F38 /* chatVC.swift in Sources */,
 				6AAFFE4823E427E300665DBE /* RegularTools.swift in Sources */,
 				6ABBFE2F23EBC0A0008E6C97 /* mineSpaceViewController.swift in Sources */,
