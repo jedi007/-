@@ -168,6 +168,11 @@ class ChatViewController: UIViewController {
             return
         }
         
+        if messageTV.text == "" {
+            print("have no message")
+            return
+        }
+        
         if let messageData = messageTV.text.data(using: .utf8) {
             
             for finfo in currentFriendsList {
