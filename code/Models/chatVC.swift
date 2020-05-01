@@ -36,6 +36,7 @@ class ChatViewController: UIViewController {
     var messageName:String!
     var addview:AddView?
     var moveH:CGFloat?
+    var cfram:CGRect?
     
     
     override func viewDidLoad() {
@@ -89,10 +90,12 @@ class ChatViewController: UIViewController {
         self.view.addSubview(statusBarView)
         
         addview = (Bundle.main.loadNibNamed("AddView", owner: self, options: nil)?.last as! AddView)
-        let cfram = self.contentView.frame
-        moveH = cfram.size.height*0.4
-        addview!.frame = CGRect(x: cfram.origin.x, y: cfram.origin.y+cfram.size.height, width: cfram.size.width, height: moveH!)
+        cfram = self.contentView.frame
+        moveH = cfram!.size.height*0.4
+        addview!.frame = CGRect(x: cfram!.origin.x, y: cfram!.origin.y+cfram!.size.height, width: cfram!.size.width, height: moveH!)
         self.view.addSubview(addview!)
+        
+        print("init cfram \(self.cfram)")
     }
     
     
@@ -125,6 +128,10 @@ class ChatViewController: UIViewController {
     
     @objc func backViewClick(){
         self.view.endEditing(true)
+        UIView.animate(withDuration: 0.4, animations: { ()-> Void in
+            self.contentView.frame.origin.y = self.cfram!.origin.y
+            self.addview!.frame = CGRect(x: self.cfram!.origin.x, y: self.cfram!.origin.y+self.cfram!.size.height, width: self.cfram!.size.width, height: self.moveH!)
+        })
     }
     
     @objc private func keyboardWillShow(notification: NSNotification) {
@@ -133,7 +140,8 @@ class ChatViewController: UIViewController {
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
         
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
-            self.contentView.frame.origin.y -= (keyboardFrame?.size.height)!
+            print("in animate cfram \(self.cfram)")
+            self.contentView.frame.origin.y = self.cfram!.origin.y - (keyboardFrame?.size.height)!
         }, completion: { (flg) -> Void in
             //self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
         })
@@ -145,7 +153,8 @@ class ChatViewController: UIViewController {
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
         
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
-            self.contentView.frame.origin.y += (keyboardFrame?.size.height)!
+            self.contentView.frame.origin.y = self.cfram!.origin.y //(keyboardFrame?.size.height)!
+            self.addview!.frame = CGRect(x: self.cfram!.origin.x, y: self.cfram!.origin.y+self.cfram!.size.height, width: self.cfram!.size.width, height: self.moveH!)
         }, completion: { (flg) -> Void in
             //self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
         })
