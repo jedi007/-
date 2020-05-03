@@ -21,6 +21,7 @@ class ChatViewController: UIViewController {
     @IBOutlet weak var sendMessageBtn: UIButton!
     @IBOutlet weak var sendMessageBtnW: NSLayoutConstraint!
     @IBOutlet weak var emojiBtn: UIButton!
+    @IBOutlet weak var sendView: UIView!
     
     var currentFriendsList:[FriendInfo] = []
     var messageID:String!{
@@ -37,6 +38,7 @@ class ChatViewController: UIViewController {
     var addview:AddView?
     var moveH:CGFloat?
     var cfram:CGRect?
+    var keyboardHeight:CGFloat?
     
     
     override func viewDidLoad() {
@@ -82,6 +84,8 @@ class ChatViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none;//去掉Cell之间的间隔线
+        
+        messageTV.delegate = self
     
         self.view.sendSubviewToBack(contentView)
         let statusBarFram = UIApplication.shared.keyWindow?.windowScene?.statusBarManager?.statusBarFrame;
@@ -111,6 +115,8 @@ class ChatViewController: UIViewController {
         if let count = messagesDics[self.messageID]?.count,count>0 {
             self.tableView.scrollToRow(at: IndexPath(row: count-1, section: 0), at: .bottom, animated: true)
         }
+        
+        print("self.messageTV.frame: \(self.messageTV.frame)")
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -146,10 +152,12 @@ class ChatViewController: UIViewController {
         let info = notification.userInfo!
         let duration = info[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
+        keyboardHeight = (keyboardFrame?.size.height)!
+        print("(keyboardFrame?.size.height)!: \(keyboardHeight!)")
         
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
             print("in animate cfram \(self.cfram)")
-            self.contentView.frame.origin.y = self.cfram!.origin.y - (keyboardFrame?.size.height)!
+            self.contentView.frame.origin.y = self.cfram!.origin.y - self.keyboardHeight!
         }, completion: { (flg) -> Void in
             //self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
         })
@@ -159,7 +167,7 @@ class ChatViewController: UIViewController {
         let info = notification.userInfo!
         let duration = info[UIResponder.keyboardAnimationDurationUserInfoKey] as! TimeInterval
         let keyboardFrame = (info[UIResponder.keyboardFrameEndUserInfoKey]! as AnyObject).cgRectValue
-        
+        keyboardHeight = 0
         UIView.animate(withDuration: duration, delay: 0, options: UIView.AnimationOptions.curveEaseIn,animations: { () -> Void in
             self.contentView.frame.origin.y = self.cfram!.origin.y //(keyboardFrame?.size.height)!
             self.addview!.frame = CGRect(x: self.cfram!.origin.x, y: self.cfram!.origin.y+self.cfram!.size.height, width: self.cfram!.size.width, height: self.moveH!)
@@ -169,19 +177,14 @@ class ChatViewController: UIViewController {
     }
     
     @IBAction func sendMessage(_ sender: UIButton) {
-        print(sender.tag)
+        print("sender.tag: \(sender.tag)")
         
-        if sender.tag == 1 {
-            setSendBtnTitletoPlus(senderBtn: sender)
-        } else { //处于加号状态时点击
+        if sender.tag == 0 { //处于加号状态时点击
             self.view.endEditing(true)
             UIView.animate(withDuration: 0.4, animations: { ()->Void in
                 self.addview!.frame.origin.y = self.cfram!.origin.y+self.cfram!.size.height-self.moveH!
                 self.contentView.frame.origin.y = self.cfram!.origin.y - self.moveH!
             })
-            
-            
-            //setSendBtnTitleToSend(senderBtn: sender)
             return
         }
         
@@ -229,12 +232,15 @@ class ChatViewController: UIViewController {
             }
             
         }
-        
+        setSendBtnTitletoPlus(senderBtn: sender)
     }
     
     func setSendBtnTitletoPlus(senderBtn: UIButton) -> Void {
+        if senderBtn.tag == 0 {
+            return
+        }
         senderBtn.tag = 0
-        UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+        UIView.animate(withDuration: 0, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
             self.sendMessageBtnW.constant = 32
             self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width+28, height: self.messageTV.frame.height)
             self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x+28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
@@ -244,22 +250,30 @@ class ChatViewController: UIViewController {
             senderBtn.backgroundColor = UIColor.clear
             senderBtn.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 28,height: 28))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
         }, completion: { (flg) -> Void in
-            
+            self.contentView.frame.origin.y = self.cfram!.origin.y - self.keyboardHeight!
         })
     }
     
     
     func setSendBtnTitleToSend(senderBtn: UIButton) -> Void {
+        if(senderBtn.tag == 1){
+            return
+        }
         senderBtn.tag = 1
         senderBtn.setTitle("发送", for: .normal)
         senderBtn.backgroundColor = UIColor.systemGreen
         senderBtn.setImage(nil, for: .normal)
-        UIView.animate(withDuration: 0.15, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
+        
+        UIView.animate(withDuration: 0, delay: 0, options: UIView.AnimationOptions.curveLinear,animations: { () -> Void in
             self.sendMessageBtnW.constant = 60
             self.messageTV.frame = CGRect(x: self.messageTV.frame.origin.x, y: self.messageTV.frame.origin.y, width: self.messageTV.frame.size.width-28, height: self.messageTV.frame.height)
             self.emojiBtn.frame = CGRect(x: self.emojiBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: self.emojiBtn.frame.width, height: self.emojiBtn.frame.height)
             self.sendMessageBtn.frame = CGRect(x: self.sendMessageBtn.frame.origin.x-28, y: self.sendMessageBtn.frame.origin.y, width: 60, height: self.sendMessageBtn.frame.size.height)
-        }, completion: nil)
+            print("after self.messageTV.frame: \(self.messageTV.frame)")
+        }, completion: { (flg) -> Void in
+            print("completion self.contentView.frame: \(self.contentView.frame)")
+            self.contentView.frame.origin.y = self.cfram!.origin.y - self.keyboardHeight!
+        })
     }
     
     
@@ -372,4 +386,17 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
 //    }
     
     
+}
+
+extension ChatViewController: UITextViewDelegate{
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.lengthOfBytes(using: .utf8) > 0 {
+            print("文本框内有文字个数大于0 进行相应操作")
+            self.setSendBtnTitleToSend(senderBtn: self.sendMessageBtn)
+
+        }else{
+            print("文本框内有文字个数等于0 进行相应操作")
+            setSendBtnTitletoPlus(senderBtn: sendMessageBtn)
+        }
+    }
 }
