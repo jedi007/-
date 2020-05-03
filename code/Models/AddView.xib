@@ -13,70 +13,54 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="qUW-ag-SlN">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7IY-oo-Lr8">
                     <rect key="frame" x="0.0" y="44" width="414" height="358.5"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="JCr-KY-DTY">
-                            <rect key="frame" x="0.0" y="0.0" width="89" height="358.5"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JCr-KY-DTY">
+                            <rect key="frame" x="0.0" y="143.5" width="95.5" height="215"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubr-V3-Gcy">
-                                    <rect key="frame" x="17" y="8" width="52" height="54"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ubr-V3-Gcy">
+                                    <rect key="frame" x="32" y="0.0" width="63.5" height="194"/>
                                     <color key="backgroundColor" red="0.61960784310000006" green="0.91764705879999997" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
                                     <state key="normal" title="Button"/>
                                 </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1R-xa-YbR">
+                                    <rect key="frame" x="32" y="194" width="63.5" height="21"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="13e-cK-b7h">
-                            <rect key="frame" x="109" y="0.0" width="89" height="358.5"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yYf-pS-QWJ">
-                                    <rect key="frame" x="17" y="8" width="52" height="54"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.61960784310000006" green="0.91764705879999997" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gIa-2L-H7v">
-                            <rect key="frame" x="218" y="0.0" width="87" height="358.5"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UTs-Cr-ySC">
-                                    <rect key="frame" x="17" y="8" width="52" height="54"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.61960784310000006" green="0.91764705879999997" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        </view>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kmm-Y5-MFr">
-                            <rect key="frame" x="325" y="0.0" width="89" height="358.5"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4H-4z-gsS">
-                                    <rect key="frame" x="17" y="8" width="52" height="54"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="backgroundColor" red="0.61960784310000006" green="0.91764705879999997" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
-                                    <state key="normal" title="Button"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="ubr-V3-Gcy" secondAttribute="trailing" id="4ms-jG-UVe"/>
+                                <constraint firstItem="A1R-xa-YbR" firstAttribute="width" secondItem="JCr-KY-DTY" secondAttribute="width" multiplier="0.6666" id="Dwm-rI-CUR"/>
+                                <constraint firstAttribute="trailing" secondItem="A1R-xa-YbR" secondAttribute="trailing" id="Zr9-SZ-jwn"/>
+                                <constraint firstItem="ubr-V3-Gcy" firstAttribute="width" secondItem="JCr-KY-DTY" secondAttribute="width" multiplier="0.6666" id="cFD-5z-pkF"/>
+                                <constraint firstAttribute="bottom" secondItem="A1R-xa-YbR" secondAttribute="bottom" id="eyG-We-nki"/>
+                                <constraint firstItem="ubr-V3-Gcy" firstAttribute="top" secondItem="JCr-KY-DTY" secondAttribute="top" id="ihl-h5-krO"/>
+                                <constraint firstItem="A1R-xa-YbR" firstAttribute="top" secondItem="ubr-V3-Gcy" secondAttribute="bottom" id="uRv-Y2-lEJ"/>
+                            </constraints>
                         </view>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                </stackView>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="JCr-KY-DTY" secondAttribute="bottom" id="3MF-YG-1zx"/>
+                        <constraint firstItem="JCr-KY-DTY" firstAttribute="width" secondItem="7IY-oo-Lr8" secondAttribute="width" multiplier="0.2308" id="4w4-oU-jMN"/>
+                        <constraint firstItem="JCr-KY-DTY" firstAttribute="leading" secondItem="7IY-oo-Lr8" secondAttribute="leading" id="J0h-md-GGL"/>
+                        <constraint firstItem="JCr-KY-DTY" firstAttribute="height" secondItem="7IY-oo-Lr8" secondAttribute="height" multiplier="0.6" id="wPL-qP-8n1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="qUW-ag-SlN" firstAttribute="leading" secondItem="vOS-Eg-eQQ" secondAttribute="leading" id="6RU-eG-wGm"/>
-                <constraint firstItem="qUW-ag-SlN" firstAttribute="top" secondItem="vOS-Eg-eQQ" secondAttribute="top" id="Dsp-hW-f97"/>
-                <constraint firstItem="qUW-ag-SlN" firstAttribute="height" secondItem="OeV-F8-MyN" secondAttribute="height" multiplier="0.4" id="Jn5-EL-TE7"/>
-                <constraint firstItem="vOS-Eg-eQQ" firstAttribute="trailing" secondItem="qUW-ag-SlN" secondAttribute="trailing" id="Pgl-0d-HJu"/>
+                <constraint firstItem="7IY-oo-Lr8" firstAttribute="leading" secondItem="vOS-Eg-eQQ" secondAttribute="leading" id="NZu-uM-qe7"/>
+                <constraint firstItem="vOS-Eg-eQQ" firstAttribute="trailing" secondItem="7IY-oo-Lr8" secondAttribute="trailing" id="VVo-Oq-BeS"/>
+                <constraint firstItem="7IY-oo-Lr8" firstAttribute="top" secondItem="vOS-Eg-eQQ" secondAttribute="top" id="bZz-94-HtH"/>
+                <constraint firstItem="7IY-oo-Lr8" firstAttribute="height" secondItem="OeV-F8-MyN" secondAttribute="height" multiplier="0.4" id="evY-6H-11e"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vOS-Eg-eQQ"/>
-            <point key="canvasLocation" x="101" y="-10"/>
+            <point key="canvasLocation" x="100.00000000000001" y="-10.044642857142856"/>
         </view>
     </objects>
 </document>
