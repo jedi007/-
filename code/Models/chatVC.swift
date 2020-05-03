@@ -105,11 +105,16 @@ class ChatViewController: UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         
-        self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
+        if let count = messagesDics[self.messageID]?.count,count>0 {
+            self.tableView.scrollToRow(at: IndexPath(row: count-1, section: 0), at: .bottom, animated: true)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: false)
+        if let count = messagesDics[self.messageID]?.count,
+            count>0{
+            self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: false)
+        }
         
         sendMessageBtn.setImage(UIImage(named: "plus")?.reSizeImage(reSize: CGSize(width: 28,height: 28))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
         emojiBtn.setImage(UIImage(named: "smile")?.reSizeImage(reSize: CGSize(width: 40,height: 40))?.withRenderingMode(UIImage.RenderingMode.alwaysOriginal), for: .normal)
