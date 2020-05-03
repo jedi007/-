@@ -88,20 +88,22 @@ class ChatViewController: UIViewController {
         let statusBarView = UIView(frame: statusBarFram!)
         statusBarView.backgroundColor = UIColor.hexColor(hex: "EBEBEB")
         self.view.addSubview(statusBarView)
-        
-        addview = (Bundle.main.loadNibNamed("AddView", owner: self, options: nil)?.last as! AddView)
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        print("init viewDidAppear cfram \(self.contentView.frame)")
-                print("moveH \(moveH)")
-        cfram = self.contentView.frame
-        moveH = cfram!.size.height*0.4
-        addview!.frame = CGRect(x: cfram!.origin.x, y: cfram!.origin.y+cfram!.size.height, width: cfram!.size.width, height: moveH!)
-        self.view.addSubview(addview!)
+        print(addview)
+        if addview == nil {
+            addview = (Bundle.main.loadNibNamed("AddView", owner: self, options: nil)?.last as! AddView)
+            print("init viewDidAppear cfram \(self.contentView.frame)")
+            print("moveH \(moveH)")
+            cfram = self.contentView.frame
+            moveH = cfram!.size.height*0.4
+            addview!.frame = CGRect(x: cfram!.origin.x, y: cfram!.origin.y+cfram!.size.height, width: cfram!.size.width, height: moveH!)
+            self.view.addSubview(addview!)
+        }
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -172,10 +174,10 @@ class ChatViewController: UIViewController {
         if sender.tag == 1 {
             setSendBtnTitletoPlus(senderBtn: sender)
         } else { //处于加号状态时点击
-            
+            self.view.endEditing(true)
             UIView.animate(withDuration: 0.4, animations: { ()->Void in
-                self.addview!.frame.origin.y -= self.moveH!
-                self.contentView.frame.origin.y -= self.moveH!
+                self.addview!.frame.origin.y = self.cfram!.origin.y+self.cfram!.size.height-self.moveH!
+                self.contentView.frame.origin.y = self.cfram!.origin.y - self.moveH!
             })
             
             
