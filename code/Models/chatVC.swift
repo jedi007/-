@@ -78,8 +78,8 @@ class ChatViewController: UIViewController {
         
         
         let viewSingleTapGesture = UITapGestureRecognizer(target: self, action: #selector(backViewClick))
-        self.view.addGestureRecognizer(viewSingleTapGesture)
-        self.view.isUserInteractionEnabled = true
+        self.contentView.addGestureRecognizer(viewSingleTapGesture)
+        self.contentView.isUserInteractionEnabled = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -393,10 +393,20 @@ extension ChatViewController: UITextViewDelegate{
         if textView.text.lengthOfBytes(using: .utf8) > 0 {
             print("文本框内有文字个数大于0 进行相应操作")
             self.setSendBtnTitleToSend(senderBtn: self.sendMessageBtn)
-
         }else{
             print("文本框内有文字个数等于0 进行相应操作")
             setSendBtnTitletoPlus(senderBtn: sendMessageBtn)
         }
+    }
+    
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        if text == "\n" {
+            print("its \n")
+            textView.endEditing(true)
+            textView.resignFirstResponder()
+            sendMessage(sendMessageBtn)
+            return false
+        }
+        return true
     }
 }
