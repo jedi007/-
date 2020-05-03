@@ -90,17 +90,18 @@ class ChatViewController: UIViewController {
         self.view.addSubview(statusBarView)
         
         addview = (Bundle.main.loadNibNamed("AddView", owner: self, options: nil)?.last as! AddView)
-        cfram = self.contentView.frame
-        moveH = cfram!.size.height*0.4
-        addview!.frame = CGRect(x: cfram!.origin.x, y: cfram!.origin.y+cfram!.size.height, width: cfram!.size.width, height: moveH!)
-        self.view.addSubview(addview!)
-        
-        print("init cfram \(self.cfram)")
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        print("init viewDidAppear cfram \(self.contentView.frame)")
+                print("moveH \(moveH)")
+        cfram = self.contentView.frame
+        moveH = cfram!.size.height*0.4
+        addview!.frame = CGRect(x: cfram!.origin.x, y: cfram!.origin.y+cfram!.size.height, width: cfram!.size.width, height: moveH!)
+        self.view.addSubview(addview!)
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
