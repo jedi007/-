@@ -9,5 +9,8 @@
 import UIKit
 
 class AddView:UIView {
+    @IBAction func photoBtnClicked(_ sender: UIButton) {
+        print("photoBtnClicked")
+    }
     
 }

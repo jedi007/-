@@ -31,6 +31,9 @@
                                             <integer key="value" value="8"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="photoBtnClicked:" destination="OeV-F8-MyN" eventType="touchUpInside" id="aod-HZ-BC4"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="相册" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1R-xa-YbR">
                                     <rect key="frame" x="55.5" y="236.5" width="25" height="14.5"/>

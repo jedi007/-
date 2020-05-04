@@ -78,8 +78,8 @@ class ChatViewController: UIViewController {
         
         
         let viewSingleTapGesture = UITapGestureRecognizer(target: self, action: #selector(backViewClick))
-        self.contentView.addGestureRecognizer(viewSingleTapGesture)
-        self.contentView.isUserInteractionEnabled = true
+        self.view.addGestureRecognizer(viewSingleTapGesture)
+        self.view.isUserInteractionEnabled = true
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -141,6 +141,7 @@ class ChatViewController: UIViewController {
     
     
     @objc func backViewClick(){
+        print("backViewClicked")
         self.view.endEditing(true)
         UIView.animate(withDuration: 0.4, animations: { ()-> Void in
             self.contentView.frame.origin.y = self.cfram!.origin.y
