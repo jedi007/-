@@ -315,6 +315,12 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         var messagestr = ""
         if let dic = messagesDics[messageID]?[indexPath.row],
            let messagedata = dic["messageData"] as? Data{
+            
+            if let messageType = dic["messageDataType"] as? String,
+               messageType == "img"{
+                return 160
+            }
+            
             messagestr = String(data: messagedata, encoding: .utf8) ?? ""
             
             let size = messagedata.count
@@ -344,14 +350,28 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         
         let dic = messagesDics[messageID]?[indexPath.row]
         if dic?["messageFrom"] as? String == mainUserInfo.telephone {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatVCellID", for: indexPath) as! MineChatVCCell
-            
-            if let messagedata = dic?["messageData"] as? Data,
-                let messagestr = String(data: messagedata, encoding: .utf8){
-                cell.messageBV.setMessageStr(message: messagestr)
+            if let messageType = dic?["messageDataType"] as? String {
+                print("receive messagedataType: \(messageType)")
+                if messageType == "String" {
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatVCellID", for: indexPath) as! MineChatVCCell
+                    if let messagedata = dic?["messageData"] as? Data,
+                        let messagestr = String(data: messagedata, encoding: .utf8){
+                        cell.messageBV.setMessageStr(message: messagestr)
+                    }
+                    return cell
+                } else if messageType == "img" {
+                    
+                    let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatIImgVCellID", for: indexPath) as! MineChatImgCell
+                    if let messagedata = dic?["messageData"] as? Data,
+                       let img = UIImage(data: messagedata){
+                        cell.imgV.image = img
+                    }
+                    
+                    print("return img cell")
+                    
+                    return cell
+                }
             }
-            
-            return cell
         }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
@@ -420,6 +440,10 @@ extension ChatViewController: AddViewDelegate{
     func useImg(_ img: UIImage) {
         print("delegate get img")
         backViewClick()
+        
+        if let imgdata = img.jpegData(compressionQuality: 0.5) {
+            sendData(messageData: imgdata, dataType: "img")
+        }
     }
     
     func cancelSelectImg(){
