@@ -11,6 +11,7 @@ import UIKit
 protocol AddViewDelegate {
     func useImg(_ img:UIImage)
     func cancelSelectImg()
+    func repairUIBUG()
 }
 
 class AddView:UIView {
@@ -44,6 +45,13 @@ class AddView:UIView {
            print("不支持拍照")
         }
     }
+    
+    @IBAction func vedioClicked(_ sender: UIButton) {
+        AlertDialog.shared.alertDialog(title: "敬请期待", message: "功能暂未开放", actionText: "知道了", actionHandler: { (action:UIAlertAction) in
+            self.delegate?.repairUIBUG()
+        })
+    }
+    
 }
 
 extension AddView:UIImagePickerControllerDelegate,UINavigationControllerDelegate{

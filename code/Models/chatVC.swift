@@ -427,4 +427,10 @@ extension ChatViewController: AddViewDelegate{
             self.contentView.frame.origin.y = self.cfram!.origin.y - self.moveH!
         })
     }
+    
+    func repairUIBUG() {
+        UIView.animate(withDuration: 0, animations: { ()->Void in
+            self.contentView.frame.origin.y = self.cfram!.origin.y - self.moveH!
+        })
+    }
 }

@@ -25,6 +25,7 @@
 		6A20217323EE97D0002D2DFB /* 摇一摇.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216A23EE97D0002D2DFB /* 摇一摇.png */; };
 		6A20217423EE97D0002D2DFB /* 附近的人.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216B23EE97D0002D2DFB /* 附近的人.png */; };
 		6A20217523EE97D0002D2DFB /* 小程序.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216C23EE97D0002D2DFB /* 小程序.png */; };
+		6A25F9DB24613EF1000EF18D /* 红包.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A25F9DA24613EF1000EF18D /* 红包.png */; };
 		6A306B3E2442AED400DB52CA /* mineChatVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A306B3D2442AED400DB52CA /* mineChatVCCell.swift */; };
 		6A306B402442AF0500DB52CA /* mineChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A306B3F2442AF0500DB52CA /* mineChatBubble.swift */; };
 		6A306B422443552500DB52CA /* ToolFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A306B412443552500DB52CA /* ToolFuncs.swift */; };
@@ -108,6 +109,7 @@
 		6A20216A23EE97D0002D2DFB /* 摇一摇.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "摇一摇.png"; sourceTree = "<group>"; };
 		6A20216B23EE97D0002D2DFB /* 附近的人.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "附近的人.png"; sourceTree = "<group>"; };
 		6A20216C23EE97D0002D2DFB /* 小程序.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小程序.png"; sourceTree = "<group>"; };
+		6A25F9DA24613EF1000EF18D /* 红包.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红包.png"; sourceTree = "<group>"; };
 		6A306B3D2442AED400DB52CA /* mineChatVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mineChatVCCell.swift; sourceTree = "<group>"; };
 		6A306B3F2442AF0500DB52CA /* mineChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mineChatBubble.swift; sourceTree = "<group>"; };
 		6A306B412443552500DB52CA /* ToolFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolFuncs.swift; sourceTree = "<group>"; };
@@ -272,6 +274,7 @@
 		6AC05DD823E2DD56009BD223 /* 图标 */ = {
 			isa = PBXGroup;
 			children = (
+				6A25F9DA24613EF1000EF18D /* 红包.png */,
 				6A7E68D024544009006002B5 /* smile.png */,
 				6A7E68CE24542586006002B5 /* plus.png */,
 				6A9D0AFD23EAAB380078AA19 /* 都信.png */,
@@ -481,6 +484,7 @@
 				6A9D0B0223EAAB390078AA19 /* 发现.png in Resources */,
 				6A0D2A2F23F8F72B00B2DFF8 /* models.storyboard in Resources */,
 				6A20216F23EE97D0002D2DFB /* 扫一扫2.png in Resources */,
+				6A25F9DB24613EF1000EF18D /* 红包.png in Resources */,
 				6AC05DDF23E2DD7C009BD223 /* RadioButton-wrong.jpg in Resources */,
 				6A67D973245C06270054B67D /* AddView.xib in Resources */,
 				6A7E68CF24542586006002B5 /* plus.png in Resources */,
