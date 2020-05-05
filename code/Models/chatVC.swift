@@ -196,12 +196,12 @@ class ChatViewController: UIViewController {
         }
         
         if let messageData = messageTV.text.data(using: .utf8) {
-            sendData(messageData: messageData)
+            sendData(messageData: messageData,dataType: "String")
         }
         setSendBtnTitletoPlus(senderBtn: sender)
     }
     
-    func sendData(messageData: Data) -> Void {
+    func sendData(messageData: Data, dataType:String) -> Void {
         for finfo in currentFriendsList {
             if finfo.telephone==mainUserInfo.telephone {
                 continue
@@ -218,7 +218,7 @@ class ChatViewController: UIViewController {
             messageDic["messageFrom"] = mainUserInfo.telephone as AnyObject?
             messageDic["messageID"] = messageID as AnyObject?
             messageDic["messageName"] = messageName as AnyObject?
-            messageDic["messageDataType"] = "String" as AnyObject?
+            messageDic["messageDataType"] = dataType as AnyObject?
             messageDic["messageData"] = messageData as AnyObject?
             messageDic["friendList"] = currentFriendsList as AnyObject?
             
