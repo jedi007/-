@@ -107,6 +107,7 @@ class ChatViewController: UIViewController {
             moveH = cfram!.size.height*0.4
             addview!.frame = CGRect(x: cfram!.origin.x, y: cfram!.origin.y+cfram!.size.height, width: cfram!.size.width, height: moveH!)
             self.view.addSubview(addview!)
+            addview!.delegate = self
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -409,5 +410,21 @@ extension ChatViewController: UITextViewDelegate{
             return false
         }
         return true
+    }
+}
+
+
+extension ChatViewController: AddViewDelegate{
+    func useImg(_ img: UIImage) {
+        print("delegate get img")
+        backViewClick()
+    }
+    
+    func cancelSelectImg(){
+        print("delegate cancelSelectImg")
+        UIView.animate(withDuration: 0, animations: { ()->Void in
+            //self.addview!.frame.origin.y = self.cfram!.origin.y+self.cfram!.size.height-self.moveH!
+            self.contentView.frame.origin.y = self.cfram!.origin.y - self.moveH!
+        })
     }
 }

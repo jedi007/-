@@ -8,9 +8,68 @@
 
 import UIKit
 
+protocol AddViewDelegate {
+    func useImg(_ img:UIImage)
+    func cancelSelectImg()
+}
+
 class AddView:UIView {
+    
+    var delegate:AddViewDelegate?
+    
     @IBAction func photoBtnClicked(_ sender: UIButton) {
         print("photoBtnClicked")
+        
+        let photoPicker =  UIImagePickerController()
+        photoPicker.delegate = self
+        photoPicker.allowsEditing = true
+        photoPicker.sourceType = .photoLibrary
+        
+        //photoPicker.modalPresentationStyle = .fullScreen
+        //在需要的地方present出来
+        UIViewController.currentViewController()!.present(photoPicker, animated: true, completion: nil)
+        //self.present(photoPicker, animated: true, completion: nil)
     }
     
+}
+
+extension AddView:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
+     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any])
+     {
+         print("\n\n\n\n\ndidFinishPickingMediaWithInfo")
+
+        //获得照片
+         //let image:UIImage = info[UIImagePickerController.InfoKey.editedImage.rawValue] as! UIImage
+         let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
+         
+        // 拍照
+//        if picker.sourceType == .camera {
+//             //保存相册
+//             UIImageWriteToSavedPhotosAlbum(image, self, #selector(image(image:didFinishSavingWithError:contextInfo:)), nil)
+//        }
+
+        //personImage.image = image
+        //imgV.image = image
+        
+        UIViewController.currentViewController()!.dismiss(animated: true, completion: {
+            self.delegate?.useImg(image)
+        })
+        //self.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        print("取消了")
+        delegate?.cancelSelectImg()
+        UIViewController.currentViewController()!.dismiss(animated: true, completion: nil)
+    }
+     
+     
+     @objc func image(image:UIImage,didFinishSavingWithError error:NSError?,contextInfo:AnyObject) {
+
+        if error != nil {
+            print("保存失败")
+        } else {
+            print("保存成功")
+        }
+    }
 }
