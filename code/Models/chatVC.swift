@@ -196,45 +196,47 @@ class ChatViewController: UIViewController {
         }
         
         if let messageData = messageTV.text.data(using: .utf8) {
-            
-            for finfo in currentFriendsList {
-                if finfo.telephone==mainUserInfo.telephone {
-                    continue
-                }
-                
-                var optionDic : [String: AnyObject] = [:]
-                optionDic["telephone"] = mainUserInfo.telephone as AnyObject?
-                optionDic["targetTelephone"] = finfo.telephone as AnyObject?
-                optionDic["action"] = 1 as AnyObject?
-                let convertStr:String =  JSONTools.shared.convertDictionaryToString(dict: optionDic)
-                
-                var messageDic : [String: AnyObject] = [:]
-                messageDic["messageType"] = "friendsMessage" as AnyObject?
-                messageDic["messageFrom"] = mainUserInfo.telephone as AnyObject?
-                messageDic["messageID"] = messageID as AnyObject?
-                messageDic["messageName"] = messageName as AnyObject?
-                messageDic["messageDataType"] = "String" as AnyObject?
-                messageDic["messageData"] = messageData as AnyObject?
-                messageDic["friendList"] = currentFriendsList as AnyObject?
-                
-                let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messageDic as NSDictionary)
-                //print("messageDicData: \(messageDicData)")
-                
-                //let dic = NSKeyedUnarchiver.unarchiveObject(with: messageDicData) as! NSDictionary
-                //print("unarchiveObject messageDic: \(dic)")
-                
-                let sendData = "\(convertStr)####DATA####".data(using: .utf8)! + messageDicData
-                
-                UdpManager.shared.sendData(data: sendData, toHost: httpManager.shared.serverIP, port: httpManager.shared.serverPort)
-                
-                appendMessage(dic: messageDic as NSDictionary)
-                
-                messageTV.text = ""
-                self.view.endEditing(true)
-            }
-            
+            sendData(messageData: messageData)
         }
         setSendBtnTitletoPlus(senderBtn: sender)
+    }
+    
+    func sendData(messageData: Data) -> Void {
+        for finfo in currentFriendsList {
+            if finfo.telephone==mainUserInfo.telephone {
+                continue
+            }
+            
+            var optionDic : [String: AnyObject] = [:]
+            optionDic["telephone"] = mainUserInfo.telephone as AnyObject?
+            optionDic["targetTelephone"] = finfo.telephone as AnyObject?
+            optionDic["action"] = 1 as AnyObject?
+            let convertStr:String =  JSONTools.shared.convertDictionaryToString(dict: optionDic)
+            
+            var messageDic : [String: AnyObject] = [:]
+            messageDic["messageType"] = "friendsMessage" as AnyObject?
+            messageDic["messageFrom"] = mainUserInfo.telephone as AnyObject?
+            messageDic["messageID"] = messageID as AnyObject?
+            messageDic["messageName"] = messageName as AnyObject?
+            messageDic["messageDataType"] = "String" as AnyObject?
+            messageDic["messageData"] = messageData as AnyObject?
+            messageDic["friendList"] = currentFriendsList as AnyObject?
+            
+            let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messageDic as NSDictionary)
+            //print("messageDicData: \(messageDicData)")
+            
+            //let dic = NSKeyedUnarchiver.unarchiveObject(with: messageDicData) as! NSDictionary
+            //print("unarchiveObject messageDic: \(dic)")
+            
+            let sendData = "\(convertStr)####DATA####".data(using: .utf8)! + messageDicData
+            
+            UdpManager.shared.sendData(data: sendData, toHost: httpManager.shared.serverIP, port: httpManager.shared.serverPort)
+            
+            appendMessage(dic: messageDic as NSDictionary)
+            
+            messageTV.text = ""
+            self.view.endEditing(true)
+        }
     }
     
     func setSendBtnTitletoPlus(senderBtn: UIButton) -> Void {
