@@ -67,6 +67,9 @@
                                             <integer key="value" value="8"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="cameraBtnClicked:" destination="OeV-F8-MyN" eventType="touchUpInside" id="Ryx-Gf-dSP"/>
+                                    </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="拍照" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gfh-AA-lOA">
                                     <rect key="frame" x="55.5" y="236.5" width="25" height="14.5"/>

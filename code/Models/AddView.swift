@@ -31,6 +31,19 @@ class AddView:UIView {
         //self.present(photoPicker, animated: true, completion: nil)
     }
     
+    
+    @IBAction func cameraBtnClicked(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            let  cameraPicker = UIImagePickerController()
+            cameraPicker.delegate = self
+            cameraPicker.allowsEditing = true
+            cameraPicker.sourceType = .camera
+            //在需要的地方present出来
+            UIViewController.currentViewController()!.present(cameraPicker, animated: true, completion: nil)
+        } else {
+           print("不支持拍照")
+        }
+    }
 }
 
 extension AddView:UIImagePickerControllerDelegate,UINavigationControllerDelegate{
@@ -59,8 +72,9 @@ extension AddView:UIImagePickerControllerDelegate,UINavigationControllerDelegate
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         print("取消了")
-        delegate?.cancelSelectImg()
-        UIViewController.currentViewController()!.dismiss(animated: true, completion: nil)
+        UIViewController.currentViewController()!.dismiss(animated: true, completion: {
+            self.delegate?.cancelSelectImg()
+        })
     }
      
      
