@@ -364,6 +364,7 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
                     let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatIImgVCellID", for: indexPath) as! MineChatImgCell
                     if let messagedata = dic?["messageData"] as? Data,
                        let img = UIImage(data: messagedata){
+                        cell.imgWidth.constant = 150*img.size.width/img.size.height
                         cell.imgV.image = img
                     }
                     

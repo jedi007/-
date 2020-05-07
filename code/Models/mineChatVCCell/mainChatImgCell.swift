@@ -9,6 +9,7 @@
 import UIKit
 
 class MineChatImgCell: UITableViewCell {
+    @IBOutlet weak var imgWidth: NSLayoutConstraint!
     
     @IBOutlet weak var imgV: UIImageView!
     
