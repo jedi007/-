@@ -726,10 +726,10 @@
                                                 </connections>
                                             </tableViewCell>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="MineChatIImgVCellID" id="9dh-EU-iiX" customClass="MineChatImgCell" customModule="相信" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="162" width="414" height="10.333333015441895"/>
+                                                <rect key="frame" x="0.0" y="162" width="414" height="160.33332824707031"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="9dh-EU-iiX" id="K21-jG-17b">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="10.333333015441895"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160.33332824707031"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="3A2-6I-tKR">
@@ -746,14 +746,15 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XRU-kN-sHR">
-                                                            <rect key="frame" x="211" y="0.0" width="150" height="0.33333333333333331"/>
+                                                            <rect key="frame" x="211" y="0.0" width="150" height="150.33333333333334"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
+                                                                <constraint firstAttribute="height" constant="150" id="2Ry-Kw-HGc"/>
                                                                 <constraint firstAttribute="width" constant="150" id="DYx-3z-hjj"/>
                                                             </constraints>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                                    <integer key="value" value="6"/>
+                                                                    <integer key="value" value="5"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
@@ -770,6 +771,54 @@
                                                 <connections>
                                                     <outlet property="imgV" destination="XRU-kN-sHR" id="jH1-8g-Vn1"/>
                                                     <outlet property="imgWidth" destination="DYx-3z-hjj" id="36C-Pr-maq"/>
+                                                </connections>
+                                            </tableViewCell>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ChatIImgVCellID" id="K5z-Py-RQ4" userLabel="ChatIImgVCellID" customClass="ChatImgCell" customModule="相信" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="322.33332824707031" width="414" height="160.33332824707031"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="K5z-Py-RQ4" id="qk2-Q3-yoG">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="160.33332824707031"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sP-YE-qxa">
+                                                            <rect key="frame" x="76" y="0.0" width="150" height="150.33333333333334"/>
+                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="150" id="AGh-zi-Rna"/>
+                                                                <constraint firstAttribute="height" constant="150" id="jbP-2u-nSl"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="示例头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="ueF-El-YQ2">
+                                                            <rect key="frame" x="28" y="0.0" width="40" height="40"/>
+                                                            <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="40" id="aBK-Kc-bcw"/>
+                                                                <constraint firstAttribute="width" constant="40" id="xmP-k0-sJZ"/>
+                                                            </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                    <integer key="value" value="5"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                            </userDefinedRuntimeAttributes>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="bottom" secondItem="5sP-YE-qxa" secondAttribute="bottom" constant="10" id="3EH-nu-Bt1"/>
+                                                        <constraint firstItem="ueF-El-YQ2" firstAttribute="leading" secondItem="qk2-Q3-yoG" secondAttribute="leadingMargin" constant="8" id="Hhu-Gs-EMM"/>
+                                                        <constraint firstItem="5sP-YE-qxa" firstAttribute="top" secondItem="qk2-Q3-yoG" secondAttribute="top" id="Oap-0Q-RHO"/>
+                                                        <constraint firstItem="5sP-YE-qxa" firstAttribute="leading" secondItem="ueF-El-YQ2" secondAttribute="trailing" constant="8" id="ROA-1T-nGo"/>
+                                                        <constraint firstItem="ueF-El-YQ2" firstAttribute="top" secondItem="qk2-Q3-yoG" secondAttribute="top" id="gJY-Pi-yOA"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <connections>
+                                                    <outlet property="imgV" destination="5sP-YE-qxa" id="u47-jU-Krz"/>
+                                                    <outlet property="imgWidth" destination="AGh-zi-Rna" id="iXo-5x-EXG"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>

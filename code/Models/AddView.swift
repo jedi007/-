@@ -73,6 +73,7 @@ extension AddView:UIImagePickerControllerDelegate,UINavigationControllerDelegate
         //imgV.image = image
         
         UIViewController.currentViewController()!.dismiss(animated: true, completion: {
+            print("call delegate to use img")
             self.delegate?.useImg(image)
         })
         //self.dismiss(animated: true, completion: nil)

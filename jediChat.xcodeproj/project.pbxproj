@@ -26,7 +26,7 @@
 		6A20217423EE97D0002D2DFB /* 附近的人.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216B23EE97D0002D2DFB /* 附近的人.png */; };
 		6A20217523EE97D0002D2DFB /* 小程序.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A20216C23EE97D0002D2DFB /* 小程序.png */; };
 		6A25F9DB24613EF1000EF18D /* 红包.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A25F9DA24613EF1000EF18D /* 红包.png */; };
-		6A25F9DF2461BA7A000EF18D /* mainChatImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A25F9DE2461BA7A000EF18D /* mainChatImgCell.swift */; };
+		6A25F9DF2461BA7A000EF18D /* mineChatImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A25F9DE2461BA7A000EF18D /* mineChatImgCell.swift */; };
 		6A306B3E2442AED400DB52CA /* mineChatVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A306B3D2442AED400DB52CA /* mineChatVCCell.swift */; };
 		6A306B402442AF0500DB52CA /* mineChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A306B3F2442AF0500DB52CA /* mineChatBubble.swift */; };
 		6A306B422443552500DB52CA /* ToolFuncs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A306B412443552500DB52CA /* ToolFuncs.swift */; };
@@ -34,6 +34,7 @@
 		6A387D9F243B301B002D0DCD /* messagesVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A387D9E243B301B002D0DCD /* messagesVCCell.swift */; };
 		6A4A53932440B45000F29021 /* chatVCCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4A53922440B45000F29021 /* chatVCCell.swift */; };
 		6A4C07E0240A2941006B679C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4C07DF240A2941006B679C /* NetworkManager.swift */; };
+		6A55D6952464501E00063AFF /* ChatImgCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A55D6942464501E00063AFF /* ChatImgCell.swift */; };
 		6A67D971245C029A0054B67D /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A67D970245C029A0054B67D /* AddView.swift */; };
 		6A67D973245C06270054B67D /* AddView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A67D972245C06270054B67D /* AddView.xib */; };
 		6A7272C0243CAD9F00FB4F61 /* SaveInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */; };
@@ -111,7 +112,7 @@
 		6A20216B23EE97D0002D2DFB /* 附近的人.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "附近的人.png"; sourceTree = "<group>"; };
 		6A20216C23EE97D0002D2DFB /* 小程序.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "小程序.png"; sourceTree = "<group>"; };
 		6A25F9DA24613EF1000EF18D /* 红包.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红包.png"; sourceTree = "<group>"; };
-		6A25F9DE2461BA7A000EF18D /* mainChatImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainChatImgCell.swift; sourceTree = "<group>"; };
+		6A25F9DE2461BA7A000EF18D /* mineChatImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mineChatImgCell.swift; sourceTree = "<group>"; };
 		6A306B3D2442AED400DB52CA /* mineChatVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mineChatVCCell.swift; sourceTree = "<group>"; };
 		6A306B3F2442AF0500DB52CA /* mineChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mineChatBubble.swift; sourceTree = "<group>"; };
 		6A306B412443552500DB52CA /* ToolFuncs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolFuncs.swift; sourceTree = "<group>"; };
@@ -119,6 +120,7 @@
 		6A387D9E243B301B002D0DCD /* messagesVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = messagesVCCell.swift; sourceTree = "<group>"; };
 		6A4A53922440B45000F29021 /* chatVCCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = chatVCCell.swift; sourceTree = "<group>"; };
 		6A4C07DF240A2941006B679C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6A55D6942464501E00063AFF /* ChatImgCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatImgCell.swift; sourceTree = "<group>"; };
 		6A67D970245C029A0054B67D /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		6A67D972245C06270054B67D /* AddView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddView.xib; sourceTree = "<group>"; };
 		6A7272BF243CAD9F00FB4F61 /* SaveInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveInfo.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				6A4A53922440B45000F29021 /* chatVCCell.swift */,
 				6ACAAB922441AAC5000B8542 /* ChatBubble.swift */,
+				6A55D6942464501E00063AFF /* ChatImgCell.swift */,
 			);
 			path = chatVCCell;
 			sourceTree = "<group>";
@@ -225,7 +228,7 @@
 			children = (
 				6A306B3D2442AED400DB52CA /* mineChatVCCell.swift */,
 				6A306B3F2442AF0500DB52CA /* mineChatBubble.swift */,
-				6A25F9DE2461BA7A000EF18D /* mainChatImgCell.swift */,
+				6A25F9DE2461BA7A000EF18D /* mineChatImgCell.swift */,
 			);
 			path = mineChatVCCell;
 			sourceTree = "<group>";
@@ -567,11 +570,12 @@
 				CDA465C7238145A4007D794C /* SceneDelegate.swift in Sources */,
 				6A9D0B0623EAAC1E0078AA19 /* mainTabBarController.swift in Sources */,
 				6A0D2A3523F92D3B00B2DFF8 /* searchedUserInfoShowVC.swift in Sources */,
-				6A25F9DF2461BA7A000EF18D /* mainChatImgCell.swift in Sources */,
+				6A25F9DF2461BA7A000EF18D /* mineChatImgCell.swift in Sources */,
 				6A9D0B0C23EABE310078AA19 /* addressBookViewController.swift in Sources */,
 				6AC05DE323E30461009BD223 /* dateTools.swift in Sources */,
 				6A306B422443552500DB52CA /* ToolFuncs.swift in Sources */,
 				6A4C07E0240A2941006B679C /* NetworkManager.swift in Sources */,
+				6A55D6952464501E00063AFF /* ChatImgCell.swift in Sources */,
 				6A306B402442AF0500DB52CA /* mineChatBubble.swift in Sources */,
 				6ACAAB932441AAC5000B8542 /* ChatBubble.swift in Sources */,
 				6A0905DB23E1AB1D003A2788 /* registerViewController.swift in Sources */,

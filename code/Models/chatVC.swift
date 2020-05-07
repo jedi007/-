@@ -223,7 +223,7 @@ class ChatViewController: UIViewController {
             messageDic["friendList"] = currentFriendsList as AnyObject?
             
             let messageDicData = NSKeyedArchiver.archivedData(withRootObject:messageDic as NSDictionary)
-            //print("messageDicData: \(messageDicData)")
+            print("send messageDicData: \(messageDicData)")
             
             //let dic = NSKeyedUnarchiver.unarchiveObject(with: messageDicData) as! NSDictionary
             //print("unarchiveObject messageDic: \(dic)")
@@ -375,13 +375,35 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
             }
         }
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
-        
-        if let messagedata = dic?["messageData"] as? Data,
-            let messagestr = String(data: messagedata, encoding: .utf8){
-            cell.messageBV.setMessageStr(message: messagestr)
+        if let messageType = dic?["messageDataType"] as? String {
+            print("receive messagedataType: \(messageType)")
+            if messageType == "String" {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
+                
+                if let messagedata = dic?["messageData"] as? Data,
+                    let messagestr = String(data: messagedata, encoding: .utf8){
+                    cell.messageBV.setMessageStr(message: messagestr)
+                }
+                
+                return cell
+            } else if messageType == "img" {
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatIImgVCellID", for: indexPath) as! MineChatImgCell
+                if let messagedata = dic?["messageData"] as? Data,
+                   let img = UIImage(data: messagedata){
+                    cell.imgWidth.constant = 150*img.size.width/img.size.height
+                    cell.imgV.image = img
+                }
+                
+                print("return img cell")
+                
+                return cell
+            }
+            
+            
         }
-        
+            
+        //为编译通过
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
         return cell
     }
     
