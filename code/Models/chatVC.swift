@@ -465,6 +465,7 @@ extension ChatViewController: AddViewDelegate{
         backViewClick()
         
         if let imgdata = img.jpegData(compressionQuality: 0.5) {
+            httpManager.shared.uploadFile(fileName: "testfilename.jpg", data: imgdata)
             sendData(messageData: imgdata, dataType: "img")
         }
     }
