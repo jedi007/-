@@ -465,8 +465,22 @@ extension ChatViewController: AddViewDelegate{
         backViewClick()
         
         if let imgdata = img.jpegData(compressionQuality: 0.5) {
-            httpManager.shared.uploadFile(fileName: "testfilename.jpg", data: imgdata)
-            sendData(messageData: imgdata, dataType: "img")
+            //httpManager.shared.uploadFile(fileName: "testfilename.jpg", data: imgdata)
+            //sendData(messageData: imgdata, dataType: "img")
+            
+            httpManager.shared.downloadFile(fileName: "testfilename.jpg", failed: {(errorCode:Int) in
+                print("downloadFile failed with errorCode : \(errorCode)")
+            }, success: {
+                print("downloadFile successed")
+            })
+            
+//            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
+//                httpManager.shared.downloadFile(fileName: "testfilename.jpg", failed: {(errorCode:Int) in
+//                    print("downloadFile failed with errorCode : \(errorCode)")
+//                }, success: {
+//                    print("downloadFile successed")
+//                })
+//            })
         }
     }
     

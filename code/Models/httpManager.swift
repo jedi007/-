@@ -262,6 +262,38 @@ class httpManager {
         task.resume()
     }
     
+    func downloadFile(fileName:String, failed:@escaping (_ errorCode:Int)->Void, success:@escaping ()->Void) -> Void {
+        let session = URLSession(configuration: .default)
+        
+        //let url = "\(baseUrl)/downloadFile"
+        let url = URL(string: "http://192.168.31.113/believe/downloadFile")!
+        print("downloadfile url : \(url)")
+        
+        var request = URLRequest(url: url, timeoutInterval: 5)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        let postData = ["filename":fileName]
+        let postString = postData.compactMap({ (key, value) -> String in
+            return "\(key)=\(value)"
+        }).joined(separator: "&")
+        request.httpBody = postString.data(using: .utf8)
+        
+        let task = session.dataTask(with: request) {(data, response, error) in
+            if error != nil
+            {
+                print("error : \(error!.localizedDescription)")
+                failed(-201)
+                return;
+            }
+            
+            print("down data: \(data)")
+            
+            success()
+        }
+        task.resume()
+    }
+    
     func uploadFile( fileName:String, data:Data){
         //分隔线
         let boundary = "Boundary-\(UUID().uuidString)"
