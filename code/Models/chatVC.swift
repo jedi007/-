@@ -470,8 +470,18 @@ extension ChatViewController: AddViewDelegate{
             
             httpManager.shared.downloadFile(fileName: "testfilename.jpg", failed: {(errorCode:Int) in
                 print("downloadFile failed with errorCode : \(errorCode)")
-            }, success: {
+            }, success: { (data:Data?) in
                 print("downloadFile successed")
+                if let imdata = data,
+                   let img = UIImage(data: imdata) {
+                    print("make img success")
+                    
+                    DispatchQueue.main.async {
+                        let imgV = UIImageView(image: img)
+                        imgV.frame = CGRect(x: 0, y: 0, width: 200, height: 300)
+                        self.view.addSubview(imgV)
+                    }
+                }
             })
             
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {

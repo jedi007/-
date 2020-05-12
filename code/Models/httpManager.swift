@@ -262,7 +262,7 @@ class httpManager {
         task.resume()
     }
     
-    func downloadFile(fileName:String, failed:@escaping (_ errorCode:Int)->Void, success:@escaping ()->Void) -> Void {
+    func downloadFile(fileName:String, failed:@escaping (_ errorCode:Int)->Void, success:@escaping (_ imgdata: Data?)->Void) -> Void {
         let session = URLSession(configuration: .default)
         
         //let url = "\(baseUrl)/downloadFile"
@@ -289,7 +289,7 @@ class httpManager {
             
             print("down data: \(data)")
             
-            success()
+            success(data)
         }
         task.resume()
     }
