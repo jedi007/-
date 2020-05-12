@@ -733,7 +733,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="3A2-6I-tKR">
-                                                            <rect key="frame" x="369" y="0.0" width="40" height="40"/>
+                                                            <rect key="frame" x="369" y="5" width="40" height="40"/>
                                                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="UQv-vl-p9e"/>
@@ -746,7 +746,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XRU-kN-sHR">
-                                                            <rect key="frame" x="211" y="0.0" width="150" height="150.33333333333334"/>
+                                                            <rect key="frame" x="211" y="5" width="150" height="150.33333333333334"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="150" id="2Ry-Kw-HGc"/>
@@ -761,10 +761,10 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="3A2-6I-tKR" firstAttribute="leading" secondItem="XRU-kN-sHR" secondAttribute="trailing" constant="8" id="5J4-yJ-XsB"/>
-                                                        <constraint firstAttribute="bottom" secondItem="XRU-kN-sHR" secondAttribute="bottom" constant="10" id="OjI-AG-R5u"/>
-                                                        <constraint firstItem="3A2-6I-tKR" firstAttribute="top" secondItem="K21-jG-17b" secondAttribute="top" id="iYE-o6-PuH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="XRU-kN-sHR" secondAttribute="bottom" constant="5" id="OjI-AG-R5u"/>
+                                                        <constraint firstItem="3A2-6I-tKR" firstAttribute="top" secondItem="K21-jG-17b" secondAttribute="top" constant="5" id="iYE-o6-PuH"/>
                                                         <constraint firstAttribute="trailing" secondItem="3A2-6I-tKR" secondAttribute="trailing" constant="5" id="kx9-AN-Qfc"/>
-                                                        <constraint firstItem="XRU-kN-sHR" firstAttribute="top" secondItem="K21-jG-17b" secondAttribute="top" id="nlh-w6-A9q"/>
+                                                        <constraint firstItem="XRU-kN-sHR" firstAttribute="top" secondItem="K21-jG-17b" secondAttribute="top" constant="5" id="nlh-w6-A9q"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -781,7 +781,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5sP-YE-qxa">
-                                                            <rect key="frame" x="76" y="0.0" width="150" height="150.33333333333334"/>
+                                                            <rect key="frame" x="76" y="5" width="150" height="150.33333333333334"/>
                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="150" id="AGh-zi-Rna"/>
@@ -794,7 +794,7 @@
                                                             </userDefinedRuntimeAttributes>
                                                         </imageView>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="示例头像.png" translatesAutoresizingMaskIntoConstraints="NO" id="ueF-El-YQ2">
-                                                            <rect key="frame" x="28" y="0.0" width="40" height="40"/>
+                                                            <rect key="frame" x="28" y="5" width="40" height="40"/>
                                                             <color key="backgroundColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="40" id="aBK-Kc-bcw"/>
@@ -808,11 +808,11 @@
                                                         </imageView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstAttribute="bottom" secondItem="5sP-YE-qxa" secondAttribute="bottom" constant="10" id="3EH-nu-Bt1"/>
+                                                        <constraint firstAttribute="bottom" secondItem="5sP-YE-qxa" secondAttribute="bottom" constant="5" id="3EH-nu-Bt1"/>
                                                         <constraint firstItem="ueF-El-YQ2" firstAttribute="leading" secondItem="qk2-Q3-yoG" secondAttribute="leadingMargin" constant="8" id="Hhu-Gs-EMM"/>
-                                                        <constraint firstItem="5sP-YE-qxa" firstAttribute="top" secondItem="qk2-Q3-yoG" secondAttribute="top" id="Oap-0Q-RHO"/>
+                                                        <constraint firstItem="5sP-YE-qxa" firstAttribute="top" secondItem="qk2-Q3-yoG" secondAttribute="top" constant="5" id="Oap-0Q-RHO"/>
                                                         <constraint firstItem="5sP-YE-qxa" firstAttribute="leading" secondItem="ueF-El-YQ2" secondAttribute="trailing" constant="8" id="ROA-1T-nGo"/>
-                                                        <constraint firstItem="ueF-El-YQ2" firstAttribute="top" secondItem="qk2-Q3-yoG" secondAttribute="top" id="gJY-Pi-yOA"/>
+                                                        <constraint firstItem="ueF-El-YQ2" firstAttribute="top" secondItem="qk2-Q3-yoG" secondAttribute="top" constant="5" id="gJY-Pi-yOA"/>
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
