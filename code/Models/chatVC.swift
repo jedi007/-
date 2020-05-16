@@ -485,8 +485,17 @@ extension ChatViewController: AddViewDelegate{
             let uuid = UUID().uuidString
             let imgcacheName = "\(uuid).jpg"
             print("uuid:\(uuid)")
-            httpManager.shared.uploadFile(fileName: imgcacheName, data: imgdata)
-            sendData(messageData: imgcacheName.data(using: .utf8)!, dataType: "img")
+            httpManager.shared.uploadFile(fileName: imgcacheName, data: imgdata, completionCb: {
+                (data, response, error) -> Void in
+                if error != nil{
+                    print(error!)
+                }else{
+                    let str = String(data: data!, encoding: String.Encoding.utf8)
+                    print("--- 上传完毕 ---:\(str!)")
+                    
+                    self.sendData(messageData: imgcacheName.data(using: .utf8)!, dataType: "img")
+                }
+            })
             
 //            httpManager.shared.downloadFile(fileName: imgcacheName, failed: {(errorCode:Int) in
 //                print("downloadFile failed with errorCode : \(errorCode)")

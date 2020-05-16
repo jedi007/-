@@ -294,7 +294,7 @@ class httpManager {
         task.resume()
     }
     
-    func uploadFile( fileName:String, data:Data){
+    func uploadFile( fileName:String, data:Data, completionCb: @escaping (Data?, URLResponse?, Error?) -> Void){
         //分隔线
         let boundary = "Boundary-\(UUID().uuidString)"
         
@@ -321,12 +321,7 @@ class httpManager {
         let uploadTask = session.dataTask(with: request, completionHandler: {
             (data, response, error) -> Void in
             //上传完毕后
-            if error != nil{
-                print(error!)
-            }else{
-                let str = String(data: data!, encoding: String.Encoding.utf8)
-                print("--- 上传完毕 ---\(str!)")
-            }
+            completionCb(data, response, error)
         })
          
         //使用resume方法启动任务
