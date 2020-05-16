@@ -387,11 +387,28 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
                 
                 return cell
             } else if messageType == "img" {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatIImgVCellID", for: indexPath) as! MineChatImgCell
+                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatIImgVCellID", for: indexPath) as! ChatImgCell
                 if let messagedata = dic?["messageData"] as? Data,
-                   let img = UIImage(data: messagedata){
-                    cell.imgWidth.constant = 150*img.size.width/img.size.height
-                    cell.imgV.image = img
+                    let imgname = String(data: messagedata, encoding: .utf8){
+                    
+                    print("receive imgname:\(imgname)")
+                    
+                    httpManager.shared.downloadFile(fileName: imgname, failed: {(errorCode:Int) in
+                        print("downloadFile failed with errorCode : \(errorCode)")
+                    }, success: { (data:Data?) in
+                        print("downloadFile successed")
+                        if let imdata = data,
+                           let img = UIImage(data: imdata) {
+                            print("make img success")
+                            
+                            DispatchQueue.main.async {
+                                cell.imgWidth.constant = 150*img.size.width/img.size.height
+                                cell.imgV.image = img
+                            }
+                        } else {
+                            print("make img failed")
+                        }
+                    })
                 }
                 
                 print("return img cell")
@@ -464,25 +481,28 @@ extension ChatViewController: AddViewDelegate{
         print("delegate get img")
         backViewClick()
         
-        if let imgdata = img.jpegData(compressionQuality: 0.5) {
-            //httpManager.shared.uploadFile(fileName: "testfilename.jpg", data: imgdata)
-            //sendData(messageData: imgdata, dataType: "img")
+        if let imgdata = img.jpegData(compressionQuality: 1) {
+            let uuid = UUID().uuidString
+            let imgcacheName = "\(uuid).jpg"
+            print("uuid:\(uuid)")
+            httpManager.shared.uploadFile(fileName: imgcacheName, data: imgdata)
+            sendData(messageData: imgcacheName.data(using: .utf8)!, dataType: "img")
             
-            httpManager.shared.downloadFile(fileName: "testfilename.jpg", failed: {(errorCode:Int) in
-                print("downloadFile failed with errorCode : \(errorCode)")
-            }, success: { (data:Data?) in
-                print("downloadFile successed")
-                if let imdata = data,
-                   let img = UIImage(data: imdata) {
-                    print("make img success")
-                    
-                    DispatchQueue.main.async {
-                        let imgV = UIImageView(image: img)
-                        imgV.frame = CGRect(x: 0, y: 0, width: 200, height: 300)
-                        self.view.addSubview(imgV)
-                    }
-                }
-            })
+//            httpManager.shared.downloadFile(fileName: imgcacheName, failed: {(errorCode:Int) in
+//                print("downloadFile failed with errorCode : \(errorCode)")
+//            }, success: { (data:Data?) in
+//                print("downloadFile successed")
+//                if let imdata = data,
+//                   let img = UIImage(data: imdata) {
+//                    print("make img success")
+//
+//                    DispatchQueue.main.async {
+//                        let imgV = UIImageView(image: img)
+//                        imgV.frame = CGRect(x: 0, y: 0, width: 200, height: 300)
+//                        self.view.addSubview(imgV)
+//                    }
+//                }
+//            })
             
 //            DispatchQueue.main.asyncAfter(deadline: .now() + 2.5, execute: {
 //                httpManager.shared.downloadFile(fileName: "testfilename.jpg", failed: {(errorCode:Int) in
