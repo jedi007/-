@@ -288,9 +288,8 @@ class ChatViewController: UIViewController {
             messagesDics[messageID] = [dic as NSDictionary]
         }
         
-        tableView.reloadData()
-        
         DispatchQueue.main.async{
+            self.tableView.reloadData()
             self.tableView.scrollToRow(at: IndexPath(row: messagesDics[self.messageID]!.count-1, section: 0), at: .bottom, animated: true)
         }
         
@@ -363,7 +362,8 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
                     
                     let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatIImgVCellID", for: indexPath) as! MineChatImgCell
                     if let messagedata = dic?["messageData"] as? Data,
-                       let img = UIImage(data: messagedata){
+                        let imgname = String(data: messagedata, encoding: .utf8),
+                        let img = ImageStore.shareSingleOne.image(forKey: imgname){
                         cell.imgWidth.constant = 150*img.size.width/img.size.height
                         cell.imgV.image = img
                     }
@@ -493,7 +493,9 @@ extension ChatViewController: AddViewDelegate{
                     let str = String(data: data!, encoding: String.Encoding.utf8)
                     print("--- 上传完毕 ---:\(str!)")
                     
-                    self.sendData(messageData: imgcacheName.data(using: .utf8)!, dataType: "img")
+                    ImageStore.shareSingleOne.setImage(img, forKey: uuid)
+                    
+                    self.sendData(messageData: uuid.data(using: .utf8)!, dataType: "img")
                 }
             })
             
