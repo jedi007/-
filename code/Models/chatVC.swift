@@ -494,10 +494,8 @@ extension ChatViewController: AddViewDelegate{
                 }else{
                     let str = String(data: data!, encoding: String.Encoding.utf8)
                     print("--- 上传完毕 ---:\(str!)")
-                    
                     ImageStore.shareSingleOne.setImage(img, forKey: uuid)
-                    
-                    self.sendData(messageData: uuid.data(using: .utf8)!, dataType: "img")
+                    self.sendData(messageData: imgcacheName.data(using: .utf8)!, dataType: "img")
                 }
             })
             
