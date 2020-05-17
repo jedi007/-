@@ -234,8 +234,10 @@ class ChatViewController: UIViewController {
             
             appendMessage(dic: messageDic as NSDictionary)
             
-            messageTV.text = ""
-            self.view.endEditing(true)
+            DispatchQueue.main.async {
+                self.messageTV.text = ""
+                self.view.endEditing(true)
+            }
         }
     }
     
