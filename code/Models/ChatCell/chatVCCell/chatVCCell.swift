@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatVCCell: UITableViewCell {
+class ChatVCCell: UITableViewCell,StringChatprotocol {
     @IBOutlet weak var messageBV: ChatBubbleView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -33,4 +33,7 @@ class ChatVCCell: UITableViewCell {
         //nameLabel.adjustsFontForContentSizeCategory = true
     }
     
+    func setMessage(str: String) {
+        self.messageBV.setMessageStr(message: str)
+    }
 }

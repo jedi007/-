@@ -1,20 +1,22 @@
 //
-//  mineChatVCCell.swift
+//  mainChatImgCell.swift
 //  jediChat
 //
-//  Created by 李杰 on 2020/4/12.
+//  Created by 李杰 on 2020/5/5.
 //  Copyright © 2020 李杰. All rights reserved.
 //
 
 import UIKit
 
-class MineChatVCCell: UITableViewCell {
-    @IBOutlet weak var messageBV: MineChatBubbleView!
+class MineChatImgCell: UITableViewCell,ImgChatprotocol {
+    @IBOutlet weak var imgWidth: NSLayoutConstraint!
+    
+    @IBOutlet weak var imgV: UIImageView!
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        print("ChatVCCell init called")
+        print("ChatImgCell init called")
     }
     
     required init?(coder: NSCoder) {
@@ -33,4 +35,8 @@ class MineChatVCCell: UITableViewCell {
         //nameLabel.adjustsFontForContentSizeCategory = true
     }
     
+    func setImg(img:UIImage) -> Void {
+        self.imgWidth.constant = 150*img.size.width/img.size.height
+        self.imgV.image = img
+    }
 }

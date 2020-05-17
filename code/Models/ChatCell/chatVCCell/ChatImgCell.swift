@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ChatImgCell: UITableViewCell {
+class ChatImgCell: UITableViewCell,ImgChatprotocol {
     
     @IBOutlet weak var imgV: UIImageView!
     @IBOutlet weak var imgWidth: NSLayoutConstraint!
@@ -36,4 +36,8 @@ class ChatImgCell: UITableViewCell {
         //nameLabel.adjustsFontForContentSizeCategory = true
     }
     
+    func setImg(img:UIImage) -> Void {
+        self.imgWidth.constant = 150*img.size.width/img.size.height
+        self.imgV.image = img
+    }
 }

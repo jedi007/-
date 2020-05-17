@@ -350,54 +350,30 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
         //print("indexPath.row:  \(indexPath.row)  indexPath.section: \(indexPath.section)")
         
         let dic = messagesDics[messageID]?[indexPath.row]
-        if dic?["messageFrom"] as? String == mainUserInfo.telephone {
-            if let messageType = dic?["messageDataType"] as? String {
-                print("receive messagedataType: \(messageType)")
-                if messageType == "String" {
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatVCellID", for: indexPath) as! MineChatVCCell
-                    if let messagedata = dic?["messageData"] as? Data,
-                        let messagestr = String(data: messagedata, encoding: .utf8){
-                        cell.messageBV.setMessageStr(message: messagestr)
-                    }
-                    return cell
-                } else if messageType == "img" {
-                    
-                    let cell = tableView.dequeueReusableCell(withIdentifier: "MineChatIImgVCellID", for: indexPath) as! MineChatImgCell
-                    if let messagedata = dic?["messageData"] as? Data,
-                        let imgname = String(data: messagedata, encoding: .utf8),
-                        let img = ImageStore.shareSingleOne.image(forKey: imgname){
-                        cell.imgWidth.constant = 150*img.size.width/img.size.height
-                        cell.imgV.image = img
-                    }
-                    
-                    print("return img cell")
-                    
-                    return cell
-                }
-            }
-        }
+        var cell:UITableViewCell = UITableViewCell()
         
         if let messageType = dic?["messageDataType"] as? String {
-            print("receive messagedataType: \(messageType)")
             if messageType == "String" {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
-                
+                if  dic?["messageFrom"] as? String == mainUserInfo.telephone {
+                    cell = tableView.dequeueReusableCell(withIdentifier: "MineChatVCellID", for: indexPath) as! MineChatVCCell
+                } else {
+                    cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
+                }
                 if let messagedata = dic?["messageData"] as? Data,
                     let messagestr = String(data: messagedata, encoding: .utf8){
-                    cell.messageBV.setMessageStr(message: messagestr)
+                    (cell  as! StringChatprotocol).setMessage(str: messagestr)
                 }
-                
-                return cell
             } else if messageType == "img" {
-                let cell = tableView.dequeueReusableCell(withIdentifier: "ChatIImgVCellID", for: indexPath) as! ChatImgCell
+                if  dic?["messageFrom"] as? String == mainUserInfo.telephone {
+                    cell = tableView.dequeueReusableCell(withIdentifier: "MineChatIImgVCellID", for: indexPath) as! MineChatImgCell
+                } else {
+                    cell = tableView.dequeueReusableCell(withIdentifier: "ChatIImgVCellID", for: indexPath) as! ChatImgCell
+                }
                 if let messagedata = dic?["messageData"] as? Data,
-                    let imgname = String(data: messagedata, encoding: .utf8){
-                    
-                    print("receive imgname:\(imgname)")
+                    let imgname = String(data: messagedata, encoding: .utf8) {
                     if let img = ImageStore.shareSingleOne.image(forKey: imgname) {
                         DispatchQueue.main.async {
-                            cell.imgWidth.constant = 150*img.size.width/img.size.height
-                            cell.imgV.image = img
+                            (cell  as! ImgChatprotocol).setImg(img: img)
                         }
                     } else {
                         httpManager.shared.downloadFile(fileName: imgname, failed: {(errorCode:Int) in
@@ -409,8 +385,7 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
                                 print("make img success")
                                 ImageStore.shareSingleOne.setImage(img, forKey: imgname)
                                 DispatchQueue.main.async {
-                                    cell.imgWidth.constant = 150*img.size.width/img.size.height
-                                    cell.imgV.image = img
+                                    (cell  as! ImgChatprotocol).setImg(img: img)
                                 }
                             } else {
                                 let failedr = String(data: data!, encoding: .utf8)!
@@ -419,17 +394,9 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
                         })
                     }
                 }
-                
-                print("return img cell")
-                
-                return cell
             }
-            
-            
         }
-            
-        //为编译通过
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ChatViewCellID", for: indexPath) as! ChatVCCell
+        
         return cell
     }
     

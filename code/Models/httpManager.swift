@@ -267,7 +267,7 @@ class httpManager {
         
         let url = URL(string: "\(baseUrl)/downloadFile")!
         //let url = URL(string: "http://192.168.31.113/believe/downloadFile")!
-        print("downloadfile url : \(url)")
+        print("downloadfile url : \(url), name:\(fileName)")
         
         var request = URLRequest(url: url, timeoutInterval: 5)
         request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")

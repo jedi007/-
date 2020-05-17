@@ -102,7 +102,7 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
                 }
                 
                 if messageDataType == "String" {
-                    cell.abstract.text =  "\(fromFname): \(String(data: mdata, encoding: .utf8))"
+                    cell.abstract.text =  "\(fromFname): \(String(data: mdata, encoding: .utf8)!)"
                 } else if messageDataType == "img" {
                     cell.abstract.text = "\(fromFname): 图片"
                 }
