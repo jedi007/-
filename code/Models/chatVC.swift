@@ -408,7 +408,8 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
                                 cell.imgV.image = img
                             }
                         } else {
-                            print("make img failed")
+                            let failedr = String(data: data!, encoding: .utf8)!
+                            print("make img failed, data: \(failedr)")
                         }
                     })
                 }
