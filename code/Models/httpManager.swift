@@ -265,8 +265,8 @@ class httpManager {
     func downloadFile(fileName:String, failed:@escaping (_ errorCode:Int)->Void, success:@escaping (_ imgdata: Data?)->Void) -> Void {
         let session = URLSession(configuration: .default)
         
-        //let url = "\(baseUrl)/downloadFile"
-        let url = URL(string: "http://192.168.31.113/believe/downloadFile")!
+        let url = URL(string: "\(baseUrl)/downloadFile")!
+        //let url = URL(string: "http://192.168.31.113/believe/downloadFile")!
         print("downloadfile url : \(url)")
         
         var request = URLRequest(url: url, timeoutInterval: 5)
@@ -305,8 +305,8 @@ class httpManager {
         ]
         
         //上传地址
-        //let url = URL(string: "\(baseUrl)/uploadFile")!
-        let url = URL(string: "http://192.168.31.113/believe/uploadFile")!
+        let url = URL(string: "\(baseUrl)/uploadFile")!
+        //let url = URL(string: "http://192.168.31.113/believe/uploadFile")!
         var request = URLRequest(url: url)
         //请求类型为POST
         request.httpMethod = "POST"
