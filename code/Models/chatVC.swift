@@ -394,24 +394,30 @@ extension ChatViewController: UITableViewDelegate,UITableViewDataSource {
                     let imgname = String(data: messagedata, encoding: .utf8){
                     
                     print("receive imgname:\(imgname)")
-                    
-                    httpManager.shared.downloadFile(fileName: imgname, failed: {(errorCode:Int) in
-                        print("downloadFile failed with errorCode : \(errorCode)")
-                    }, success: { (data:Data?) in
-                        print("downloadFile successed")
-                        if let imdata = data,
-                           let img = UIImage(data: imdata) {
-                            print("make img success")
-                            
-                            DispatchQueue.main.async {
-                                cell.imgWidth.constant = 150*img.size.width/img.size.height
-                                cell.imgV.image = img
-                            }
-                        } else {
-                            let failedr = String(data: data!, encoding: .utf8)!
-                            print("make img failed, data: \(failedr)")
+                    if let img = ImageStore.shareSingleOne.image(forKey: imgname) {
+                        DispatchQueue.main.async {
+                            cell.imgWidth.constant = 150*img.size.width/img.size.height
+                            cell.imgV.image = img
                         }
-                    })
+                    } else {
+                        httpManager.shared.downloadFile(fileName: imgname, failed: {(errorCode:Int) in
+                            print("downloadFile failed with errorCode : \(errorCode)")
+                        }, success: { (data:Data?) in
+                            print("downloadFile successed")
+                            if let imdata = data,
+                               let img = UIImage(data: imdata) {
+                                print("make img success")
+                                ImageStore.shareSingleOne.setImage(img, forKey: imgname)
+                                DispatchQueue.main.async {
+                                    cell.imgWidth.constant = 150*img.size.width/img.size.height
+                                    cell.imgV.image = img
+                                }
+                            } else {
+                                let failedr = String(data: data!, encoding: .utf8)!
+                                print("make img failed, data: \(failedr)")
+                            }
+                        })
+                    }
                 }
                 
                 print("return img cell")
