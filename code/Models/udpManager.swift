@@ -110,7 +110,7 @@ extension UdpManager: GCDAsyncUdpSocketDelegate {
     }
     
     func udpSocket(_ sock:GCDAsyncUdpSocket, didSendDataWithTag tag:Int) {
-        print("已经发送数据:\(tag)")
+        //print("已经发送数据:\(tag)")
     }
     
 }

@@ -31,11 +31,11 @@ class messagesViewController: UIViewController {
     }
     
     func onReceiveMessage(messageDic:NSDictionary) -> Void {
-        print("messagesViewController receive messageDic: \(messageDic)")
-        print("messagesViewController receive messageDic: \(messageDic["messageType"] as? String)")
-        print("messagesViewController receive messageDic: \(messageDic["messageID"] as? String)")
-        print("messagesViewController receive messageDic: \(messageDic["messageName"] as? String)")
-        print("messagesViewController receive messageDic: \(messageDic["messageFrom"] as? String)")
+//        print("messagesViewController receive messageDic: \(messageDic)")
+//        print("messagesViewController receive messageDic: \(messageDic["messageType"] as? String)")
+//        print("messagesViewController receive messageDic: \(messageDic["messageID"] as? String)")
+//        print("messagesViewController receive messageDic: \(messageDic["messageName"] as? String)")
+//        print("messagesViewController receive messageDic: \(messageDic["messageFrom"] as? String)")
         let mdic:NSMutableDictionary = messageDic.mutableCopy() as! NSMutableDictionary
         
         if let messageData = messageDic["messageData"] as? Data
@@ -90,10 +90,21 @@ extension messagesViewController: UITableViewDelegate,UITableViewDataSource {
             }
             
             if let mdata = dic["messageData"] as? Data,
-               let messageDataType = dic["messageDataType"] as? String
+                let messageDataType = dic["messageDataType"] as? String,
+                let messagefrom = dic["messageFrom"] as? String
             {
+                print("messagefrom: \(messagefrom)")
+                var fromFname = mainUserInfo.name!
+                for finfo in friendsList {
+                    if finfo.telephone == messagefrom {
+                        fromFname = finfo.name ?? "no name"
+                    }
+                }
+                
                 if messageDataType == "String" {
-                    cell.abstract.text = String(data: mdata, encoding: .utf8)
+                    cell.abstract.text =  "\(fromFname): \(String(data: mdata, encoding: .utf8))"
+                } else if messageDataType == "img" {
+                    cell.abstract.text = "\(fromFname): 图片"
                 }
                 
                 if let receiveDate = dic["receiveDate"] as? String {
